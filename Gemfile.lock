@@ -37,7 +37,7 @@ GEM
     arel (4.0.2)
     babosa (0.3.11)
     bcrypt-ruby (3.1.2)
-    bootstrap-sass (2.3.2.0)
+    bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
       will_paginate
@@ -97,6 +97,8 @@ GEM
       net-ssh (>= 2.1.3)
     fog-json (1.0.0)
       multi_json (~> 1.0)
+    font-awesome-rails (4.0.3.0)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     friendly_id (5.0.3)
       activerecord (>= 4.0.0)
@@ -122,6 +124,8 @@ GEM
     multi_json (1.9.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    nav_lynx (1.1.0)
+      rails (>= 3.2.13)
     net-scp (1.2.0)
       net-ssh (>= 2.6.5)
     net-ssh (2.8.0)
@@ -255,7 +259,7 @@ DEPENDENCIES
   activerecord-reputation-system!
   babosa
   bcrypt-ruby (= 3.1.2)
-  bootstrap-sass (= 2.3.2.0)
+  bootstrap-sass (~> 3.1.1)
   bootstrap-will_paginate (= 0.0.9)
   capybara (= 2.1.0)
   carrierwave
@@ -263,10 +267,12 @@ DEPENDENCIES
   coffee-rails (= 4.0.1)
   factory_girl_rails (= 4.2.1)
   fog
+  font-awesome-rails
   friendly_id (~> 5.0.0)
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
   mini_magick
+  nav_lynx
   pg (= 0.15.1)
   rails (= 4.0.4)
   rails-erd
@@ -274,7 +280,7 @@ DEPENDENCIES
   rails_autolink
   rmagick
   rspec-rails (= 2.13.1)
-  sass-rails (= 4.0.1)
+  sass-rails (>= 3.2)
   sdoc (= 0.3.20)
   selenium-webdriver (= 2.35.1)
   sprockets (= 2.11.0)

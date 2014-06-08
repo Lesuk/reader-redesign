@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+	include ActionView::Helpers::TextHelper
 	before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
 	before_action :set_article, only: [:show, :vote]
 
@@ -10,7 +11,7 @@ class ArticlesController < ApplicationController
 			#@articles = Article.users_articles(params[:author])
 			@articles = Article.includes(:comments).by_author(params[:author])
 			@name = "by " + User.find_by_id(params[:author]).name
-		else			
+		else	
 			@articles = Article.includes(:comments).search(params)
 		end
 	end
@@ -35,7 +36,7 @@ class ArticlesController < ApplicationController
 			flash[:success] = "New article has been created."
 			micro_post_title = view_context.link_to(@article.title, @article)
 			#micropost = current_user.microposts.build(content: micro_post_content)
-			micropost = current_user.microposts.build(content: @article.title, 
+			micropost = current_user.microposts.build(content: truncate(@article.content.html_safe, length: 100, separator: ' ', escape: false), 
 				mtitle: micro_post_title, mpost_picrute: @article.thumbnail)
 
 			micropost.save

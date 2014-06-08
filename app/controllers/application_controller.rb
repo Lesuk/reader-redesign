@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   include SessionsHelper
-  before_action :micro_post
+  before_action :micro_post, :count_mess
 
   private
 
@@ -12,5 +12,9 @@ class ApplicationController < ActionController::Base
   			@micropost = current_user.microposts.build
   		end
   	end
+
+    def count_mess
+      @count_mess = Message.where(recepient_id: current_user, read: nil).count
+    end
   
 end

@@ -1,0 +1,47 @@
+<% @user ||= current_user %>
+
+<div class="profile-box">
+
+	<div class="profile-header" style="background: url(<%= asset_path 'default_bckg3.png' %>) no-repeat;">
+
+		<div class="profile-avatar">
+            <%= image_tag(@user.avatar_url(:thumb), size: "100x100") %>
+		</div>
+
+		<div class="overlayer bottom-right">
+			<div class="overlayer-wrapper">
+				<div class="padding-10 hidden-xs">									
+					<button type="button" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="profile-name">
+		<h1><%= @user.name %></h1>
+		<span class="profile-login"><%= @user.make_dog %></span>
+	</div>
+
+	<div class="profile-navbar">
+        <%= link_to(user_path(@user), class: "profile-links") do %>
+            <i class="fa fa-comment-o"></i>
+            <span class="count"><%= @user.microposts.count %></span>
+            <span class="label-pf">Tweets</span>
+        <% end %>
+        <%= link_to(articles_path + "?author=" + @user.id.to_s, class: "profile-links") do %>
+            <i class="fa fa-pencil"></i>
+            <span class="count"><%= @user.articles.count %></span>
+            <span class="label-pf">Articles</span>
+        <% end %>
+        <%= link_to(followers_user_path(@user), class: "profile-links") do %>
+            <i class="fa fa-eye"></i>
+            <span class="count"><%= @user.followers.count %></span>
+            <span class="label-pf">Followers</span>
+        <% end %>
+        <%= link_to(following_user_path(@user), class: "profile-links") do %>
+            <i class="fa fa-eye"></i>
+            <span class="count"><%= @user.followed_users.count %></span>
+            <span class="label-pf">Following</span>
+        <% end %>
+	</div>
+</div>

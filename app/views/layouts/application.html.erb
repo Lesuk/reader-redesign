@@ -10,17 +10,30 @@
   <%= render 'layouts/shim' %>
   <%= favicon_link_tag 'favicon.ico' %>
 </head>
-<body>
-  	<%= render 'layouts/header' %>
-    <div class="container">
-      <% button = '<button type="button" class="close" data-dismiss="alert">&times;</button>' %>
-      <% flash.each do |key, value| %>
-        <%= content_tag(:div, raw(value + button), class: "alert alert-#{key} span11 offset1", data: {dismiss: "alert"}) %>
-      <% end %>
+<body class="">
+
+  <%= render 'shared/graph' %>
+  <%= render 'layouts/header' %>
+  <!-- BEGIN CONTAINER -->
+  <div class="page-container row"> 
+
+    <%= render "layouts/sidebar" %>
+    
+    <!-- BEGIN PAGE CONTAINER-->
+    <div class="page-content"> 
+      <div class="clearfix"></div>
+
       <%= yield %>
-      <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
+
     </div>
+
+    <a href="#" class="scrollup">Scroll</a>
+
+    <%#= render 'layouts/footer' %>
+    <%#= debug(params) if Rails.env.development? %>
+  </div> <!-- END CONTAINER --> 
+
+    <% if params[:controller] == 'articles' %>
     <script type='text/javascript' charset='UTF-8'>
       $(document).ready(function(){
         $('form[data-remote]').bind('ajax:before', function(){
@@ -30,5 +43,7 @@
         });
       });
     </script>
+    <% end %>
+
   </body>
 </html>

@@ -10,4 +10,15 @@ module ApplicationHelper
 		end
 	end
 
+	def set_icon(name, style)
+		if style == "glyph"
+    		names =  "glyphicon glyphicon-#{name}"
+    	elsif style == "fa"
+    		names = "fa fa-#{name}"
+    	else
+    		names = "#{name}"
+    	end
+    	content_tag :i, nil, :class => names
+  	end
+
 end
