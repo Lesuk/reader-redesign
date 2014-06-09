@@ -87,6 +87,11 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	def liked_for?(micropost)
+		eval = evaluations.where(target_type: micropost.class, target_id: micropost.id).first
+		eval.present? && eval.value > 0 ? true : false
+	end
+
   	private
   	
 	    def create_remember_token

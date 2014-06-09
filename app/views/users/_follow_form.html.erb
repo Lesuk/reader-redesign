@@ -1,9 +1,15 @@
 <% unless current_user?(@user) %>
-	<div id="follow_form">
-		<% if current_user.following?(@user) %>
-			<%= render 'unfollow' %>
-		<% else %>
-			<%= render 'follow' %>
-		<% end %>
+	<div class="overlayer bottom-right">
+		<div class="overlayer-wrapper">
+			<div class="padding-10 hidden-xs">
+				<div id="follow_form">
+					<% if current_user.following?(@user) %>
+						<%= render 'unfollow' %>
+					<% else %>
+						<%= render 'follow' %>
+					<% end %>
+				</div>									
+			</div>
+		</div>
 	</div>
 <% end %>

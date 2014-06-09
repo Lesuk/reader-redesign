@@ -6,10 +6,10 @@
     <%= form_for(@user) do |f| %>
     	<%= render 'shared/error_messages', object: f.object %>
       	<%= render 'fields', f: f %>
+      	<label>
+			<%= f.check_box :remove_avatar %> Remove avatar
+		</label>
       	<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
-
-    <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails" target="_blank">change</a>
   </div>
 </div>

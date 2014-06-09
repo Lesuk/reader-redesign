@@ -1,0 +1,13 @@
+<%= form_for @micropost do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<%= f.text_area :content, id: "word-counter-2", class: "form-control", rows: 3, placeholder: "Write new micropost..." %>
+	<div class="input-group">
+        <span class="input-group-btn">
+            <span class="btn btn-white btn-file">
+                <%= set_icon("picture-o", "fa") %><%= f.file_field :mpost_picrute %>
+            </span>
+        </span>
+        <input type="text" class="form-control" readonly>
+        <%= f.submit "Post", class: "btn btn-success" %>
+    </div>
+<% end %>

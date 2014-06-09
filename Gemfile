@@ -40,6 +40,7 @@ gem 'tire'
 gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4'
 gem "font-awesome-rails"
 gem 'nav_lynx'
+gem 'carrierwave-dropbox'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

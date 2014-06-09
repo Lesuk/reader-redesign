@@ -1,19 +1,75 @@
-<li id="<%= dom_id(feed_item) %>">
-	<%= link_to gravatar_for(feed_item.user), feed_item.user %>
-	<span class="user"><%= link_to feed_item.user.name, feed_item.user %></span>
-	<% if feed_item.repost_author.present? %>
-		<% main_author = User.find_by(id: feed_item.repost_author) %>
-		<div class="author">Author: <%= link_to gravatar_for(main_author), main_author %> 
-		<%= link_to main_author.name, main_author %></div>
-	<% end %>
-	<% if feed_item.mtitle.present? %>
-		Article: <%= raw(feed_item.mtitle) %>
-	<% end %>
-	<span class="content"><%= auto_link(feed_item.content, html: { target: '_blank' }) %></span>
-	<div class="image-in-mpost"><%= image_tag feed_item.mpost_picrute_url(:mthumb) if feed_item.mpost_picrute? %></div>
-	<span class="timestamp">Posted <%= time_ago_in_words(feed_item.created_at) %> ago.</span>
-	<% if current_user?(feed_item.user) || current_user.admin? %>
-    <%= link_to 'Delete', feed_item, method: :delete, remote: true %>
-    <% # confirm: 'Are you sure?' %>
-  	<% end %>
+<li id="<%= dom_id(feed_item) %>" class="animated fadeInUp">
+	<div class="hentry-box">
+		<small class="time"><span class="_timestamp"><%= time_ago_in_words(feed_item.created_at) %> ago.</span></small>
+
+		<div class="entry-user">
+			<div class="user">
+				<a href="<%= user_path(feed_item.user) %>">
+				  <%= image_tag(feed_item.user.avatar_url(:lthumb), size: "50x50", class: "avatar") %>
+				  <strong class="fullname"><%= feed_item.user.name %></strong>
+				  <span class="username"><s>@</s><b><%= feed_item.user.login %></b></span>
+				</a>
+			</div>
+		</div>
+
+		<% if feed_item.mpost_picrute? %>
+		<figure class="entry-thumb">
+			<%= link_to(image_tag(feed_item.mpost_picrute_url(:mthumb), size: "400x226", class: "entry-img"), feed_item.mpost_picrute_url.to_s) %>
+		</figure>
+		<% end %>
+
+		<% if feed_item.repost_author.present? %>
+			<% main_author = User.find_by(id: feed_item.repost_author) %>
+		<table cellpadding="0" cellspacing="0" class="published_by_wrap">
+			<tbody>
+				<tr>
+					<td>
+						<%= link_to(image_tag(main_author.avatar_url(:lthumb), size: "20x20"), user_path(main_author), class: "published_by_photo") %>
+					</td>
+					<td>
+						<div class="published_by_title">
+					    	<i class="fa fa-retweet"></i>
+					    	<%= link_to main_author.name, user_path(main_author), class: "published_by" %>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<% end %>
+		
+		<div class="entry-wrap">
+			<% if feed_item.mtitle.present? %>
+			<header class="entry-header">
+				<h4 class="entry-title semi-bold">
+					<%= raw(feed_item.mtitle) %>
+				</h4>
+			</header>
+			<% end %>
+
+			<div class="entry-summary clearfix">
+				<p><%= auto_link(feed_item.content, html: { target: '_blank' }) %></p>
+			</div>
+		</div>
+
+		<footer class="entry-actions">
+			<ul>
+				<li class="action-reply">
+					<a href="#"><i class="fa fa-reply"></i><span>Reply</span></a>
+				</li>
+				<% if current_user?(feed_item.user) || current_user.admin? %>
+    				<li class="action-reply"><%= link_to set_icon("times", "fa") + 'Delete', feed_item, method: :delete, confirm: 'Are you sure?', remote: true %></li>
+  				<% end %>
+  				<% if !current_user?(feed_item.user) %>
+					<li class="action-reply">
+					<%= link_to set_icon("retweet", "fa") + "Repost", retweet_micropost_path(feed_item.id), method: :post %> (<%= feed_item.repost_count(feed_item.id) %>)</li>
+				<% end %>
+				<!--<li class="action-reply">
+					<a href="#"><i class="fa fa-star"></i><span>Favorite</span></a>
+				</li> -->
+				<li class="action-reply">
+					<%= link_to set_icon("heart", "fa") + "Like", like_micropost_path(feed_item), method: "post" %>(<%= feed_item.reputation_for(:mpost_likes).to_i %>)
+				</li>
+			</ul>
+		</footer>
+	</div>
 </li>

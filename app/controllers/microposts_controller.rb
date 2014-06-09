@@ -38,6 +38,21 @@ class MicropostsController < ApplicationController
 		redirect_to root_url
 	end
 
+	def like
+		@micropost = Micropost.find(params[:id])
+		if current_user.liked_for?(@micropost)
+		  like_reset
+		  redirect_to :back, notice: "Like reset!"
+		else
+		  @micropost.add_evaluation(:mpost_likes, 1, current_user)
+		  redirect_to :back, notice: "Thank you for like :)"
+		end
+	end
+
+	def like_reset
+		@micropost.delete_evaluation(:mpost_likes, current_user)
+	end
+
 	private
 
 		def micropost_params

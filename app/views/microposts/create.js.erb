@@ -1,6 +1,2 @@
-//$('#microposts').append("<%= j render partial: 'shared/feed_item', collection: @feed_items %>");
-//$(".btn-primary").html("<%= escape_javascript(render('users/unfollow')) %>")
-
-$('#microposts').append('<%= j render("shared/feed_item, collection: @feed_items) %>');
+$('#timeline').append("<%= j render partial: 'shared/feed_item', collection: @feed_items %>");
 $('#new_micropost')[0].reset();
-$('#micropost_<%= @micropost.id %>').submitOnCheck();

@@ -987,23 +987,28 @@ span.iconset{
 }
 .header .chat-toggler .profile-pic{
 	display:inline-block;
-	border-radius: 100px 100px 100px 100px;
-    display: inline-block;
     height: 35px;
     overflow: hidden;
     width: 35px;	
 	float:left;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
 }
-
 .header .chat-message-preview .profile-pic{
-	display:inline-block;
-	border-radius: 100px 100px 100px 100px;
     display: inline-block;
     float: left;
     height: 35px;
     overflow: hidden;
     width: 35px;
-	margin-left:10px
+	margin-left:10px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
 }
 .header .chat-toggler a{
 	color:#1b1e24;
@@ -2104,6 +2109,9 @@ font-family: 'Open Sans';
 	border-radius: 3px;
 	vertical-align: top;
 }
+.hentry-box:hover .entry-actions ul li{
+	color: #8899a6;
+}
 .hentry-box:hover .entry-actions a{
 	color: #8899a6;
 }
@@ -2116,7 +2124,7 @@ font-family: 'Open Sans';
 }
 .new-msg{
 	min-height: 145px;
-	padding: 15px;
+	padding: 15px 15px 5px;
 }
 .new-msg #word-counter-2{
 	margin-bottom: 10px;
@@ -2135,8 +2143,9 @@ font-family: 'Open Sans';
 	text-shadow: 0 1px 1px rgba(255,255,255,.75);
 }
 .hentry-box .originalDisplayInfo{
-	position: relative;
-	top: 7px;
+	position: absolute;
+	bottom: 17px;
+	right: 90px;
 }
 .modal-body .originalDisplayInfo{
 	position: fixed;
@@ -2170,6 +2179,9 @@ input[readonly] {
 	cursor: text !important;
 	width: 320px !important;
 }
+.new-msg input[readonly] {
+	width: 200px !important;
+}
 .modal-footer .btn-file i.glyphicon{
 	margin-right: 7px;
 }
@@ -2177,6 +2189,7 @@ input[readonly] {
 #new_micropost .btn-success{
 	min-width: 60px;
 	width: 60px;
+	float: right;
 	background-color: #00aed9;
 }
 .entry-user{
@@ -2250,6 +2263,7 @@ input[readonly] {
 }
 .entry-actions ul li{
 	display: inline;
+	color: #d2dce2;
 }
 .entry-actions ul li a{
 	color: #D2DCE2; 
@@ -4586,6 +4600,10 @@ background-position: -95px -40px;
     background-color: #fff;
 	border:1px solid #e5e9ec;
 }
+.new-msg form .input-group-btn .btn-white{
+	border: 1px solid #e5e9ec;
+	border-radius: 3px;
+}
 .btn-white:hover, .btn-white:focus, .btn-white:active, .btn-white.active, .btn-white.disabled, .btn-white[disabled] {
     background-color: #fbfcfd;
     *background-color: #fbfcfd;
@@ -5297,15 +5315,25 @@ box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.11)!important;
 /*** Messages and Notifications **/
 /*** Alerts **/
 .alert {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 31px;
+	/*padding: 9px 19px 9px 15px;*/
+	padding: 5px 20px;
+	opacity: 0.8;
+	text-align: center;
 	color: #ce8f22;
 	background-color: #fffcee;	
 	background-image:none;
 	box-shadow:none;
 	text-shadow:none;
-	padding: 9px 19px 9px 15px;
-	border-radius: 3px 3px 3px 3px;
-	 border: 1px solid #F0DBB4;
-	 transition: all 0.2s linear 0s;
+	/* border-radius: 3px; */
+	border-radius: 0px;
+	border: 1px solid #F0DBB4;
+	transition: all 0.2s linear 0s;
+	z-index: 9999;
 }
 
 .alert-success{

@@ -14,6 +14,7 @@ ReaderRor::Application.routes.draw do
     resources :comments
     member do
       post :retweet
+      post :like
     end
   end
   resources :sessions,      only: [:new, :create, :destroy]

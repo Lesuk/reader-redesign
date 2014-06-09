@@ -2,19 +2,14 @@
 
 <div class="profile-box">
 
-	<div class="profile-header" style="background: url(<%= asset_path 'default_bckg3.png' %>) no-repeat;">
+	<div class="profile-header" style="background: url(<%= asset_path 'default_bckg6.png' %>) no-repeat;">
 
 		<div class="profile-avatar">
             <%= image_tag(@user.avatar_url(:thumb), size: "100x100") %>
 		</div>
 
-		<div class="overlayer bottom-right">
-			<div class="overlayer-wrapper">
-				<div class="padding-10 hidden-xs">									
-					<button type="button" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</button>
-				</div>
-			</div>
-		</div>
+        <%= render 'users/follow_form' if signed_in? %>
+
 	</div>
 
 	<div class="profile-name">

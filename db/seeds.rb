@@ -48,7 +48,3 @@ ARTICLE
 z27 = Article.create! title: "В деяких регіонах Росії закрили доступ до ВКонтакті", user_id: 2, publish_date: 1.weeks.ago, content: <<-ARTICLE
 На даний момент, в деяких регіонах Росії заблоковано доступ до соціальної мережі ВКонтакті. Раніше інтернет -провайдер Ростелеком посилався на технічний збій, але врешті-решт визнав, що доступ до ресурсу закритий за рішенням суду. Ми, як оператор звязку, були зобовязані це зробити, - розповів представник компанії.
 ARTICLE
-
-Article.create! title: "Upcoming", author: 1, publish_date: 1.weeks.from_now, content: <<-ARTICLE
-This article is set to be published in the future.
-ARTICLE

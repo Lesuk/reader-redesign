@@ -1,0 +1,56 @@
+[2014-06-07 11:02:35,597][INFO ][node                     ] [Ulysses] {0.20.6}[5624]: initializing ...
+[2014-06-07 11:02:35,605][INFO ][plugins                  ] [Ulysses] loaded [], sites []
+[2014-06-07 11:02:42,403][INFO ][node                     ] [Ulysses] {0.20.6}[5624]: initialized
+[2014-06-07 11:02:42,403][INFO ][node                     ] [Ulysses] {0.20.6}[5624]: starting ...
+[2014-06-07 11:02:42,510][INFO ][transport                ] [Ulysses] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-07 11:02:45,606][INFO ][cluster.service          ] [Ulysses] new_master [Ulysses][-yc1ZutJRiS4NduwXeeWLQ][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-07 11:02:45,649][INFO ][discovery                ] [Ulysses] elasticsearch/-yc1ZutJRiS4NduwXeeWLQ
+[2014-06-07 11:02:45,677][INFO ][http                     ] [Ulysses] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-07 11:02:45,678][INFO ][node                     ] [Ulysses] {0.20.6}[5624]: started
+[2014-06-07 11:02:45,965][INFO ][gateway                  ] [Ulysses] recovered [0] indices into cluster_state
+[2014-06-07 11:14:39,410][INFO ][cluster.metadata         ] [Ulysses] [articles] creating index, cause [api], shards [5]/[1], mappings [article]
+[2014-06-07 11:14:42,927][INFO ][cluster.metadata         ] [Ulysses] [articles] update_mapping [article] (dynamic)
+[2014-06-07 19:37:53,295][INFO ][node                     ] [Ulysses] {0.20.6}[5624]: stopping ...
+[2014-06-07 19:37:53,680][INFO ][node                     ] [Ulysses] {0.20.6}[5624]: stopped
+[2014-06-07 19:37:53,681][INFO ][node                     ] [Ulysses] {0.20.6}[5624]: closing ...
+[2014-06-07 19:37:53,751][INFO ][node                     ] [Ulysses] {0.20.6}[5624]: closed
+[2014-06-07 19:41:30,837][INFO ][node                     ] [Diamondhead] {0.20.6}[23001]: initializing ...
+[2014-06-07 19:41:30,848][INFO ][plugins                  ] [Diamondhead] loaded [], sites []
+[2014-06-07 19:41:37,581][INFO ][node                     ] [Diamondhead] {0.20.6}[23001]: initialized
+[2014-06-07 19:41:37,582][INFO ][node                     ] [Diamondhead] {0.20.6}[23001]: starting ...
+[2014-06-07 19:41:37,755][INFO ][transport                ] [Diamondhead] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-07 19:41:40,840][INFO ][cluster.service          ] [Diamondhead] new_master [Diamondhead][FRa8UdU7RV26SGzgtL_NPQ][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-07 19:41:40,876][INFO ][discovery                ] [Diamondhead] elasticsearch/FRa8UdU7RV26SGzgtL_NPQ
+[2014-06-07 19:41:40,904][INFO ][http                     ] [Diamondhead] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-07 19:41:40,904][INFO ][node                     ] [Diamondhead] {0.20.6}[23001]: started
+[2014-06-07 19:41:42,620][INFO ][gateway                  ] [Diamondhead] recovered [1] indices into cluster_state
+[2014-06-07 21:31:39,696][INFO ][node                     ] [Larry Bodine] {0.20.6}[26898]: initializing ...
+[2014-06-07 21:31:39,707][INFO ][plugins                  ] [Larry Bodine] loaded [], sites []
+[2014-06-07 21:31:46,438][INFO ][node                     ] [Larry Bodine] {0.20.6}[26898]: initialized
+[2014-06-07 21:31:46,439][INFO ][node                     ] [Larry Bodine] {0.20.6}[26898]: starting ...
+[2014-06-07 21:31:46,597][INFO ][transport                ] [Larry Bodine] bound_address {inet[/0:0:0:0:0:0:0:0:9301]}, publish_address {inet[/192.168.203.201:9301]}
+[2014-06-07 21:31:50,714][INFO ][cluster.service          ] [Diamondhead] added {[Larry Bodine][yc6gjCWiS5mQtVIesvv2ag][inet[/192.168.203.201:9301]],}, reason: zen-disco-receive(join from node[[Larry Bodine][yc6gjCWiS5mQtVIesvv2ag][inet[/192.168.203.201:9301]]])
+[2014-06-07 21:31:50,744][INFO ][cluster.service          ] [Larry Bodine] detected_master [Diamondhead][FRa8UdU7RV26SGzgtL_NPQ][inet[/192.168.203.201:9300]], added {[Diamondhead][FRa8UdU7RV26SGzgtL_NPQ][inet[/192.168.203.201:9300]],}, reason: zen-disco-receive(from master [[Diamondhead][FRa8UdU7RV26SGzgtL_NPQ][inet[/192.168.203.201:9300]]])
+[2014-06-07 21:31:50,847][INFO ][discovery                ] [Larry Bodine] elasticsearch/yc6gjCWiS5mQtVIesvv2ag
+[2014-06-07 21:31:50,871][INFO ][http                     ] [Larry Bodine] bound_address {inet[/0:0:0:0:0:0:0:0:9201]}, publish_address {inet[/192.168.203.201:9201]}
+[2014-06-07 21:31:50,872][INFO ][node                     ] [Larry Bodine] {0.20.6}[26898]: started
+[2014-06-07 21:42:57,836][INFO ][node                     ] [Diamondhead] {0.20.6}[23001]: stopping ...
+[2014-06-07 21:42:58,438][INFO ][discovery.zen            ] [Larry Bodine] master_left [[Diamondhead][FRa8UdU7RV26SGzgtL_NPQ][inet[/192.168.203.201:9300]]], reason [shut_down]
+[2014-06-07 21:42:58,482][INFO ][cluster.service          ] [Larry Bodine] master {new [Larry Bodine][yc6gjCWiS5mQtVIesvv2ag][inet[/192.168.203.201:9301]], previous [Diamondhead][FRa8UdU7RV26SGzgtL_NPQ][inet[/192.168.203.201:9300]]}, removed {[Diamondhead][FRa8UdU7RV26SGzgtL_NPQ][inet[/192.168.203.201:9300]],}, reason: zen-disco-master_failed ([Diamondhead][FRa8UdU7RV26SGzgtL_NPQ][inet[/192.168.203.201:9300]])
+[2014-06-07 21:42:58,691][INFO ][node                     ] [Diamondhead] {0.20.6}[23001]: stopped
+[2014-06-07 21:42:58,692][INFO ][node                     ] [Diamondhead] {0.20.6}[23001]: closing ...
+[2014-06-07 21:42:58,892][INFO ][node                     ] [Diamondhead] {0.20.6}[23001]: closed
+[2014-06-07 22:48:18,549][INFO ][node                     ] [Larry Bodine] {0.20.6}[26898]: stopping ...
+[2014-06-07 22:48:18,618][INFO ][node                     ] [Larry Bodine] {0.20.6}[26898]: stopped
+[2014-06-07 22:48:18,618][INFO ][node                     ] [Larry Bodine] {0.20.6}[26898]: closing ...
+[2014-06-07 22:48:18,626][INFO ][node                     ] [Larry Bodine] {0.20.6}[26898]: closed
+[2014-06-07 22:48:49,924][INFO ][node                     ] [Professor Power] {0.20.6}[29116]: initializing ...
+[2014-06-07 22:48:49,936][INFO ][plugins                  ] [Professor Power] loaded [], sites []
+[2014-06-07 22:48:56,637][INFO ][node                     ] [Professor Power] {0.20.6}[29116]: initialized
+[2014-06-07 22:48:56,637][INFO ][node                     ] [Professor Power] {0.20.6}[29116]: starting ...
+[2014-06-07 22:48:56,850][INFO ][transport                ] [Professor Power] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-07 22:48:59,896][INFO ][cluster.service          ] [Professor Power] new_master [Professor Power][kUms1fqXQM2F-a23_uKLcg][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-07 22:48:59,933][INFO ][discovery                ] [Professor Power] elasticsearch/kUms1fqXQM2F-a23_uKLcg
+[2014-06-07 22:48:59,955][INFO ][http                     ] [Professor Power] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-07 22:48:59,955][INFO ][node                     ] [Professor Power] {0.20.6}[29116]: started
+[2014-06-07 22:49:01,594][INFO ][gateway                  ] [Professor Power] recovered [1] indices into cluster_state

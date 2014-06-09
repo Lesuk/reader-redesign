@@ -1,0 +1,19 @@
+<li id="<%= dom_id(feed_item) %>">
+	<%= link_to gravatar_for(feed_item.user), feed_item.user %>
+	<span class="user"><%= link_to feed_item.user.name, feed_item.user %></span>
+	<% if feed_item.repost_author.present? %>
+		<% main_author = User.find_by(id: feed_item.repost_author) %>
+		<div class="author">Author: <%= link_to gravatar_for(main_author), main_author %> 
+		<%= link_to main_author.name, main_author %></div>
+	<% end %>
+	<% if feed_item.mtitle.present? %>
+		Article: <%= raw(feed_item.mtitle) %>
+	<% end %>
+	<span class="content"><%= auto_link(feed_item.content, html: { target: '_blank' }) %></span>
+	<div class="image-in-mpost"><%= image_tag feed_item.mpost_picrute_url(:mthumb) if feed_item.mpost_picrute? %></div>
+	<span class="timestamp">Posted <%= time_ago_in_words(feed_item.created_at) %> ago.</span>
+	<% if current_user?(feed_item.user) || current_user.admin? %>
+    <%= link_to 'Delete', feed_item, method: :delete, remote: true %>
+    <% # confirm: 'Are you sure?' %>
+  	<% end %>
+</li>
