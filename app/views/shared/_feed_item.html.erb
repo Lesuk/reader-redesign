@@ -53,21 +53,25 @@
 
 		<footer class="entry-actions">
 			<ul>
+				<% likes = feed_item.reputation_for(:mpost_likes).to_i %>
+				<% reposts = feed_item.repost_count(feed_item.id) %>
 				<li class="action-reply">
 					<a href="#"><i class="fa fa-reply"></i><span>Reply</span></a>
 				</li>
+				<% if signed_in? && current_user %>
 				<% if current_user?(feed_item.user) || current_user.admin? %>
-    				<li class="action-reply"><%= link_to set_icon("times", "fa") + 'Delete', feed_item, method: :delete, confirm: 'Are you sure?', remote: true %></li>
+    				<li class="action-reply delete"><%= link_to set_icon("times", "fa"), feed_item, method: :delete, confirm: 'Are you sure?', remote: true %></li>
   				<% end %>
-  				<% if !current_user?(feed_item.user) %>
+  				<% end %>
+  				<%# if !current_user?(feed_item.user) %>
 					<li class="action-reply">
-					<%= link_to set_icon("retweet", "fa") + "Repost", retweet_micropost_path(feed_item.id), method: :post %> (<%= feed_item.repost_count(feed_item.id) %>)</li>
-				<% end %>
+					<%= link_to set_icon("retweet", "fa") + "Repost", retweet_micropost_path(feed_item.id), method: :post %>&nbsp;<%= reposts if reposts > 0 %></li>
+				<%# end %>
 				<!--<li class="action-reply">
 					<a href="#"><i class="fa fa-star"></i><span>Favorite</span></a>
 				</li> -->
 				<li class="action-reply">
-					<%= link_to set_icon("heart", "fa") + "Like", like_micropost_path(feed_item), method: "post" %>(<%= feed_item.reputation_for(:mpost_likes).to_i %>)
+					<%= link_to set_icon("heart", "fa") + "Like", like_micropost_path(feed_item), method: "post" %>&nbsp;<%= likes if likes > 0 %>
 				</li>
 			</ul>
 		</footer>

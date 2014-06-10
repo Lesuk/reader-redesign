@@ -1,15 +1,30 @@
+<div class="form-row">
 <%= f.label :title %>
-<%= f.text_field :title %>
+<%= f.text_field :title, class: "form-control input-lg" %>
+</div>
 
-<div class="article-field">
+<div class="form-row article-field">
 <%= f.label :content %>
 <%= f.cktext_area :content, ckeditor: {toolbar: [["Source","Preview","Templates"],["Bold","Italic","Underline","Strike"],["PasteText","PasteFromWord"],["Undo","Redo"],["NumberedList","BulletedList", 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],["Link","Unlink"],["Image","Flash"]], height: 400 } %>
 </div>
 
-<%= f.label :category_list, "Categories (separated by commas)" %>
-<%= f.text_field :category_list %>
-<%= f.file_field :thumbnail %>
-<div class="date-picker">
+<div class="form-row input-group transparent">
+	<span class="input-group-addon">
+		<i class="fa fa-instagram"></i>
+  	</span>
+	<%= f.text_field :category_list, class: "form-control", placeholder: "tags (separated by commas)" %>
+</div>
+
+<div class="form-row input-group">
+    <span class="input-group-btn">
+        <span class="btn btn-primary btn-file">
+            <%= set_icon("picture-o", "fa") + "  Add Thumbnail To Article" %><%= f.file_field :thumbnail %>
+        </span>
+    </span>
+    <input type="text" class="form-control" readonly>
+</div>
+
+<div class="form-row date-picker">
 <%= f.label :publish_date %>
-<%= f.datetime_select :publish_date %>
+<%= f.datetime_select :publish_date, class: "date-select" %>
 </div>

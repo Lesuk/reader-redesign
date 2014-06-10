@@ -1,15 +1,24 @@
 <% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
+<div class="content readable-content" role="main"> 
+  
+  <header class="entry-header">
+      <h1 class="entry-title">Update your profile</h1>
+  </header>
 
-<div class="row">
-  <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
-    	<%= render 'shared/error_messages', object: f.object %>
+    	  <%= render 'shared/error_messages', object: f.object %>
       	<%= render 'fields', f: f %>
-      	<label>
-			<%= f.check_box :remove_avatar %> Remove avatar
-		</label>
-      	<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+        <div class="checkbox check-primary">
+          
+          <%= f.check_box :remove_avatar, id: "checkbox3" %> 
+          <label for="checkbox3">Remove avatar</label>
+        </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <%= f.submit "Save changes", class: "btn btn-primary btn-cons bl-c" %>
+        </div>
+      </div>
     <% end %>
-  </div>
+
 </div>

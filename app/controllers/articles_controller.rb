@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
 	def show
 		@commentable = @article
 		@comments = @commentable.comments
+		@comments_count = @article.comments.count
 		
 		view = Postview.new(article_id: @article.id, guest_ip: request.remote_ip)
 		view.save!
@@ -60,7 +61,9 @@ class ArticlesController < ApplicationController
 
 	def destroy
 		@article = current_user.articles.friendly.find(params[:id])
+		art_id = params[:id].to_s
 		@article.destroy
+		Tire.index('articles').remove(art_id)
 		flash[:success] = "Article deleted"
 		redirect_to articles_url
 	end
@@ -69,11 +72,13 @@ class ArticlesController < ApplicationController
 		thumbs = params[:type]
 		if current_user.voted_for?(@article, thumbs)
 		  vote_reset
-		  redirect_to :back, notice: "Vote reset!"
+		  redirect_to :back
+		  flash[:info] = "Vote reset!"
 		else
 		  value = params[:type] == "up" ? 1 : -1
 		  @article.add_or_update_evaluation(:votes, value, current_user)
-		  redirect_to :back, notice: "Thank you for voting"
+		  redirect_to :back
+		  flash[:success] = "Thank you for voting"
 		end
 	end 
 

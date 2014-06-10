@@ -1,18 +1,27 @@
-<% provide(:title, 'All users') %>
-<h1>All users</h1>
-<div class="row">
-	<%= render 'shared/sidebar' %>
+<% provide(:title, 'Users') %>
+<div class="content white-bg" role="main"> 
+	
+	<header class="page-header-1">
+		<h1 class="entry-title">Users</h1>
+	</header>
 
-	<div class="span8">
-		<div class="navbar-inner">
-		<%= form_tag users_path, method: 'get', class: "navbar-search pull-left" do %>
-			<%= text_field_tag :search, params[:search], class: "search-query", placeholder: "Search user..." %>
-			<%#= submit_tag "Search", class: "btn btn-sm", name: nil %>
-		<% end %>
+	<%= form_tag users_path, method: 'get', class: "form-inline" do %>
+		<div class="input-group transparent">
+			<span class="input-group-addon">
+				<i class="fa fa-search"></i>
+			</span>
+			<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search user..." %>
 		</div>
-		<ul class="users">
+	<% end %>
+
+	<% if @users.any? %>
+	
+		<ul id="users">
 			<%= render @users %>
 		</ul>
+
 		<%= will_paginate %>
-	</div>
+
+	<% end %>
+
 </div>

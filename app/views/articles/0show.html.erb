@@ -1,0 +1,26 @@
+<h1><%= @article.title %></h1>
+
+<%= image_tag @article.thumbnail_url(:thumb) if @article.thumbnail? %>
+
+<%= raw @article.content %>
+<div>
+	<%= pluralize @article.reputation_for(:votes).to_i, "vote" %>
+    <% if @article.user_id != current_user.id %>
+	    | <%= link_to "up", vote_article_path(@article, type: "up"), method: "post" %>
+  		| <%= link_to "down", vote_article_path(@article, type: "down"), method: "post" %>
+    <% end %>
+</div>
+
+<p>
+  Publish date: <%= @article.publish_date.strftime('%b %d, %Y') %> |
+  <%= link_to "Edit Article", edit_article_path(@article) %> |
+  <%= link_to 'Delete', @article, data: {confirm: 'Are you sure?'}, method: :delete %> |
+  <%= link_to "Back to Articles", articles_path %>
+</p>
+<p>Article has <strong><%= @postViews %></strong> views and <strong><%= @postUniqueViews %></strong> unique views!</p>
+
+<h3>Comments</h3>
+<div id="comments">
+	<%= render @comments %>
+</div>
+<%= link_to "New comment", polymorphic_path([:new, @commentable, :comment], format: :js), remote: true, id: "new_comment_link" %>

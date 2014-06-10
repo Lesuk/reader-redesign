@@ -1,0 +1,10 @@
+<% if @user.microposts.any? %>
+<ul id="timeline" class="clearfix">
+	<%= render partial: 'shared/feed_item', collection: @microposts %>
+</ul>
+
+<div id="infinite-scrolling">
+	<%= will_paginate @microposts %>
+</div>
+
+<% end %>

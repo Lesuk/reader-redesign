@@ -8,7 +8,6 @@
 //= require jquery-ui-1.10.1.custom.min
 //= require jquery.unveil.min
 //= require pace.min
-//= require select2.min
 //= require core
 //= require ckeditor/override
 //= require ckeditor/init

@@ -1,11 +1,14 @@
 <% provide(:title, 'Create new article') %>
-<h1>Create new article</h1>
-<div class="row">
-	<div class="span10 offset1">
-		<%= form_for(@article) do |f| %>
-			<%= render 'shared/error_messages', object: f.object %>
-			<%= render 'form', f: f %>
-			<%= f.submit "Create article", class: "btn btn-large btn-primary" %>
-		<% end %>
-	</div>
+<div class="content readable-content" role="main"> 
+	
+	<header class="entry-header">
+			<h1 class="entry-title">Create new article</h1>
+	</header>
+	
+	<%= form_for(@article) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<%= render 'form', f: f %>
+		<%= f.submit "Create article", class: "btn btn-large btn-primary" %>
+	<% end %>
+
 </div>

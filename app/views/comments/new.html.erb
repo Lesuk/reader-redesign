@@ -1,7 +1,10 @@
 <%= form_for([@commentable, @comment], remote: true) do |f| %>
 
-	<%= f.label :body %>
-	<%= f.text_area :body %>
-
-	<%= f.submit "Add", class: "btn btn-large" %>
+	<p class="comment-form-comment">
+		<%= f.label :body %>
+		<%= f.text_area :body, class: "form-control", rows: 4 %>
+	</p>
+	<p class="form-submit">
+		<%= f.submit "Post Comment", class: "btn btn-default" %>
+	</p>
 <% end %>

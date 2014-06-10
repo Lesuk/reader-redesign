@@ -1,13 +1,15 @@
 <li>
-  <%#= gravatar_for user, size: 52 %>
-  <% if user.avatar? %>
-  <%= image_tag user.avatar_url(:thumb), {class: "gravatar", style: "width: 52px;height:52px;"} %>
-  <% else %>
-  <%= gravatar_for user, size: 52 %>
-  <% end %>
-  <%= link_to user.name, user %>
-  <span><%= user.make_dog %></span>
+  <div class="entry-user">
+    <div class="user">
+      <a href="<%= user_path(user) %>">
+        <%= image_tag(user.avatar_url(:thumb), size: "100x100", class: "big-avatar") %>
+        <strong class="fullname"><%= user.name %></strong>
+        <span class="username"><s>@</s><b><%= user.login %></b></span>
+      </a>
+      <br style="clear:both" />
+    </div>
+  </div>
   <% if current_user.admin? && !current_user?(user) %>
-  	| <%= link_to "delete", user, method: :delete, data: {confirm: "Are you sure?"} %>
+    <%= link_to "delete", user, method: :delete, data: {confirm: "Are you sure?"} %>
   <% end %>
 </li>

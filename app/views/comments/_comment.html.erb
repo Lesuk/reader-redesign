@@ -1,11 +1,24 @@
-<%= div_for comment do %>
-	<h3>
-	<%= comment.user.name %> said:
-	<% if current_user?(comment.user) || current_user.id == @article.user_id %>
-	<span class="actions">
-		<%= link_to 'Delete', [@commentable, comment], confirm: 'Are you sure?', method: :delete, remote: true %>
-	</span>
-	<% end %>
-	</h3>
-	<%= comment.body %>
-<% end %>
+<li id="<%= dom_id(comment) %>" class="comment">
+	<article>
+		<!-- .comment-meta -->
+		<header class="comment-meta comment-author vcard">
+			<%= image_tag(comment.user.avatar_url(:thumb), size: "75x75") %>
+		    <cite class="fn"><%= link_to comment.user.name, user_path(comment.user), class: "url" %></cite>
+		    <a href='#'><%= comment.created_at.strftime('%b %d, %Y') %></a>
+		</header>
+		<!-- .comment-meta -->
+		<!-- .comment-content -->
+		<section class="comment-content comment">
+		  <p><%= comment.body %></p>
+		</section>
+		<!-- .comment-content -->
+		<% if signed_in? && current_user %>
+			<% if current_user?(comment.user) || current_user.id == @article.user_id %>
+			<span class="actions">
+				<%= link_to 'Delete', [@commentable, comment], confirm: 'Are you sure?', method: :delete, remote: true %>
+			</span>
+			<% end %>
+		<% end %>
+	</article>
+  <!-- #comment-## --> 
+</li>

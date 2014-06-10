@@ -1,26 +1,105 @@
-<h1><%= @article.title %></h1>
+<% provide(:title, @article.title) %>
+<div class="content readable-content" role="main">   
+	<article class="hentry">         
+		<!-- .entry-header -->
+		<header class="entry-header">
+			<h1 class="entry-title"><%= @article.title %></h1>
+		</header>
+        <!-- .entry-header -->
+                      
+		<!-- .entry-meta -->
+		<div class="entry-meta">
+			<span class="posted-in">posted in 
+		    	<a href="">Design</a>
+		    </span>
+		    
+		    <span class="posted-on">
+		        on <a href='#'><%= @article.publish_date.strftime('%b %d, %Y') %></a>
+		    </span>
+		    
+		    <span class="posted-by"> 
+		    	by <%= link_to @article.user.name, user_path(@article.user) %>
+		    </span>
+		    
+		    <% if @article.user == current_user %>
+		    <span class="edit-link">
+		    	<%= link_to "Edit", edit_article_path(@article), class: "post-edit-link" %>
+		    </span>
+		    <span class="delete-link">
+		    	<%= link_to 'Delete', @article, data: {confirm: 'Are you sure?'}, method: :delete %>
+		    </span>
+		    <% end %>
+		    
+		</div>
+		<!-- .entry-meta -->
 
-<%= image_tag @article.thumbnail_url(:thumb) if @article.thumbnail? %>
+		<div class="entry-info">
+			<span><i class="fa fa-eye"></i>views: <%= @postUniqueViews %></span>
+			<span><i class="fa fa-thumbs-o-up"></i>rating: <%= @article.reputation_for(:votes).to_i %></span>
+		</div>
+                      
+        <% if @article.thumbnail %>
+		<div class="featured-image">
+			<%= image_tag @article.thumbnail_url(:big_thumb) %>
+		</div>
+		<% end %>
+                      
+                      
+		<!-- .entry-content --> 
+		<div class="entry-content">
+			<%= raw @article.content %>
+			<p class="rate-post"><b>Do you like this post?</b> Rate it: <%= link_to set_icon("thumbs-o-up","fa") + "Like", vote_article_path(@article, type: "up"), method: "post", class: "like-post" %> <%= link_to set_icon("thumbs-o-down","fa") + "Dislike", vote_article_path(@article, type: "down"), method: "post", class: "dislike-post" %></p>
+		</div>
+		<!-- .entry-content -->
+          
+		<!-- .entry-meta -->
+		<footer class="entry-meta">
+			<h3>TAGS</h3>
+			<%= raw @article.categories.map(&:name).map{|t| link_to t, category_path(t) }.join(' ') %>
+		</footer>
+		<!-- .entry-meta -->
+    </article>    
 
-<%= raw @article.content %>
-<div>
-	<%= pluralize @article.reputation_for(:votes).to_i, "vote" %>
-    <% if @article.user_id != current_user.id %>
-	    | <%= link_to "up", vote_article_path(@article, type: "up"), method: "post" %>
-  		| <%= link_to "down", vote_article_path(@article, type: "down"), method: "post" %>
-    <% end %>
-</div>
+    <aside class="about-author">              
+        <h3>WRITTEN BY</h3>
+        <!-- .author-bio --> 
+        <div class="author-bio">
+            <!-- .author-img --> 
+            <div class="author-img">
+				<%= link_to(image_tag(@article.user.avatar_url(:thumb), size: "96x96", class: "avatar"), user_path(@article.user)) %>
+            </div>
+            <!-- .author-img -->
+            <!-- .author-info -->
+            <div class="author-info">
+                <h4 class="author-name"><%= @article.user.name %></h4>
+                <p>Доробити біографію<%#= @article.user.bio %></p>
+            </div>
+            <!-- .author-info -->
+        </div>
+        <!-- .author-bio --> 
+    </aside>
 
-<p>
-  Publish date: <%= @article.publish_date.strftime('%b %d, %Y') %> |
-  <%= link_to "Edit Article", edit_article_path(@article) %> |
-  <%= link_to 'Delete', @article, data: {confirm: 'Are you sure?'}, method: :delete %> |
-  <%= link_to "Back to Articles", articles_path %>
-</p>
-<p>Article has <strong><%= @postViews %></strong> views and <strong><%= @postUniqueViews %></strong> unique views!</p>
+	<div id="comments" class="comments-area">
+	  
+		<h2 class="comments-title"><i class="fa fa-comments-o"></i>&nbsp;&nbsp;<%= @comments_count %> COMMENTS</h2>
+	  	<!-- .commentlist -->
+	  	<ol id="commentlist">  
+	  		<%= render @comments %>
+	  	</ol>
+	  	<!-- .commentlist -->
+	  
+		<!-- #respond --> 
+		<div id="respond">
+			<h2 id="reply-title"><i class="fa fa-comment-o"></i>&nbsp;DROP A COMMENT</h2>
 
-<h3>Comments</h3>
-<div id="comments">
-	<%= render @comments %>
-</div>
-<%= link_to "New comment", polymorphic_path([:new, @commentable, :comment], format: :js), remote: true, id: "new_comment_link" %>
+			<% if signed_in? && current_user %>
+			<%= link_to set_icon("plus","fa") + "New comment", polymorphic_path([:new, @commentable, :comment], format: :js), remote: true, id: "new_comment_link" %>
+			<% else %>
+				<%= link_to "Please Sign In to comment", signin_path %>
+			<% end %>
+		</div>
+		<!-- #respond --> 
+	</div>
+
+  <!-- END PAGE --> 
+  </div>

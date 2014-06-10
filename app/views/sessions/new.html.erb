@@ -1,20 +1,42 @@
 <% provide(:title, "Sign in") %>
-<h1>Sign in</h1>
 
-<div class="row">
-	<div class="span6 offset3">
-		<%= form_for(:session, url: sessions_path) do |f| %>
+<div class="content readable-content" role="main"> 
+	
+	<header class="entry-header">
+			<h1 class="entry-title">Sign in</h1>
+	</header>
 
-			<%= f.label :email %>
-			<%= f.text_field :email %>
+	<%= form_for(:session, url: sessions_path) do |f| %>
+		<div class="row">
+			<div class="form-group col-md-8">
+				<%= f.label :email, class: "form-label" %>
+				<div class="controls">
+					<%= f.text_field :email, class: "form-control" %>
+				</div>
+			</div>
+		</div>
 
-			<%= f.label :password %>
-			<%= f.password_field :password %>
+		<div class="row">
+			<div class="form-group col-md-8">
+				<%= f.label :password, class: "form-label" %>
+				<div class="controls">
+					<%= f.password_field :password, class: "form-control" %>
+				</div>
+			</div>
+		</div>
 
-			<%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+		<div class="row">
+			<div class="control-group col-md-8">
+				<%= link_to "Forgotten password?", new_password_reset_path %>
+			</div>
+		</div>
 
-		<% end %>
-		<p><%= link_to "Forgotten password?", new_password_reset_path, class: "btn" %>
-		     New user? <%= link_to "Sign up now!", signup_path, class: "btn" %></p>
-	</div>
+		<div class="row">
+			<div class="col-md-8">
+				<%= f.submit "Sign in", class: "btn btn-primary btn-cons pull-right" %>
+			</div>
+		</div>
+	<% end %>
+
+
 </div>

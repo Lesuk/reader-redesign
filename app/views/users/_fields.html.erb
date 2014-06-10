@@ -1,16 +1,54 @@
-<%= f.label :name %>
-<%= f.text_field :name %>
+<div class="row">
+	<div class="form-group col-md-8">
+		<%= f.label :name, class: "form-label" %>
+		<div class="controls">
+			<%= f.text_field :name, class: "form-control" %>
+		</div>
+	</div>
+</div>
 
-<%= f.label :login %>
-<%= f.text_field :login %>
+<div class="row">
+	<div class="form-group col-md-8">
+		<%= f.label :login, class: "form-label" %>
+		<div class="controls">
+			<%= f.text_field :login, class: "form-control" %>
+		</div>
+	</div>
+</div>
 
-<%= f.label :email %>
-<%= f.text_field :email %>
+<div class="row">
+	<div class="form-group col-md-8">
+		<%= f.label :email, class: "form-label" %>
+		<div class="controls">
+			<%= f.text_field :email, class: "form-control" %>
+		</div>
+	</div>
+</div>
 
-<%= f.label :password %>
-<%= f.password_field :password %>
+<div class="row">
+	<div class="form-group col-md-8">
+		<%= f.label :password, class: "form-label" %>
+		<div class="controls">
+			<%= f.password_field :password, class: "form-control" %>
+		</div>
+	</div>
+</div>
 
-<%= f.label :password_confirmation, "Confirm Password" %>
-<%= f.password_field :password_confirmation %>
+<div class="row">
+	<div class="form-group col-md-8">
+		<%= f.label :password_confirmation, "Confirm Password", class: "form-label" %>
+		<div class="controls">
+			<%= f.password_field :password_confirmation, class: "form-control" %>
+		</div>
+	</div>
+</div>
 
-<%= f.file_field :avatar %>
+<div class="form-row input-group">
+    <span class="input-group-btn">
+        <span class="btn btn-primary btn-file">
+            <%= set_icon("picture-o", "fa") + "  Add your avatar" %><%= f.file_field :avatar %>
+        </span>
+    </span>
+    <input type="text" class="form-control" readonly>
+</div>
+

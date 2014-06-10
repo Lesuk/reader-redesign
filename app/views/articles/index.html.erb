@@ -1,27 +1,7 @@
-<h1>Articles <%= @name %> (<%= Article.count %>)</h1>
+<div class="content" role="main">  
 
-<div class="row">
-	<%= render 'shared/sidebar' %>
+	<ul id="timeline" class="clearfix articles">
+		<%= render 'shared/article_feed' %> 
+	</ul>
 
-	<div id="articles" class="span8">
-
-		<%= form_tag articles_path, method: :get do %>
-			<p>
-				<%= text_field_tag :query, params[:query] %>
-				<%= submit_tag 'Search', name: nil %>
-			</p>
-		<% end %>
-
-		<% @articles.each do |article| %>
-			<h2><%= link_to article.title, article %></h2>
-			<%= truncate(article.content.html_safe, length: 100, separator: ' ', escape: false) %>
-			<p>Categories: <%= raw article.categories.map(&:name).map{|t| link_to t, category_path(t) }.join(', ') %>, Comments: <%= article.comments.count %></p>
-			<p>Author: <%= link_to article.user.name, article.user %> |
-			<%= link_to "All by " + article.user.name, articles_path + "?author=" + article.user.id.to_s %>, reputation: <%= article.reputation_for(:votes).to_i %></p>
-			<% if signed_in? && article.owned_by?(current_user) %>
-			<p><%= link_to "Edit", edit_article_path(article)  %> | 
-			<%= link_to 'Delete', article, data: {confirm: 'Are you sure?'}, method: :delete %></p>
-			<% end %>
-		<% end %>
-	</div>
-</div>
+</div> <!-- END CONTENT --> 

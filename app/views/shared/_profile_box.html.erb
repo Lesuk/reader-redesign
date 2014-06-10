@@ -18,22 +18,22 @@
 	</div>
 
 	<div class="profile-navbar">
-        <%= link_to(user_path(@user), class: "profile-links") do %>
+        <%= nav_link_to(user_path(@user), class: "profile-links") do %>
             <i class="fa fa-comment-o"></i>
             <span class="count"><%= @user.microposts.count %></span>
             <span class="label-pf">Tweets</span>
         <% end %>
-        <%= link_to(articles_path + "?author=" + @user.id.to_s, class: "profile-links") do %>
+        <%= nav_link_to(articles_path + "?author=" + @user.id.to_s, class: "profile-links") do %>
             <i class="fa fa-pencil"></i>
             <span class="count"><%= @user.articles.count %></span>
             <span class="label-pf">Articles</span>
         <% end %>
-        <%= link_to(followers_user_path(@user), class: "profile-links") do %>
+        <%= nav_link_to(followers_user_path(@user), class: "profile-links") do %>
             <i class="fa fa-eye"></i>
             <span class="count"><%= @user.followers.count %></span>
             <span class="label-pf">Followers</span>
         <% end %>
-        <%= link_to(following_user_path(@user), class: "profile-links") do %>
+        <%= nav_link_to(following_user_path(@user), class: "profile-links") do %>
             <i class="fa fa-eye"></i>
             <span class="count"><%= @user.followed_users.count %></span>
             <span class="label-pf">Following</span>

@@ -1,0 +1,45 @@
+[2014-06-08 01:15:45,964][INFO ][node                     ] [Professor Power] {0.20.6}[29116]: stopping ...
+[2014-06-08 01:15:46,222][INFO ][node                     ] [Professor Power] {0.20.6}[29116]: stopped
+[2014-06-08 01:15:46,222][INFO ][node                     ] [Professor Power] {0.20.6}[29116]: closing ...
+[2014-06-08 01:15:46,257][INFO ][node                     ] [Professor Power] {0.20.6}[29116]: closed
+[2014-06-08 07:55:20,517][INFO ][node                     ] [Adaptoid] {0.20.6}[828]: initializing ...
+[2014-06-08 07:55:20,526][INFO ][plugins                  ] [Adaptoid] loaded [], sites []
+[2014-06-08 07:55:26,548][INFO ][node                     ] [Adaptoid] {0.20.6}[828]: initialized
+[2014-06-08 07:55:26,548][INFO ][node                     ] [Adaptoid] {0.20.6}[828]: starting ...
+[2014-06-08 07:55:26,746][INFO ][transport                ] [Adaptoid] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-08 07:55:29,784][INFO ][cluster.service          ] [Adaptoid] new_master [Adaptoid][5GqfAwu3Q-uQXhn4bvAOYQ][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-08 07:55:29,818][INFO ][discovery                ] [Adaptoid] elasticsearch/5GqfAwu3Q-uQXhn4bvAOYQ
+[2014-06-08 07:55:29,840][INFO ][http                     ] [Adaptoid] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-08 07:55:29,840][INFO ][node                     ] [Adaptoid] {0.20.6}[828]: started
+[2014-06-08 07:55:32,448][INFO ][gateway                  ] [Adaptoid] recovered [1] indices into cluster_state
+[2014-06-08 13:31:28,591][INFO ][node                     ] [Agony] {0.20.6}[7239]: initializing ...
+[2014-06-08 13:31:28,602][INFO ][plugins                  ] [Agony] loaded [], sites []
+[2014-06-08 13:31:35,414][INFO ][node                     ] [Agony] {0.20.6}[7239]: initialized
+[2014-06-08 13:31:35,415][INFO ][node                     ] [Agony] {0.20.6}[7239]: starting ...
+[2014-06-08 13:31:35,712][INFO ][transport                ] [Agony] bound_address {inet[/0:0:0:0:0:0:0:0:9301]}, publish_address {inet[/192.168.203.201:9301]}
+[2014-06-08 13:31:39,614][INFO ][cluster.service          ] [Adaptoid] added {[Agony][48XnYuSvRPSyKWQTYkTTKw][inet[/192.168.203.201:9301]],}, reason: zen-disco-receive(join from node[[Agony][48XnYuSvRPSyKWQTYkTTKw][inet[/192.168.203.201:9301]]])
+[2014-06-08 13:31:39,977][INFO ][cluster.service          ] [Agony] detected_master [Adaptoid][5GqfAwu3Q-uQXhn4bvAOYQ][inet[/192.168.203.201:9300]], added {[Adaptoid][5GqfAwu3Q-uQXhn4bvAOYQ][inet[/192.168.203.201:9300]],}, reason: zen-disco-receive(from master [[Adaptoid][5GqfAwu3Q-uQXhn4bvAOYQ][inet[/192.168.203.201:9300]]])
+[2014-06-08 13:31:40,036][INFO ][discovery                ] [Agony] elasticsearch/48XnYuSvRPSyKWQTYkTTKw
+[2014-06-08 13:31:40,049][INFO ][http                     ] [Agony] bound_address {inet[/0:0:0:0:0:0:0:0:9201]}, publish_address {inet[/192.168.203.201:9201]}
+[2014-06-08 13:31:40,050][INFO ][node                     ] [Agony] {0.20.6}[7239]: started
+[2014-06-08 13:31:47,562][WARN ][monitor.jvm              ] [Adaptoid] [gc][ParNew][20172][4] duration [1.7s], collections [1]/[2.5s], total [1.7s]/[1.9s], memory [85.5mb]->[22.3mb]/[989.8mb], all_pools {[Code Cache] [1.3mb]->[1.3mb]/[48mb]}{[Par Eden Space] [65.3mb]->[1.3mb]/[273mb]}{[Par Survivor Space] [6.5mb]->[7.2mb]/[34.1mb]}{[CMS Old Gen] [13.6mb]->[13.6mb]/[682.6mb]}{[CMS Perm Gen] [27.9mb]->[27.9mb]/[82mb]}
+[2014-06-08 13:46:12,355][INFO ][node                     ] [Adaptoid] {0.20.6}[828]: stopping ...
+[2014-06-08 13:46:12,691][INFO ][discovery.zen            ] [Agony] master_left [[Adaptoid][5GqfAwu3Q-uQXhn4bvAOYQ][inet[/192.168.203.201:9300]]], reason [shut_down]
+[2014-06-08 13:46:12,704][INFO ][cluster.service          ] [Agony] master {new [Agony][48XnYuSvRPSyKWQTYkTTKw][inet[/192.168.203.201:9301]], previous [Adaptoid][5GqfAwu3Q-uQXhn4bvAOYQ][inet[/192.168.203.201:9300]]}, removed {[Adaptoid][5GqfAwu3Q-uQXhn4bvAOYQ][inet[/192.168.203.201:9300]],}, reason: zen-disco-master_failed ([Adaptoid][5GqfAwu3Q-uQXhn4bvAOYQ][inet[/192.168.203.201:9300]])
+[2014-06-08 13:46:12,871][INFO ][node                     ] [Adaptoid] {0.20.6}[828]: stopped
+[2014-06-08 13:46:12,871][INFO ][node                     ] [Adaptoid] {0.20.6}[828]: closing ...
+[2014-06-08 13:46:12,938][INFO ][node                     ] [Adaptoid] {0.20.6}[828]: closed
+[2014-06-08 15:00:44,945][INFO ][node                     ] [Agony] {0.20.6}[7239]: stopping ...
+[2014-06-08 15:00:45,005][INFO ][node                     ] [Agony] {0.20.6}[7239]: stopped
+[2014-06-08 15:00:45,005][INFO ][node                     ] [Agony] {0.20.6}[7239]: closing ...
+[2014-06-08 15:00:45,018][INFO ][node                     ] [Agony] {0.20.6}[7239]: closed
+[2014-06-08 15:00:48,788][INFO ][node                     ] [Hub] {0.20.6}[8065]: initializing ...
+[2014-06-08 15:00:48,800][INFO ][plugins                  ] [Hub] loaded [], sites []
+[2014-06-08 15:00:55,514][INFO ][node                     ] [Hub] {0.20.6}[8065]: initialized
+[2014-06-08 15:00:55,515][INFO ][node                     ] [Hub] {0.20.6}[8065]: starting ...
+[2014-06-08 15:00:55,704][INFO ][transport                ] [Hub] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-08 15:00:58,744][INFO ][cluster.service          ] [Hub] new_master [Hub][8aAd85u1QMeg5ildphuLYQ][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-08 15:00:58,780][INFO ][discovery                ] [Hub] elasticsearch/8aAd85u1QMeg5ildphuLYQ
+[2014-06-08 15:00:58,804][INFO ][http                     ] [Hub] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-08 15:00:58,804][INFO ][node                     ] [Hub] {0.20.6}[8065]: started
+[2014-06-08 15:01:00,754][INFO ][gateway                  ] [Hub] recovered [1] indices into cluster_state

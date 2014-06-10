@@ -10,11 +10,16 @@
 
 <% else %>
 
-<div class="center hero-unit">
-  <h1>Welcome to the UA-READER</h1>
+<div class="content home" role="main"> 
+  <h1 class="welcome">Welcome to the UA-READER</h1>
 
-  <p><%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %></p>
-  <p><%= link_to "Sign in", signin_path, class: "btn btn-large btn-primary" %></p>
+  	<div class="home-buttons">
+  		<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  		<%= link_to "Sign in", signin_path, class: "btn btn-large btn-primary" %>
+	</div>
+	<div class="home-img">
+		<%= image_tag('home_showcase.png') %>
+	</div>
 </div>
 
 <% end %>

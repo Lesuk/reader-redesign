@@ -34,8 +34,12 @@ class MicropostsController < ApplicationController
 
 	def retweet
 		tweet = Micropost.find(params[:id])
-		flash[:notice] = tweet.retweet_by(current_user)
-		redirect_to root_url
+		if !current_user?(tweet.user) 
+			flash[:notice] = tweet.retweet_by(current_user)
+			redirect_to root_url
+		else
+			redirect_to :back, notice: "You can't do repost your message!"
+		end
 	end
 
 	def like

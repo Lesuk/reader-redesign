@@ -8,6 +8,7 @@ class Article < ActiveRecord::Base
 	has_many :postviews
 	has_reputation :votes, source: :user, aggregated_by: :sum
 	belongs_to :user
+	after_save :add_index_to_art
 
 	mount_uploader :thumbnail, ThumbnailUploader
 
@@ -54,6 +55,10 @@ class Article < ActiveRecord::Base
 	def owned_by?(owner)
 		return false unless owner.is_a?(User)
 		user == owner
+	end
+
+	def add_index_to_art
+		self.index.store self
 	end
 
 	def self.search(params)

@@ -21,7 +21,7 @@
 					<i class="fa fa-search"></i>
 				</span>
 				<%= form_tag articles_path, method: :get do %>
-					<%= text_field_tag :query, params[:query], class: "form-control" %>
+					<%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search..." %>
 				<% end %>
 			</div>
 	  </div>
@@ -55,11 +55,13 @@
 					<div class="iconset top-settings-dark"></div><%= set_icon("iconset top-down-arrow", "") %>
 				</a>
 				<ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
-                  <li><%= link_to "My Account", current_user %></li>
-                  <li><%= link_to "My Settings", edit_user_path(current_user) %></li>
-                  <li class="divider"></li>
-                  <li><%= link_to set_icon("power-off", 'fa') + "Log out", signout_path, method: "delete" %></li>              
-               </ul>
+					<li><%= link_to "Add new Article", new_article_path %></li>
+					<li class="divider"></li>
+					<li><%= link_to "My Account", current_user %></li>
+					<li><%= link_to "My Settings", edit_user_path(current_user) %></li>
+					<li class="divider"></li>
+					<li><%= link_to set_icon("power-off", 'fa') + "Log out", signout_path, method: "delete" %></li>
+				</ul>
 			</li> 
 			<li class="quicklinks"> <span class="h-seperate"></span></li>
 			<li class="quicklinks mp-modal-icon" data-toggle="modal" data-target="#ModalWrite"><%= set_icon("pencil", "fa") %></li>
