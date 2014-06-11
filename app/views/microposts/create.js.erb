@@ -1,2 +1,3 @@
-$('#timeline').append("<%= j render partial: 'shared/feed_item', collection: @feed_items %>");
-$('#new_micropost')[0].reset();
+$("<%= escape_javascript(render partial: 'shared/feed_item', object: @micropost) %>").insertAfter('#home-mpost-form');
+$('#word-counter-2').val('');
+$("#user_microp").html('<%= @user.microposts.count %>');

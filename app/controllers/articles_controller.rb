@@ -35,9 +35,8 @@ class ArticlesController < ApplicationController
 		@article = current_user.articles.new(article_params)
 		if @article.save
 			flash[:success] = "New article has been created."
-			micro_post_title = view_context.link_to(@article.title, @article)
 			micropost = current_user.microposts.build(content: truncate(@article.content.html_safe, length: 100, separator: ' ', escape: false), 
-				mtitle: micro_post_title, mpost_picrute: @article.thumbnail)
+				mtitle: @article.title, mpost_picrute: @article.thumbnail, mlink: article_path(@article))
 			micropost.save
 			redirect_to @article
 		else
@@ -65,7 +64,8 @@ class ArticlesController < ApplicationController
 		@article.destroy
 		Tire.index('articles').remove(art_id)
 		flash[:success] = "Article deleted"
-		redirect_to articles_url
+		#redirect_to articles_url
+		redirect_to action: :index
 	end
 
 	def vote

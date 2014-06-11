@@ -1,21 +1,10 @@
-[2014-06-09 00:14:35,337][INFO ][node                     ] [Hub] {0.20.6}[8065]: stopping ...
-[2014-06-09 00:14:35,411][INFO ][node                     ] [Hub] {0.20.6}[8065]: stopped
-[2014-06-09 00:14:35,412][INFO ][node                     ] [Hub] {0.20.6}[8065]: closing ...
-[2014-06-09 00:14:35,419][INFO ][node                     ] [Hub] {0.20.6}[8065]: closed
-[2014-06-09 10:54:03,464][INFO ][node                     ] [Amina Synge] {0.20.6}[1127]: initializing ...
-[2014-06-09 10:54:03,473][INFO ][plugins                  ] [Amina Synge] loaded [], sites []
-[2014-06-09 10:54:09,561][INFO ][node                     ] [Amina Synge] {0.20.6}[1127]: initialized
-[2014-06-09 10:54:09,562][INFO ][node                     ] [Amina Synge] {0.20.6}[1127]: starting ...
-[2014-06-09 10:54:09,683][INFO ][transport                ] [Amina Synge] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-09 10:54:12,720][INFO ][cluster.service          ] [Amina Synge] new_master [Amina Synge][EaI1Z8pfTUChqYZNYQgjZA][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-09 10:54:12,771][INFO ][discovery                ] [Amina Synge] elasticsearch/EaI1Z8pfTUChqYZNYQgjZA
-[2014-06-09 10:54:12,792][INFO ][http                     ] [Amina Synge] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-09 10:54:12,792][INFO ][node                     ] [Amina Synge] {0.20.6}[1127]: started
-[2014-06-09 10:54:14,735][INFO ][gateway                  ] [Amina Synge] recovered [1] indices into cluster_state
-[2014-06-09 13:21:20,410][INFO ][cluster.metadata         ] [Amina Synge] [articles] deleting index
-[2014-06-09 13:29:13,436][INFO ][cluster.metadata         ] [Amina Synge] [articles] creating index, cause [api], shards [5]/[1], mappings [article]
-[2014-06-09 13:34:06,673][INFO ][cluster.metadata         ] [Amina Synge] [articles] update_mapping [article] (dynamic)
-[2014-06-09 16:25:09,548][INFO ][cluster.metadata         ] [Amina Synge] [articles] update_mapping [article] (dynamic)
-[2014-06-09 20:57:08,584][INFO ][cluster.metadata         ] [Amina Synge] [articles] deleting index
-[2014-06-09 20:57:09,383][INFO ][cluster.metadata         ] [Amina Synge] [articles] creating index, cause [api], shards [5]/[1], mappings [article]
-[2014-06-09 20:57:09,792][INFO ][cluster.metadata         ] [Amina Synge] [articles] update_mapping [article] (dynamic)
+[2014-06-11 11:37:24,484][INFO ][node                     ] [Parks, Arthur] {0.20.6}[843]: initializing ...
+[2014-06-11 11:37:24,493][INFO ][plugins                  ] [Parks, Arthur] loaded [], sites []
+[2014-06-11 11:37:30,582][INFO ][node                     ] [Parks, Arthur] {0.20.6}[843]: initialized
+[2014-06-11 11:37:30,583][INFO ][node                     ] [Parks, Arthur] {0.20.6}[843]: starting ...
+[2014-06-11 11:37:30,689][INFO ][transport                ] [Parks, Arthur] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-11 11:37:33,727][INFO ][cluster.service          ] [Parks, Arthur] new_master [Parks, Arthur][1i7OUFSsR1KUCM8zHqhFPw][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-11 11:37:33,760][INFO ][discovery                ] [Parks, Arthur] elasticsearch/1i7OUFSsR1KUCM8zHqhFPw
+[2014-06-11 11:37:33,782][INFO ][http                     ] [Parks, Arthur] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-11 11:37:33,782][INFO ][node                     ] [Parks, Arthur] {0.20.6}[843]: started
+[2014-06-11 11:37:35,653][INFO ][gateway                  ] [Parks, Arthur] recovered [1] indices into cluster_state

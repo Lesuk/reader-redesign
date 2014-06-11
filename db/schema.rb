@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608003522) do
+ActiveRecord::Schema.define(version: 20140610123054) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20140608003522) do
     t.string   "mpost_picrute"
     t.integer  "repost_author"
     t.string   "mtitle"
+    t.string   "mlink"
   end
 
   add_index "microposts", ["retweet_id"], name: "index_microposts_on_retweet_id"

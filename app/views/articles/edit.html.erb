@@ -8,8 +8,16 @@
 	<%= form_for(@article) do |f| %>
 		<%= render 'shared/error_messages', object: f.object %>
 		<%= render 'form', f: f %>
-		<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-      	<%= link_to "Cancel", @article, class: "btn btn-large btn-primary" %>
+		<div class="checkbox check-primary">
+          <%= f.check_box :remove_thumbnail, id: "checkbox3" %> 
+          <label for="checkbox3">Remove thumbnail?</label>
+        </div>
+        <div class="row">
+        	<div class="col-md-8">
+				<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+		      	<%= link_to "Cancel", @article, class: "btn btn-large btn-primary" %>
+	      	</div>
+	    </div>
 	<% end %>
 
 </div>

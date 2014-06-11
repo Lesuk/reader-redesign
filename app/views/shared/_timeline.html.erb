@@ -2,7 +2,7 @@
 <ul id="timeline" class="clearfix">
 
 	<% if signed_in? && current_user && params[:controller] == 'static_pages' %> 
-	<li class="animated fadeInUp">
+	<li id="home-mpost-form" class="animated fadeInUp">
 		<div class="hentry-box new-msg">
 			<%= render 'shared/mp_new_home' %>
 		</div>

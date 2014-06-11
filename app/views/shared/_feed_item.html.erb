@@ -14,7 +14,8 @@
 
 		<% if feed_item.mpost_picrute? %>
 		<figure class="entry-thumb">
-			<%= link_to(image_tag(feed_item.mpost_picrute_url(:mthumb), size: "400x226", class: "entry-img"), feed_item.mpost_picrute_url.to_s) %>
+			<% link = feed_item.mlink ? feed_item.mlink : feed_item.mpost_picrute_url.to_s %>
+			<%= link_to(image_tag(feed_item.mpost_picrute_url(:mthumb), size: "400x226", class: "entry-img"), link) %>
 		</figure>
 		<% end %>
 
@@ -41,13 +42,13 @@
 			<% if feed_item.mtitle.present? %>
 			<header class="entry-header">
 				<h4 class="entry-title semi-bold">
-					<%= raw(feed_item.mtitle) %>
+					<%= link_to feed_item.mtitle, feed_item.mlink %>
 				</h4>
 			</header>
 			<% end %>
 
-			<div class="entry-summary clearfix">
-				<p><%= auto_link(feed_item.content, html: { target: '_blank' }) %></p>
+			<div class="entry-summary">
+				<%= auto_link(feed_item.content, html: { target: '_blank' }) %>
 			</div>
 		</div>
 
@@ -71,7 +72,7 @@
 					<a href="#"><i class="fa fa-star"></i><span>Favorite</span></a>
 				</li> -->
 				<li class="action-reply">
-					<%= link_to set_icon("heart", "fa") + "Like", like_micropost_path(feed_item), method: "post" %>&nbsp;<%= likes if likes > 0 %>
+					<%= link_to set_icon("heart", "fa") + "Like", like_micropost_path(feed_item), remote: true, method: "post" %>&nbsp;<span class="likes-count"><%= likes if likes > 0 %></span>
 				</li>
 			</ul>
 		</footer>

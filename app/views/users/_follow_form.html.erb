@@ -2,11 +2,11 @@
 	<div class="overlayer bottom-right">
 		<div class="overlayer-wrapper">
 			<div class="padding-10 hidden-xs">
-				<div id="follow_form">
+				<div id="follow_form_<%= @user.id %>">
 					<% if current_user.following?(@user) %>
-						<%= render 'unfollow' %>
+						<%= render partial: 'unfollow', locals: {user: @user} %>
 					<% else %>
-						<%= render 'follow' %>
+						<%= render partial: 'follow', locals: {user: @user} %>
 					<% end %>
 				</div>									
 			</div>
