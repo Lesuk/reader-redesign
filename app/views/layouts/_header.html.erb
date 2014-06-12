@@ -26,9 +26,10 @@
 			</div>
 	  </div>
 	 <!-- END TOP NAVIGATION MENU -->
-	 <% if signed_in? %>
+	 
 	 <!-- BEGIN CHAT TOGGLER -->
       <div class="pull-right"> 
+      	<% if signed_in? %>
 		<a href="<%= user_path(current_user) %>" class="chat-toggler">	
 			<div class="user-details"> 
 				<div class="username"><%= current_user.name %></div>
@@ -66,9 +67,15 @@
 			<li class="quicklinks"> <span class="h-seperate"></span></li>
 			<li class="quicklinks mp-modal-icon" data-toggle="modal" data-target="#ModalWrite"><%= set_icon("pencil", "fa") %></li>
 		</ul>
+		<% else %>
+			<ul class="nav quick-section ">
+				<li class="quicklinks"><%= link_to "Sign up now!", signup_path %></li>
+				<li class="quicklinks"><%= link_to "Sign in", signin_path %></li>
+			</ul>
+		<% end %>
       </div>
 	   <!-- END CHAT TOGGLER -->
-	   <% end %>
+	   
       </div> 
       <!-- END TOP NAVIGATION MENU --> 
    

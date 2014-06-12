@@ -35,8 +35,8 @@
 			<ul class="art-box">
 				<% rate = article.reputation_for(:votes).to_i %>
 				<% watches = article.postviews.uniq_by {|i| i.guest_ip }.count %>
-				<li class="action-reply">
-                    Category: <%= raw article.categories.map(&:name).map{|t| link_to t, category_path(t) }.join(', ') %>
+				<li class="action-reply">Tags: 
+                	<%= raw article.categories.map(&:name).map{|t| link_to t, category_path(t) }.join(', ') %>
                 </li>
 
                 <li class="action-reply">

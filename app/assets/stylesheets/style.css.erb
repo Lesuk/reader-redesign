@@ -136,7 +136,8 @@ Page sidebar
 	display:inline-block;
 	width:200px;
 }
-.page-sidebar > ul > li > a {
+.page-sidebar > ul > li > a,
+.page-sidebar ul > li > a > .arrow:before {
   color: #8DA3B8;
 }
 
@@ -159,6 +160,9 @@ Page sidebar
  /* border-left:4px solid  #0aa699;*/
   padding:11.5px 31px;
   color: #fff;
+}
+#main-menu > ul > li.open > a {
+	background-color: transparent;
 }
 
 
@@ -194,9 +198,8 @@ Page sidebar
   background: #313131;
 }
 
-.page-sidebar ul > li > a > .arrow:before,
 .page-sidebar > ul > li > a > .arrow.open:before {  
-   color: #919091 !important;
+   color: #fff !important;
 }
 
 .page-sidebar ul > li.active > a .arrow:before,
@@ -220,7 +223,7 @@ Page sidebar
 }
 
 .page-sidebar > ul > li > ul.sub-menu > li > a:hover {
-  background: #1b1e24 !important;
+  background: #638299 !important;
 
 }
 
@@ -1116,6 +1119,7 @@ span.iconset{
 	padding: 7px;
 	border-radius: 5px;	
 	color: #fff !important;
+	cursor:pointer;
 }
 .header .nav li.dropdown.user .dropdown-toggle i {
   display: inline-block;
@@ -1267,7 +1271,7 @@ span.iconset{
    font-size: 16px;
    font-family: FontAwesome;
    height: auto;
-   content: "\f104";
+   content: "\f107";
    font-weight: 300;
    text-shadow:none;
 }
@@ -1280,7 +1284,7 @@ span.iconset{
    font-family: FontAwesome;
    height: auto;
    font-size: 16px;
-   content: "\f107";
+   content: "\f106";
    font-weight: 300;
    text-shadow:none;
 }
@@ -1290,7 +1294,7 @@ span.iconset{
   list-style: none;
   clear: both;
   margin:0px;
-  background-color:#22262E;
+  background-color:#111D2B;
   padding:8px 0px 10px 0px;
 
 }
@@ -1310,7 +1314,7 @@ span.iconset{
   display: block;
   margin: 0px 0px 0px 0px;
   padding: 5px 0px;
-  padding-left: 53px !important;
+  padding-left: 40px !important;
   color: #e1eaf1;
   text-decoration: none;
   text-shadow: 0 1px 1px #000;
@@ -1971,6 +1975,10 @@ font-family: 'Open Sans';
 	padding-bottom: 10px;	
 }
 
+.rd-message h1.entry-title {
+	padding-bottom: 10px;
+	font-size: 2.0em;
+}
 
 /* entry-meta */
 .readable-content .hentry .entry-meta {
@@ -2011,10 +2019,10 @@ font-family: 'Open Sans';
 	color: #BFC5CD;
 	line-height: 1;
 }
-.readable-content .entry-info span{
+.readable-content .entry-info > span{
 	margin-right: 12px;
 }
-.readable-content .entry-info span i{
+.readable-content .entry-info > span i{
 	padding-right: 5px;
 }
 
@@ -2412,6 +2420,7 @@ input[readonly] {
 	width: 100%;
 	font-size: 12px;
 	padding: 5px 15px;
+	font-family: "Open Sans", Arial;
 }
 .entry-actions ul{
 	list-style: none;
@@ -2421,11 +2430,15 @@ input[readonly] {
 }
 .entry-actions ul li{
 	display: inline;
-	color: #d2dce2;
+	color: #8899a6;
 	font-weight: bold;
 }
 .entry-actions ul.art-box li:first-child{
 	float: left;
+	max-width: 230px;
+	height: 20px;
+	overflow: hidden;
+	text-align: left;
 }
 .entry-actions ul li.delete {
 	position: absolute;
@@ -2433,7 +2446,7 @@ input[readonly] {
 	right: 4px;
 }
 .entry-actions ul li a{
-	color: #D2DCE2; 
+	color: #8899a6; 
 	font-weight: normal;
 }
 .entry-actions ul li a:hover{
@@ -5861,6 +5874,82 @@ ul.progress-list li  .progress{
 	background-color:#fdd01c;
 	color:#fff;
 }
+#email-list .table .badge-warning{
+	background-color: rgba(253, 208, 28, 0.7);
+	color: #fff;
+	border-radius: 50%;
+	width: 12px;
+	height: 12px;
+	vertical-align: sub;
+}
+#email-list {
+	background-color: #fff;
+	padding: 0 10px 10px;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+#email-list .table td a {
+	color: #576475;
+}
+#email-list .table tr.read b {
+	font-weight: normal;
+}
+#email-list .user-avt{
+	position: relative;
+}
+#email-list .user-avt img{
+	position: absolute;
+	top: 4px;
+	left: 0;
+	border-radius: 4px;
+}
+
+#email-list .table td a.delete-mail {
+	position: absolute;
+	top: 10px;
+	right: 8px;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #fff;
+	color: #E07763 !important;
+}
+
+div.dataTables_info {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size:12px;
+	float:right;
+	display:inline-block;
+	padding-right:14px;
+	border-right:1px solid #cecece;
+}
+
+div.dataTables_paginate {
+	float: right;
+	margin: 0;
+	margin-left:8px
+}
+
+.rd-message .muted{
+	position: absolute;
+	bottom: 15px;
+	right: 0;
+}
+
+.rd-message .message-info{
+	position: relative;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #eee;
+}
+
+.message-info .ms-recipient {
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 0 0 10px 15px;
+}
 
 .label-important, .badge-important{
 	background-color:#f35958;
@@ -5960,7 +6049,7 @@ ul.progress-list li  .progress{
 
 /*** Table Styles **/
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
-	padding:12px
+	padding:12px 8px
 }
 
 .table tr.row_selected td{
@@ -5974,7 +6063,7 @@ ul.progress-list li  .progress{
 .table td{
 	border-top: 1px solid #e8edf1;
 	vertical-align: top;
-	 padding: 10px 12px !important;
+	 padding: 10px 8px !important;
 	color:#576475;
 	font-size:13px;			
 }
@@ -6007,6 +6096,9 @@ ul.progress-list li  .progress{
 .table th.medium-cell{
 	width:112px
 }
+#email-list .table th.medium-cell{
+	width:140px
+}
 .table th.big-cell{
 	width:200px
 }
@@ -6015,6 +6107,7 @@ ul.progress-list li  .progress{
 }
 .table td.clickable{
 	cursor:pointer;
+	position: relative;
 }
 .table-fixed-layout{
 	 table-layout: fixed;
@@ -6322,6 +6415,10 @@ border-bottom-left-radius: 2px;
 	padding: 0;
 	box-shadow:none;
 	border:0;
+}
+
+#s2id_message_recepient_id{
+	width: 230px;
 }
 
 .input-append .add-on:last-child, .input-append .btn:last-child, .input-append .btn-group:last-child > .dropdown-toggle{

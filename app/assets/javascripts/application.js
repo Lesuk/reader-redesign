@@ -6,6 +6,7 @@
 //= require bootstrap
 //= require turbolinks
 //= require bootstrap-checkbox
+//= require select2.min
 //= require breakpoints
 //= require jquery-ui-1.10.1.custom.min
 //= require jquery.unveil.min
@@ -49,5 +50,9 @@ $(document).ready(function(){
         }
         
     });
+
+  $("#message_recepient_id").select2({
+    placeholder: "Choose a recipient",
+  });
 
 });

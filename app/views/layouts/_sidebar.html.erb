@@ -12,7 +12,14 @@
 	<% if signed_in? %>
 	<ul>
 		<p class="menu-title">PERSONAL</p>
-		<%= nav_link_to set_icon("envelope", "fa") + "Messages", messages_path, {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
+		<%= nav_link_to "javascript:;", {class: nil}, {wrapper: 'li', selected_class: 'active'} do %>
+			<i class="fa fa-envelope"></i>Messages<span class="arrow"></span>
+			<ul class="sub-menu">
+	          <li ><%= link_to set_icon("inbox","fa") + "Inbox Messages", messages_path %></li>
+	          <li ><%= link_to set_icon("envelope","fa") + "Sent Messages", sent_messages_path %></li>
+	          <li><%= link_to set_icon("pencil-square-o","fa") + "New Message", new_message_path %></li>
+	        </ul>
+		<% end %>
 		<%= nav_link_to set_icon("star-o", "fa") + "Favorites", "#", {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 		<%= nav_link_to set_icon("users", "fa") + "Friends", following_user_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 		<%= nav_link_to set_icon("list-ul", "fa") + "Tasks", user_tasks_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>

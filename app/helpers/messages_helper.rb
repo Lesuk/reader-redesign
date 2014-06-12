@@ -1,8 +1,8 @@
 module MessagesHelper
 
 	def marked_as_read(message)
-		if @message.read != 1 
-		  @message.read = 1
+		if @message.read != true
+		  @message.read = true
 		  @message.save 
 		end
 	end

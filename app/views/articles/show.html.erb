@@ -1,4 +1,4 @@
-<% provide(:title, @article.title) %>
+<% provide(:title, @article.title.html_safe) %>
 <div class="content readable-content" role="main">   
 	<article class="hentry">         
 		<!-- .entry-header -->
@@ -35,7 +35,7 @@
 
 		<div class="entry-info">
 			<span><i class="fa fa-eye"></i>views: <%= @postUniqueViews %></span>
-			<span><i class="fa fa-thumbs-o-up"></i>rating: <%= @article.reputation_for(:votes).to_i %></span>
+			<span><i class="fa fa-thumbs-o-up"></i>rating: <span id="art-rat-count"><%= @rating %></span></span>
 		</div>
                       
         <% if @article.thumbnail %>
@@ -48,7 +48,7 @@
 		<!-- .entry-content --> 
 		<div class="entry-content">
 			<%= raw @article.content %>
-			<p class="rate-post"><b>Do you like this post?</b> Rate it: <%= link_to set_icon("thumbs-o-up","fa") + "Like", vote_article_path(@article, type: "up"), method: "post", class: "like-post" %> <%= link_to set_icon("thumbs-o-down","fa") + "Dislike", vote_article_path(@article, type: "down"), method: "post", class: "dislike-post" %></p>
+			<p class="rate-post"><b>Do you like this post?</b> Rate it: <%= link_to set_icon("thumbs-o-up","fa") + "Like", vote_article_path(@article, type: "up"), remote: true, method: "post", class: "like-post" %> <%= link_to set_icon("thumbs-o-down","fa") + "Dislike", vote_article_path(@article, type: "down"), remote: true, method: "post", class: "dislike-post" %></p>
 		</div>
 		<!-- .entry-content -->
           

@@ -1,11 +1,11 @@
-<% provide(:title, 'Inbox Messages') %>
+<% provide(:title, 'Sent Messages') %>
 <div class="content" role="main">
 
 	<% if signed_in? && current_user %>
 		<div class="row-fluid">
 
 			<div class="row-fluid dataTables_wrapper">
-				<h2 class=" inline">Inbox Messages</h2>
+				<h2 class=" inline">Sent Messages</h2>
 				<div class="pull-right margin-top-20">
 					<%= will_paginate @messages, previous_label: '<i class="fa fa-chevron-left"></i>', next_label: '<i class="fa fa-chevron-right"></i>', class: "dataTables_paginate paging_bootstrap pagination"  %>
 					<div class="dataTables_info hidden-xs">
@@ -22,14 +22,14 @@
 					<tr>
 					  <th class="small-cell"></th>
 					  <th class="small-cell"></th>
-					  <th class="medium-cell">Sender</th>
+					  <th class="medium-cell">Recipient</th>
 					  <th>Subject</th>
 					  <th class="medium-cell">Time</th>
 					</tr>
 					</thead>
 
 					<tbody>
-						<%= render partial: 'messages/message', collection: @messages, locals: {type: "sender"} %> 
+						<%= render partial: 'messages/message', collection: @messages, locals: {type: "recipient"} %> 
 					</tbody>
 
 				</table>

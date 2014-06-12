@@ -1,13 +1,22 @@
 class MessagesController < ApplicationController
 	before_action :set_message, only: [:show, :destroy]
+	before_action :signed_in_user, only: [:index, :show, :sent, :new, :create, :destroy]
 
 	def index
 		@user = current_user
-		@messages = Message.all
+		@messages = Message.where(recepient_id: @user.id).paginate(page: params[:page], per_page: 20)
+	end
+
+	def sent
+		@user = current_user
+		@messages = Message.where(sender_id: @user.id).paginate(page: params[:page], per_page: 20)
+		render 'sent'
 	end
 
 	def show
 		@user = current_user
+		@sender = User.find_by(id: @message.sender_id)
+		@recipient = User.find_by(id: @message.recepient_id)
 		if ((@user.id == @message.sender_id) || (@user.id == @message.recepient_id ))
 		else
 			respond_to do |format|
@@ -42,7 +51,7 @@ class MessagesController < ApplicationController
 	def destroy
 		@message.destroy
 		flash[:success] = "Message deleted"
-		redirect_to messages_url
+		redirect_to sent_messages_path
 	end
 
 private

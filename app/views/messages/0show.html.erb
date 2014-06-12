@@ -1,0 +1,27 @@
+<% if current_user %>
+    <div id="readMessage">
+	<h3>Message</h3>
+	<table class = "table">
+	  <tr>
+	    <td>Subject</td> 
+	    <td>From</td>
+	    <td>To</td>
+	    <td>Date</td>
+	  </tr>
+	  <tr>
+	    <td><strong><%= @message.subject %></strong></td>
+	    <td><strong><%= @message.sender_id %></strong></td>
+	    <td><strong><%= @message.recepient_id %></strong></td>
+	    <td><strong><%= @message.created_at %></strong></td>
+	  </tr>
+	</table>
+
+	<p><%= @message.body %></p>
+	<%= link_to 'Back', messages_path %>
+	</div>
+	<% if @message.recepient_id == current_user.id %>
+    	<% marked_as_read(@message) %>
+    <% end %>
+<% else %>
+    <% flash[:error] = "Unauthorized - The page is not available." %>
+<%end%>

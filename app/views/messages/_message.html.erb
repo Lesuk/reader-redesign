@@ -1,16 +1,13 @@
-<% if message.recepient_id == @user.id %>
-<table class="table">
-  <tr>
-    <td>
-      <%= link_to message.subject, message_path(message) %>
-    </td>
-    <td>
-      <%= message.sender_id %>
-    </td>
-    <td>
-      <%= message.created_at %>
-    </td>
-    <td><%= link_to 'Delete Message', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-</table>
-<% end %>
+<% usr_id = type == "sender" ? message.sender_id : message.recepient_id %>
+<% user = User.find_by(id: usr_id) %>
+<tr class="<%= p "read" if message.read %>">
+  <td class="center-text"><% if !message.read %><span class="badge badge-warning">&nbsp;</span><% end %></td>
+  <td class="user-avt"><%= image_tag(user.avatar_url(:lthumb), size: "30x30") %></td>
+  <td class="clickable v-align-middle"><a href="<%= user_path(user) %>"><b><%= user.name %></b></a></td>
+  <td class="clickable tablefull v-align-middle"><a href="<%= message_path(message) %>"><b><%= message.subject %></b>&nbsp;&nbsp;<span class="muted"><%= truncate(message.body.html_safe, length: 70, separator: ' ', escape: false) %></span></a></td>
+  <td class="clickable"><span class="muted"><%= message.created_at.to_formatted_s(:short) %></span>
+    <% if type == "recipient" %>
+      <%= link_to set_icon("times","fa"), message, method: :delete, class: "delete-mail", data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </td>
+</tr>

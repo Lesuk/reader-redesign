@@ -28,3 +28,15 @@
 <%= f.label :publish_date %>
 <%= f.datetime_select :publish_date, class: "date-select" %>
 </div>
+
+<% content_for :javascript do %>
+<script type='text/javascript' charset='UTF-8'>
+  $(document).ready(function(){
+    $('form[data-remote]').bind('ajax:before', function(){
+      for (instance in CKEDITOR.instances){
+        CKEDITOR.instances[instance].updateElement();
+      }
+    });
+  });
+</script>
+<% end %>

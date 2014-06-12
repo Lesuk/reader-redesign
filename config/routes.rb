@@ -17,11 +17,14 @@ ReaderRor::Application.routes.draw do
       post :like
     end
   end
+  resources :messages do
+    collection { get :sent }
+  end
   resources :sessions,      only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :videos,        only: [:index, :new, :create, :destroy]
   resources :password_resets
-  resources :messages
+  
   root 'static_pages#home'
 
   match '/signup', to: 'users#new', via: 'get'

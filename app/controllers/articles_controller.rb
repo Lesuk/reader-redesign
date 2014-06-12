@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
 		@commentable = @article
 		@comments = @commentable.comments
 		@comments_count = @article.comments.count
-		
+		@rating = @article.reputation_for(:votes).to_i
 		view = Postview.new(article_id: @article.id, guest_ip: request.remote_ip)
 		view.save!
 		@postViews = @article.postviews.count
@@ -72,13 +72,19 @@ class ArticlesController < ApplicationController
 		thumbs = params[:type]
 		if current_user.voted_for?(@article, thumbs)
 		  vote_reset
-		  redirect_to :back
-		  flash[:info] = "Vote reset!"
+		  @rating = @article.reputation_for(:votes).to_i
+		  respond_to do |format|
+		  	format.html { redirect_to :back, flash[:info] = "Vote reset!" }
+			format.js		  
+		  end
 		else
 		  value = params[:type] == "up" ? 1 : -1
 		  @article.add_or_update_evaluation(:votes, value, current_user)
-		  redirect_to :back
-		  flash[:success] = "Thank you for voting"
+		  @rating = @article.reputation_for(:votes).to_i
+		  respond_to do |format|
+		  	format.html { redirect_to :back, flash[:success] = "Thank you for voting" }
+		  	format.js
+		  end
 		end
 	end 
 

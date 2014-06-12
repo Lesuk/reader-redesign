@@ -33,17 +33,7 @@
     <%#= debug(params) if Rails.env.development? %>
   </div> <!-- END CONTAINER --> 
 
-    <% if params[:controller] == 'articles' %>
-    <script type='text/javascript' charset='UTF-8'>
-      $(document).ready(function(){
-        $('form[data-remote]').bind('ajax:before', function(){
-          for (instance in CKEDITOR.instances){
-            CKEDITOR.instances[instance].updateElement();
-          }
-        });
-      });
-    </script>
-    <% end %>
+    <%= yield :javascript %>
 
   </body>
 </html>
