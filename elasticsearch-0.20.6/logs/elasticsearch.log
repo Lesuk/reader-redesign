@@ -1,29 +1,19 @@
-[2014-06-12 00:51:23,170][INFO ][node                     ] [Parks, Arthur] {0.20.6}[843]: stopping ...
-[2014-06-12 00:51:23,310][INFO ][node                     ] [Parks, Arthur] {0.20.6}[843]: stopped
-[2014-06-12 00:51:23,310][INFO ][node                     ] [Parks, Arthur] {0.20.6}[843]: closing ...
-[2014-06-12 00:51:23,320][INFO ][node                     ] [Parks, Arthur] {0.20.6}[843]: closed
-[2014-06-12 14:15:42,655][INFO ][node                     ] [Dark Phoenix] {0.20.6}[828]: initializing ...
-[2014-06-12 14:15:42,664][INFO ][plugins                  ] [Dark Phoenix] loaded [], sites []
-[2014-06-12 14:15:48,658][INFO ][node                     ] [Dark Phoenix] {0.20.6}[828]: initialized
-[2014-06-12 14:15:48,659][INFO ][node                     ] [Dark Phoenix] {0.20.6}[828]: starting ...
-[2014-06-12 14:15:49,428][INFO ][transport                ] [Dark Phoenix] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-12 14:15:52,466][INFO ][cluster.service          ] [Dark Phoenix] new_master [Dark Phoenix][emEX2GduSFe1WZYi7M7KUg][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-12 14:15:52,527][INFO ][discovery                ] [Dark Phoenix] elasticsearch/emEX2GduSFe1WZYi7M7KUg
-[2014-06-12 14:15:52,577][INFO ][http                     ] [Dark Phoenix] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-12 14:15:52,577][INFO ][node                     ] [Dark Phoenix] {0.20.6}[828]: started
-[2014-06-12 14:15:53,441][INFO ][monitor.jvm              ] [Dark Phoenix] [gc][ParNew][4][2] duration [784ms], collections [1]/[1.7s], total [784ms]/[905ms], memory [64.6mb]->[19.9mb]/[989.8mb], all_pools {[Code Cache] [815kb]->[827.3kb]/[48mb]}{[Par Eden Space] [49.5mb]->[748.7kb]/[273mb]}{[Par Survivor Space] [8.5mb]->[8.2mb]/[34.1mb]}{[CMS Old Gen] [6.5mb]->[10.9mb]/[682.6mb]}{[CMS Perm Gen] [21.3mb]->[22.2mb]/[82mb]}
-[2014-06-12 14:15:55,434][INFO ][gateway                  ] [Dark Phoenix] recovered [1] indices into cluster_state
-[2014-06-12 22:46:10,988][INFO ][node                     ] [Dark Phoenix] {0.20.6}[828]: stopping ...
-[2014-06-12 22:46:11,074][INFO ][node                     ] [Dark Phoenix] {0.20.6}[828]: stopped
-[2014-06-12 22:46:11,074][INFO ][node                     ] [Dark Phoenix] {0.20.6}[828]: closing ...
-[2014-06-12 22:46:11,087][INFO ][node                     ] [Dark Phoenix] {0.20.6}[828]: closed
-[2014-06-12 22:47:47,591][INFO ][node                     ] [Stained Glass Scarlet] {0.20.6}[6734]: initializing ...
-[2014-06-12 22:47:47,600][INFO ][plugins                  ] [Stained Glass Scarlet] loaded [], sites []
-[2014-06-12 22:47:54,531][INFO ][node                     ] [Stained Glass Scarlet] {0.20.6}[6734]: initialized
-[2014-06-12 22:47:54,531][INFO ][node                     ] [Stained Glass Scarlet] {0.20.6}[6734]: starting ...
-[2014-06-12 22:47:55,433][INFO ][transport                ] [Stained Glass Scarlet] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-12 22:47:58,895][INFO ][cluster.service          ] [Stained Glass Scarlet] new_master [Stained Glass Scarlet][RIC7Dd_vR2Wi9d_HFLI1xg][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-12 22:47:58,933][INFO ][discovery                ] [Stained Glass Scarlet] elasticsearch/RIC7Dd_vR2Wi9d_HFLI1xg
-[2014-06-12 22:47:58,955][INFO ][http                     ] [Stained Glass Scarlet] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-12 22:47:58,955][INFO ][node                     ] [Stained Glass Scarlet] {0.20.6}[6734]: started
-[2014-06-12 22:48:01,444][INFO ][gateway                  ] [Stained Glass Scarlet] recovered [1] indices into cluster_state
+[2014-06-13 00:17:10,611][INFO ][node                     ] [Stained Glass Scarlet] {0.20.6}[6734]: stopping ...
+[2014-06-13 00:17:10,706][INFO ][node                     ] [Stained Glass Scarlet] {0.20.6}[6734]: stopped
+[2014-06-13 00:17:10,706][INFO ][node                     ] [Stained Glass Scarlet] {0.20.6}[6734]: closing ...
+[2014-06-13 00:17:10,716][INFO ][node                     ] [Stained Glass Scarlet] {0.20.6}[6734]: closed
+[2014-06-13 09:41:05,695][INFO ][node                     ] [Crimson] {0.20.6}[1080]: initializing ...
+[2014-06-13 09:41:05,703][INFO ][plugins                  ] [Crimson] loaded [], sites []
+[2014-06-13 09:41:12,402][INFO ][node                     ] [Crimson] {0.20.6}[1080]: initialized
+[2014-06-13 09:41:12,403][INFO ][node                     ] [Crimson] {0.20.6}[1080]: starting ...
+[2014-06-13 09:41:12,511][INFO ][transport                ] [Crimson] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-13 09:41:15,548][INFO ][cluster.service          ] [Crimson] new_master [Crimson][UoWcJtYZTP2qZpdan0v8ew][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-13 09:41:15,585][INFO ][discovery                ] [Crimson] elasticsearch/UoWcJtYZTP2qZpdan0v8ew
+[2014-06-13 09:41:15,608][INFO ][http                     ] [Crimson] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-13 09:41:15,608][INFO ][node                     ] [Crimson] {0.20.6}[1080]: started
+[2014-06-13 09:41:17,565][INFO ][gateway                  ] [Crimson] recovered [1] indices into cluster_state
+[2014-06-13 11:54:09,311][WARN ][monitor.jvm              ] [Crimson] [gc][ParNew][7972][3] duration [2.6s], collections [1]/[2.8s], total [2.6s]/[2.7s], memory [87.1mb]->[21.6mb]/[989.8mb], all_pools {[Code Cache] [1.1mb]->[1.1mb]/[48mb]}{[Par Eden Space] [68.3mb]->[401.7kb]/[273mb]}{[Par Survivor Space] [7.8mb]->[7.6mb]/[34.1mb]}{[CMS Old Gen] [10.9mb]->[13.6mb]/[682.6mb]}{[CMS Perm Gen] [28mb]->[28mb]/[82mb]}
+[2014-06-13 15:46:50,658][INFO ][node                     ] [Crimson] {0.20.6}[1080]: stopping ...
+[2014-06-13 15:46:51,013][INFO ][node                     ] [Crimson] {0.20.6}[1080]: stopped
+[2014-06-13 15:46:51,014][INFO ][node                     ] [Crimson] {0.20.6}[1080]: closing ...
+[2014-06-13 15:46:51,042][INFO ][node                     ] [Crimson] {0.20.6}[1080]: closed

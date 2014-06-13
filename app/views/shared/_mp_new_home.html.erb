@@ -1,4 +1,4 @@
-<%= form_for(@micropost, remote: true, html: {id: "new_micropost_home"}) do |f| %>
+<%= form_for(@micropost, remote: true) do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
 	<%= f.text_area :content, id: "word-counter-2", class: "form-control", rows: 3, placeholder: "Write new micropost..." %>
 	<div class="input-group">
@@ -8,12 +8,6 @@
             </span>
         </span>
         <input type="text" class="form-control" readonly>
-        <%= f.submit "Post", class: "btn btn-success" %>
+        <%= f.submit "Post", class: "btn btn-success bl-c pull-right" %>
     </div>
 <% end %>
-<script id="template-upload" type="text/x-tmpl">
-<div class="upload">
-    {%=o.name%}
-    <div class="progress"><div class="bar" style="width: 0%"></div></div>
-</div>
-</script>

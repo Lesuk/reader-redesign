@@ -2134,6 +2134,22 @@ margin-right: 5px;
 color: #5FCF9E;
 }
 
+.task_low{ border-left: 3px solid #C1E4A0 }
+.task_medium{ border-left: 3px solid #F8E558; }
+.task_high{ border-left: 3px solid #E56B6B; }
+
+#complete_tasks label:before {
+	background-color: #0090d9 !important;
+}
+#complete_tasks td{
+	text-decoration: line-through;
+}
+
+.del-task,
+.task-note{
+	text-align: center;
+}
+
 /* COMMENTS */
 .comments-area {
  	padding: 2em 0
@@ -2384,11 +2400,15 @@ div.form-row {
   cursor: inherit;
   display: block;
 }
-input[readonly] {
+#new_micropost input[readonly] {
   	border: none !important;
 	background-color: rgba(255, 255, 255, 0) !important;
 	cursor: text !important;
 	width: 320px !important;
+}
+#new_task input[readonly] {
+	background-color: rgba(255, 255, 255, 0) !important;
+	cursor: text !important;
 }
 .new-msg input[readonly] {
 	width: 200px !important;
@@ -2397,14 +2417,17 @@ input[readonly] {
 	margin-right: 7px;
 }
 
-div.upload {
+div.upload-h,
+div.upload-m {
 	padding: 9px 20px;
 }
-.upload div.progress {
+.upload-h div.progress-h,
+.upload-m div.progress-m {
 	margin: 0;
 	height: 8px;
 }
-.bar {
+.bar-h,
+.bar-m {
     height: 8px;
     background: green;
 }

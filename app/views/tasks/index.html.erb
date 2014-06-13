@@ -16,14 +16,36 @@
 		</div>
 	</div>
 
-	<h2>Incomplete Tasks</h2>
-	<div class="tasks" id="incomplete_tasks">
-		<%= render @tasks %>
-	</div>
+	<table class="table table-hover table-condensed dataTable" id="incomplete_tasks">
+		<thead>
+			<tr role="row">
+			  <th class="small-cell"></th>
+			  <th>Task name</th>
+			  <th class="medium-cell">Priority</th>
+			  <th class="medium-cell">Due by date</th>
+			  <th class="small-cell">notes</th>
+			  <th class="small-cell"></th>
+			</tr>
+		</thead>
+		<tbody id="body-incompleted">
+			<%= render @tasks %>
+		</tbody>
+	</table>
 
-	<h2>Comlpete Tasks</h2>
-	<div class="tasks" id="complete_tasks">
-		<%= render @tasks_done %>
-	</div>		
+	<table class="table table-hover table-condensed dataTable" id="complete_tasks">
+		<thead>
+			<tr role="row">
+			  <th class="small-cell"></th>
+			  <th>Task name</th>
+			  <th class="medium-cell">Priority</th>
+			  <th class="medium-cell">Due by date</th>
+			  <th class="small-cell">notes</th>
+			  <th class="small-cell"></th>
+			</tr>
+		</thead>
+		<tbody id="body-completed">
+			<%= render @tasks_done %>
+		</tbody>
+	</table>	
 
 </div>

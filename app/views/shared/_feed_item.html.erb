@@ -61,7 +61,7 @@
 				</li>
 				<% if signed_in? && current_user %>
 				<% if current_user?(feed_item.user) || current_user.admin? %>
-    				<li class="action-delete delete"><%= link_to set_icon("times", "fa"), feed_item, method: :delete, confirm: 'Are you sure?', remote: true %></li>
+    				<li class="action-delete delete"><%= link_to set_icon("times", "fa"), feed_item, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></li>
   				<% end %>
   				<% end %>
 				<li class="action-repost <%= 'reposted' if feed_item.retweets.where(user_id: current_user.id).present? %>">

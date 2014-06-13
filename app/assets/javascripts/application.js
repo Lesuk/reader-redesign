@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery-fileupload/basic
-//= require jquery-fileupload/vendor/tmpl
+// require jquery-fileupload/basic  // I don't use it now
+// require jquery-fileupload/vendor/tmpl  // I don't use it now
 //= require textarea-сounter
 //= require bootstrap
 //= require turbolinks
@@ -12,6 +12,7 @@
 //= require jquery.unveil.min
 //= require pace.min
 //= require bootstrap-datepicker
+//= require zebra_datepicker
 //= require core
 //= require ckeditor/override
 //= require ckeditor/init
@@ -40,12 +41,13 @@ $(document).ready(function(){
 	$('#word-counter-2').textareaCount(counter);
 
 	$('.btn-file :file').on('fileselect', function(event, numFiles, label) {
-        
+
         var input = $(this).parents('.input-group').find(':text'),
             log = numFiles > 1 ? numFiles + ' files selected' : label;
         
         if( input.length ) {
             input.val(log);
+            $("#new_micropost .b-post").removeClass("b-post");
         } else {
             if( log ) alert(log);
         }
@@ -56,7 +58,17 @@ $(document).ready(function(){
     placeholder: "Choose a recipient",
   });
 
-  $( ".due_date" ).datepicker({ minDate: -1 });
+  $('#task_due_date').Zebra_DatePicker({
+    direction: true
+  });
+
+  $('.task-note a').popover({
+    placement : 'bottom'
+  });
+
+  $('#new_micropost .b-post').on('click', function () {  
+    $('#ModalWrite').modal('hide');
+  });
 
   $('.task-form .collapse, .task-form .expand').on('click', function () {
     var el = jQuery(this).parents(".task-form").children(".task-form-body");

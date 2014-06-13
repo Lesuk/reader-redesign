@@ -1,8 +1,9 @@
 class TasksController < ApplicationController
+	before_action :signed_in_user, only: [:index, :create, :update, :destroy]
 	before_action :set_task, only: [:update, :destroy]
 
 	def index
-		@tasks = current_user.tasks.in_process
+		@tasks = current_user.tasks.in_process.priority_order
 		@tasks_done = current_user.tasks.done
 		@task = Task.new
 	end
@@ -51,7 +52,7 @@ private
 	end
 	
 	def task_params
-		params.require(:task).permit(:title, :note, :completed, :priority)
+		params.require(:task).permit(:title, :note, :completed, :priority, :due_date)
 	end
 
 

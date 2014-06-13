@@ -1,3 +1,4 @@
 $("<%= escape_javascript(render partial: 'shared/feed_item', object: @micropost) %>").insertAfter('#home-mpost-form');
 $('#word-counter-2').val('');
+$('#word-counter').val('');
 $("#user_microp").html('<%= @user.microposts.count %>');
