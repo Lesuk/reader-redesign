@@ -1,5 +1,5 @@
 <% provide(:title, 'My Tasks') %>
-<div class="content white-bg users" role="main"> 
+<div class="content white-bg" role="main"> 
 
 	<header class="page-header-1">
 		<h1 class="entry-title">My Tasks</h1>
@@ -16,6 +16,8 @@
 		</div>
 	</div>
 
+	<h2 class="tasks-header">Tasks in process</h2>
+
 	<table class="table table-hover table-condensed dataTable" id="incomplete_tasks">
 		<thead>
 			<tr role="row">
@@ -31,6 +33,8 @@
 			<%= render @tasks %>
 		</tbody>
 	</table>
+
+	<h2 class="tasks-header">Completed tasks</h2>
 
 	<table class="table table-hover table-condensed dataTable" id="complete_tasks">
 		<thead>

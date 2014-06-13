@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 	def show
 		#@user = User.find(params[:id])
 		@user = User.find_by_login(params[:id])
-		@microposts = @user.microposts.paginate(page: params[:page])
+		@microposts = @user.microposts.paginate(page: params[:page], per_page: 20)
 		@title = @user.name
 	end
 
@@ -62,6 +62,11 @@ class UsersController < ApplicationController
 		@user = User.find_by_login(params[:id])
 		@users = @user.followers.paginate(page: params[:page])
 		render 'show_follow'
+	end
+
+	def media
+		@user = User.find_by_login(params[:id])
+		@microposts = @user.microposts.where.not(mpost_picrute: nil).paginate(page: params[:page], per_page: 20)
 	end
 
 	private

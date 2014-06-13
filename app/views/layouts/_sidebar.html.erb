@@ -24,7 +24,7 @@
 		<%= nav_link_to set_icon("users", "fa") + "Friends", following_user_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 		<%= nav_link_to set_icon("list-ul", "fa") + "Tasks", user_tasks_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 		<%= nav_link_to set_icon("youtube-play", "fa") + "Videos", videos_path, {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
-		<%= nav_link_to set_icon("picture-o", "fa") + "Gallery", "#", {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
+		<%= nav_link_to set_icon("picture-o", "fa") + "Gallery", media_user_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 	</ul>
 	<% end %>
 

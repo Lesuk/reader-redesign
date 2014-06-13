@@ -13,6 +13,7 @@
 //= require pace.min
 //= require bootstrap-datepicker
 //= require zebra_datepicker
+//= require touchTouch.jquery
 //= require core
 //= require ckeditor/override
 //= require ckeditor/init
@@ -62,9 +63,11 @@ $(document).ready(function(){
     direction: true
   });
 
-  $('.task-note a').popover({
+  $('.task-note span').popover({
     placement : 'bottom'
   });
+
+  $('.entry-thumb a').touchTouch();
 
   $('#new_micropost .b-post').on('click', function () {  
     $('#ModalWrite').modal('hide');

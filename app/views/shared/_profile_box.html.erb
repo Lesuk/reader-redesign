@@ -20,23 +20,28 @@
 	<div class="profile-navbar">
         <%= nav_link_to(user_path(@user), class: "profile-links") do %>
             <i class="fa fa-comment-o"></i>
-            <span id="user_microp" class="count"><%= @user.microposts.count %></span>
+            <span id="user_microp" class="count"><%= @user.microposts.size %></span>
             <span class="label-pf">Tweets</span>
         <% end %>
         <%= nav_link_to(articles_path + "?author=" + @user.id.to_s, class: "profile-links") do %>
             <i class="fa fa-pencil"></i>
-            <span class="count"><%= @user.articles.count %></span>
+            <span class="count"><%= @user.articles.size %></span>
             <span class="label-pf">Articles</span>
         <% end %>
         <%= nav_link_to(followers_user_path(@user), class: "profile-links") do %>
             <i class="fa fa-eye"></i>
-            <span id="followers" class="count"><%= @user.followers.count %></span>
+            <span id="followers" class="count"><%= @user.followers.size %></span>
             <span class="label-pf">Followers</span>
         <% end %>
         <%= nav_link_to(following_user_path(@user), class: "profile-links") do %>
             <i class="fa fa-eye"></i>
-            <span class="count"><%= @user.followed_users.count %></span>
+            <span class="count"><%= @user.followed_users.size %></span>
             <span class="label-pf">Following</span>
+        <% end %>
+        <%= nav_link_to(media_user_path(@user), class: "profile-links") do %>
+            <i class="fa fa-picture-o"></i>
+            <span class="count"><%= @user.microposts.where.not(mpost_picrute: nil).size %></span>
+            <span class="label-pf">Media</span>
         <% end %>
 	</div>
 </div>

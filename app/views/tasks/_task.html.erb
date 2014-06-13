@@ -17,8 +17,8 @@
 	<td class="task-prior"><%= priority %></td>
 	<td><%= task.due_date.to_date.to_formatted_s(:long) if task.due_date %></td>
 	<td class="task-note">
-		<% if task.note %>
-			<a href="" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<%= task.note %>"><i class="fa fa-file"></i></a>
+		<% if task.note? %>
+			<span href="" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<%= task.note %>"><i class="fa fa-file"></i></span>
 		<% end %>
 	</td>
 	<td class="del-task"><%= link_to set_icon("trash-o","fa"), [current_user, task], method: :delete, remote: true %></td>
