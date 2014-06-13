@@ -20,7 +20,7 @@
 		<% end %>
 
 		<% if feed_item.repost_author.present? %>
-			<% main_author = User.find_by(id: feed_item.repost_author) %>
+			<% main_author = feed_item.set_main_author #User.find_by(id: feed_item.repost_author) %>
 		<table cellpadding="0" cellspacing="0" class="published_by_wrap">
 			<tbody>
 				<tr>
@@ -61,17 +61,15 @@
 				</li>
 				<% if signed_in? && current_user %>
 				<% if current_user?(feed_item.user) || current_user.admin? %>
-    				<li class="action-reply delete"><%= link_to set_icon("times", "fa"), feed_item, method: :delete, confirm: 'Are you sure?', remote: true %></li>
+    				<li class="action-delete delete"><%= link_to set_icon("times", "fa"), feed_item, method: :delete, confirm: 'Are you sure?', remote: true %></li>
   				<% end %>
   				<% end %>
-  				<%# if !current_user?(feed_item.user) %>
-					<li class="action-reply">
-					<%= link_to set_icon("retweet", "fa") + "Repost", retweet_micropost_path(feed_item.id), method: :post %>&nbsp;<%= reposts if reposts > 0 %></li>
-				<%# end %>
+				<li class="action-repost <%= 'reposted' if feed_item.retweets.where(user_id: current_user.id).present? %>">
+				<%= link_to set_icon("retweet", "fa") + "Repost", retweet_micropost_path(feed_item.id), method: :post %>&nbsp;<%= reposts if reposts > 0 %></li>
 				<!--<li class="action-reply">
 					<a href="#"><i class="fa fa-star"></i><span>Favorite</span></a>
 				</li> -->
-				<li class="action-reply">
+				<li class="action-like <%= 'liked' if current_user.liked_for?(feed_item) %>">
 					<%= link_to set_icon("heart", "fa") + "Like", like_micropost_path(feed_item), remote: true, method: "post" %>&nbsp;<span class="likes-count"><%= likes if likes > 0 %></span>
 				</li>
 			</ul>

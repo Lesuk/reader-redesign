@@ -1,5 +1,9 @@
 <%= form_for([current_user, task], remote: true) do |f| %>
-  <%= f.check_box :completed, { id: dom_id(task), style: "float: left;margin-right: 5px;" } %>
-  <%= f.label task.id, task.title, { style: "float: left;margin-right: 10px;" } %>
-  <%= link_to "(remove)", [current_user, task], method: :delete, remote: true %>
+<div class="row-fluid">
+	<div class="checkbox check-success 	">
+		<%= f.check_box :completed, { id: dom_id(task), class: "todo-list" } %>
+		<%= f.label task.id, task.title, { class: "" } %>
+	</div>
+</div>
 <% end %>
+ <%#= link_to "(remove)", [current_user, task], method: :delete, remote: true %>

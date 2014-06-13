@@ -11,6 +11,7 @@
 //= require jquery-ui-1.10.1.custom.min
 //= require jquery.unveil.min
 //= require pace.min
+//= require bootstrap-datepicker
 //= require core
 //= require ckeditor/override
 //= require ckeditor/init
@@ -54,5 +55,19 @@ $(document).ready(function(){
   $("#message_recepient_id").select2({
     placeholder: "Choose a recipient",
   });
+
+  $( ".due_date" ).datepicker({ minDate: -1 });
+
+  $('.task-form .collapse, .task-form .expand').on('click', function () {
+    var el = jQuery(this).parents(".task-form").children(".task-form-body");
+    if (jQuery(this).hasClass("collapse")) {
+      jQuery(this).removeClass("collapse").addClass("expand");
+      el.slideUp(200);
+    } else {
+      jQuery(this).removeClass("expand").addClass("collapse");
+      el.slideDown(200);
+    }
+  });
+
 
 });

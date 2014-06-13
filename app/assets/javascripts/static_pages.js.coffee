@@ -1,5 +1,5 @@
 jQuery ->
-  $('#new_micropost').fileupload
+  $('#new_micropost_home').fileupload
     dataType: "script"
     add: (e, data) ->
       types = /(\.|\/)(gif|jpe?g|png)$/i

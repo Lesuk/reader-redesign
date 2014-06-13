@@ -1,28 +1,29 @@
-<h1>Tasks</h1>
+<% provide(:title, 'My Tasks') %>
+<div class="content white-bg users" role="main"> 
 
-<div class="row">
+	<header class="page-header-1">
+		<h1 class="entry-title">My Tasks</h1>
+	</header>
 
-	<%= render 'shared/sidebar' %>
-
-	<div id="tasks-list" class="span8">
-
-		<%= form_for([current_user, @task], remote: true) do |f| %>
-			<%= f.text_field :title %>
-			<%= f.text_field :note %>
-			<%= f.number_field :priority %>
-			<%= f.submit class: 'btn btn-default' %>
-		<% end %>
-
-		<h2>Incomplete Tasks</h2>
-		<div class="tasks" id="incomplete_tasks">
-			<%= render @tasks %>
+	<div class="task-form">
+		<div class="task-form-h">
+			<a href="javascript:;" class="expand">
+				<h4><i class="fa fa-plus"></i><span class="semi-bold">Add New task</span></h4>
+			</a>
 		</div>
-
-		<h2>Comlpete Tasks</h2>
-		<div class="tasks" id="complete_tasks">
-			<%= render @tasks_done %>
-		</div>		
-
+		<div class="task-form-body" style="overflow: hidden; display: none;">
+			<%= render "form" %>
+		</div>
 	</div>
+
+	<h2>Incomplete Tasks</h2>
+	<div class="tasks" id="incomplete_tasks">
+		<%= render @tasks %>
+	</div>
+
+	<h2>Comlpete Tasks</h2>
+	<div class="tasks" id="complete_tasks">
+		<%= render @tasks_done %>
+	</div>		
 
 </div>

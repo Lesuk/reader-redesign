@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611171843) do
+ActiveRecord::Schema.define(version: 20140612200109) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -183,8 +183,12 @@ ActiveRecord::Schema.define(version: 20140611171843) do
     t.integer  "priority",   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "due_date"
   end
 
+  add_index "tasks", ["due_date"], name: "index_tasks_on_due_date"
+  add_index "tasks", ["priority"], name: "index_tasks_on_priority"
+  add_index "tasks", ["title"], name: "index_tasks_on_title"
   add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
 
   create_table "users", force: true do |t|

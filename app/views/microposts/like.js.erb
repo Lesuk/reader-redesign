@@ -1,1 +1,6 @@
-$("#micropost_<%= @micropost.id %> .likes-count").html('<%= @likes %>');
+$("#micropost_<%= @micropost.id %> .likes-count").html('<%= @likes > 0 ? @likes : "" %>');
+<% if @liked %>
+	$('#micropost_<%= @micropost.id %> .action-like').removeClass('liked');
+<% else %>
+	$('#micropost_<%= @micropost.id %> .action-like').addClass('liked');
+<% end %>

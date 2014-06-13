@@ -7,7 +7,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="ModalWriteLabel">Create a micropost</h4>
       </div>
-      <%= form_for(@micropost) do |f| %>
+      <%= form_for(@micropost, remote: true, html: {id: "new_micropost_gl"}) do |f| %>
       	<div class="modal-body">
 			<%= render 'shared/error_messages', object: f.object %>
 			<div class="field">
@@ -31,5 +31,4 @@
     </div>
   </div>
 </div>
-
 <% end %>

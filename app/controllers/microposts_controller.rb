@@ -46,14 +46,14 @@ class MicropostsController < ApplicationController
 
 	def like
 		@micropost = Micropost.find(params[:id])
-		if current_user.liked_for?(@micropost)
+		@liked = current_user.liked_for?(@micropost)
+		if @liked
 		  like_reset
 		  @likes = @micropost.reputation_for(:mpost_likes).to_i
 		  respond_to do |format|
 		  	format.html{ redirect_to :back, notice: "Like reset!" }
 			format.js
 		  end
-		  
 		else
 		  @micropost.add_evaluation(:mpost_likes, 1, current_user)
 		  @likes = @micropost.reputation_for(:mpost_likes).to_i

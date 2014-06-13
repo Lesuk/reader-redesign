@@ -11,15 +11,3 @@
 	<%= f.label :body %>
 	<%= f.text_area :body, class: "form-control", rows: 5, placeholder: "Enter text..." %>
 </div>
-
-<% content_for :javascript do %>
-<script type='text/javascript' charset='UTF-8'>
-  $(document).ready(function(){
-    $('form[data-remote]').bind('ajax:before', function(){
-      for (instance in CKEDITOR.instances){
-        CKEDITOR.instances[instance].updateElement();
-      }
-    });
-  });
-</script>
-<% end %>

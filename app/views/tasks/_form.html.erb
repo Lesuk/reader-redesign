@@ -1,0 +1,31 @@
+<%= form_for([current_user, @task], remote: true, class: "form-inline") do |f| %>
+
+	<div class="form-group task-name">
+		<%= f.label :title, "Task name" %>
+		<%= f.text_field :title, class: "form-control" %>
+	</div>
+
+	<div class="form-group task-priority">
+		<%= f.label :priority, "Priority" %>
+		<%= f.select :priority, [['low', 0], ['medium', 1], ['high', 2]] , class: "form-control" %>
+	</div>
+
+	<div class="form-group input-append success date no-padding">
+		<div class="label-div">
+			<%= f.label :due_date, "Due by date" %>
+		</div>
+		<%= f.text_field :due_date, class: "form-control due_date" %>
+        <span class="add-on">
+        	<span class="arrow"></span><i class="fa fa-th"></i>
+        </span>
+    </div>
+
+	<div class="form-group">
+		<%= f.label :note, class: "sr-only" %>
+		<%= f.text_area :note, class: "form-control", rows: 3, placeholder: "Some notes to task..." %>
+	</div>
+	
+	<%= f.submit class: 'btn btn-default bl-c pull-right' %>
+	<div style="clear:both;"></div>
+
+<% end %>

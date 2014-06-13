@@ -6,7 +6,7 @@ class Micropost < ActiveRecord::Base
 	has_many :comments, as: :commentable
 	has_many :replies, foreign_key: "to_id", class_name: "Micropost"
 	has_many :retweets, class_name: "Micropost", foreign_key: "retweet_id"
-	has_reputation :mpost_likes, source: :user
+	has_reputation :mpost_likes, source: :user, dependent: :destroy
 	belongs_to :to, class_name: "User"
 	before_save :check_in_reply_to_scan
 	scope :from_users_followed_by_including_replies, -> (user) { followed_by_including_replies(user) }
@@ -58,7 +58,11 @@ class Micropost < ActiveRecord::Base
 	end
 
 	def repost_count(post_id)
-		Micropost.where(retweet_id: post_id).count
+		Micropost.where(retweet_id: post_id).size
+	end
+
+	def set_main_author
+		User.find_by("id == ?", self.repost_author)
 	end
 
 end
