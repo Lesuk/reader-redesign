@@ -1,47 +1,30 @@
-<% provide(:title, 'All videos') %>
-<h1>All videos</h1>
-<div class="row">
-	<%= render 'shared/sidebar' %>
+<% provide(:title, 'Videos') %>
+<div class="content white-bg videos" role="main"> 
+	
+	<header class="page-header-1">
+		<h1 class="entry-title">Videos</h1>
+		<%= link_to 'Add video', new_video_path, class: "btn btn-primary bl-c"  %>
+	</header>
 
-	<div class="span8">
-		<div class="navbar-inner">
-		<%= form_tag users_path, method: 'get', class: "navbar-search pull-left" do %>
-			<%= text_field_tag :search, params[:search], class: "search-query", placeholder: "Search video..." %>
-		<% end %>
-		<%= link_to 'Add video', new_video_path, {class: "btn", style: "float: right; margin-top: 5px;"}  %>
+	<%= form_tag videos_path, method: 'get', class: "form-inline" do %>
+		<div class="input-group transparent">
+			<span class="input-group-addon">
+				<i class="fa fa-search"></i>
+			</span>
+			<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search video..." %>
 		</div>
+	<% end %>
 
-		<% if @videos.any? %>
-		 
-		    <div id="player-wrapper"></div>
-		 
-		    <% @videos.in_groups_of(3) do |group| %>
+	<div id="11player-wrapper"></div>
 
-		        <% group.each do |video| %>
-		          <% if video %>
-		             <div id="<%= dom_id(video) %>" class="yt_video thumbnail" style="width: 300px; float: left;" >
-		                <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,
-		                              class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
-		 
-		                <div class="caption">
-		                  <h5><%= video.title %></h5>
-		                  <p>Author: <b><%= video.author %></b></p>
-		                  <p>Duration: <b><%= video.duration %></b></p>
-		                  <p>
-		                    <i class="icon-thumbs-up"></i> <%= video.likes %>
-		                    <i class="icon-thumbs-down"></i> <%= video.dislikes %>
-		                  </p>
-		                  <% if video.user_id %>
-		                  <span>Shared by: <%= link_to video.user.name, user_path(video.user) %></span>
-		                  <% end %>
-		                  | <span><%= link_to "delete", video, method: :delete, remote: true %></span>
-		                </div>
-		            </div>
-		          <% end %>
-		        <% end %>
-		      
-		    <% end %>
-		<% end %>
-		<%= will_paginate %>
-	</div>
+	<% if @videos.any? %>
+	
+		<ul id="videos">
+			<%= render @videos %>
+		</ul>
+
+		<%= will_paginate @videos %>
+
+	<% end %>
+
 </div>

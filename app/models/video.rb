@@ -24,15 +24,17 @@ private
 
 	def get_additional_info
 	    begin
-	      client = YouTubeIt::OAuth2Client.new(dev_key: 'AIzaSyCP5JsCq50Hf59z0Ce3gJONZFbLTFi_luo')
+	      client = YouTubeIt::OAuth2Client.new(dev_key: ENV["YT_API_KEY"])
 	      video = client.video_by(uid)
 	      self.title = video.title
 	      self.duration = parse_duration(video.duration)
 	      self.author = video.author.name
 	      self.likes = video.rating.likes
 	      self.dislikes = video.rating.dislikes
+	      self.published_at = video.published_at
+	      self.views = video.view_count
 	    rescue
-	      self.title = '' ; self.duration = '00:00:00' ; self.author = '' ; self.likes = 0 ; self.dislikes = 0
+	     # self.title = '' ; self.duration = '00:00:00' ; self.author = '' ; self.likes = 0 ; self.dislikes = 0; self.views = 0;
 	    end
   	end
 

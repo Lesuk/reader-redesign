@@ -1983,9 +1983,18 @@ font-family: 'Open Sans';
 	color: #345;
 }
 
+.page-header-1{
+	position: relative;
+}
+
 .page-header-1 .entry-title{
 	border-bottom: 1px solid #eee;
 	padding-bottom: 10px;	
+}
+.page-header-1 a{
+	position: absolute;
+	top: 3px;
+	right: 0px;
 }
 
 .rd-message h1.entry-title {
@@ -2307,7 +2316,8 @@ div.form-row {
 
 
 /* User Feed */
-#timeline{
+#timeline,
+#videos{
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
@@ -2372,6 +2382,13 @@ div.form-row {
 }
 .hentry-box:hover .entry-actions li.reposted a{
 	color: #6AA512;
+}
+
+.hentry-box .entry-actions li.action-video{
+	float: left;
+}
+.hentry-box .entry-actions li.action-video a{
+	color: #0084B4;
 }
 
 .hentry-box .time{
@@ -2458,19 +2475,26 @@ input[readonly] {
 	margin-right: 7px;
 }
 
-div.upload-h,
-div.upload-m {
-	padding: 9px 20px;
+.embed-video{
+	position: relative;
+	padding-bottom: 57%;
+	height: 0px;
+	overflow: hidden;
+	width: 100%;
 }
-.upload-h div.progress-h,
-.upload-m div.progress-m {
-	margin: 0;
-	height: 8px;
+.embed-video iframe,
+.embed-video object,
+.embed-video embed{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	padding: 7px;
 }
-.bar-h,
-.bar-m {
-    height: 8px;
-    background: green;
+.entry-actions ul li.action-video a i{
+	font-size: 13px;
 }
 
 #new_micropost_home .btn-success{
@@ -2521,10 +2545,12 @@ div.upload-m {
 .entry-thumb{
 	margin-bottom: 10px;
 	text-align: center;
+	position: relative;
 }
 .entry-thumb img{
 	width: 100%;
 }
+
 .mpost-container .entry-thumb img {
 height: auto;
 width: auto;
@@ -4040,6 +4066,80 @@ form legend,
    border-top: 0;
 }
 
+/* Videos */
+#videos{
+	margin-top: 30px;
+}
+#videos li{
+	display: inline-block;
+	width: 230px;
+	position: relative;
+	margin: 0 15px 30px 0;
+	padding: 0;
+	word-wrap: break-word;
+}
+#videos li:nth-child(3n+3){
+	margin-right: 0;
+}
+#videos li img{
+	border-radius: 3px;
+}
+
+span.video-duration {
+	position: absolute;
+	bottom: 2px;
+	right: 8px;
+	color: white;
+	font-weight: bold;
+}
+#videos h5 {
+	margin: 0;
+	font-weight: 600;
+	line-height: 1.4em;
+}
+
+div.video-author {
+	color: #5F5F5F;
+	margin-top: 4px;
+}
+div.video-author a {
+	color: #5F5F5F;
+}
+div.video-author a:hover {
+	text-decoration: underline;
+}
+.video-info {
+	color: #9E9E9E;
+	position: relative;
+}
+.video-info span:first-child {
+	padding-right: 8px;
+}
+.video-info span:last-child {
+	padding-left: 8px;
+}
+.video-info a {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: #F18383;
+}
+
+div.video-likes {
+margin-top: 2px;
+}
+.video-likes span:first-child {
+margin-right: 15px;
+color: #60A35D;
+}
+.video-likes span:last-child {
+color: #C36F6F;
+}
+#videos i.fa-thumbs-o-up, #videos i.fa-thumbs-o-down {
+padding-right: 6px;
+}
+
+
 
 /*** General Users  List ***/
 #search{
@@ -4053,13 +4153,15 @@ form legend,
 	border-top: 1px solid #eee;
 }
 
-.users .page-header-1 .entry-title{
+.users .page-header-1 .entry-title,
+.videos .page-header-1 .entry-title{
 	margin-bottom: 0;
 }
 
-.users form.form-inline {
-background-color: rgb(250, 250, 250);
-padding: 15px 0px 15px 15px;
+.users form.form-inline,
+.videos form.form-inline{
+	background-color: rgb(250, 250, 250);
+	padding: 15px 0px 15px 15px;
 }
 
 .user-info-wrapper{
@@ -7600,12 +7702,26 @@ table.fc-border-separate{
 	/*overflow: hidden;*/
 }
 .profile-box .profile-header{
+	position: relative;
 	height: 180px;
 	margin-top: 0px;
 	background-color: #F5F5F5;
 	background-position-y: 50%;
 	box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1);
 }
+
+.profile-box .profile-header::after {
+	background: url(<%= asset_path 'shadow.png' %>) repeat-x left 0 bottom -2px;
+	border: 1px solid rgba(0, 0, 0, .25);
+	border-width: 0 1px 1px 1px;
+	bottom: 0;
+	content: '';
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
 .profile-box .profile-header .bottom-right{
 	bottom: 50px;
 }
@@ -7614,7 +7730,7 @@ table.fc-border-separate{
 }
 
 .profile-box .profile-header .profile-avatar{
-	bottom: 15px;
+	bottom: -35px;
 	left: 10px;
 	position: absolute;
 	transition: bottom .3s;

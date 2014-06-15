@@ -2,7 +2,7 @@
 
 <div class="profile-box">
 
-	<div class="profile-header" style="background: url(<%= asset_path 'default_bckg6.png' %>) no-repeat;">
+	<div class="profile-header" style="background: url(<%= asset_path 'default_bckg2.png' %>) no-repeat;">
 
 		<div class="profile-avatar">
             <%= image_tag(@user.avatar_url(:thumb), size: "100x100") %>
@@ -40,7 +40,7 @@
         <% end %>
         <%= nav_link_to(media_user_path(@user), class: "profile-links") do %>
             <i class="fa fa-picture-o"></i>
-            <span class="count"><%= @user.microposts.where.not(mpost_picrute: nil).size %></span>
+            <span class="count"><%= @user.microposts.where(media: true).size %></span>
             <span class="label-pf">Media</span>
         <% end %>
 	</div>

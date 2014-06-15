@@ -57,6 +57,13 @@
 			<ul>
 				<% likes = feed_item.reputation_for(:mpost_likes).to_i %>
 				<% reposts = feed_item.repost_count(feed_item.id) %>
+
+				<% if feed_item.video %>
+				<li class="action-video">
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#video<%= feed_item.id %>"><i class="fa fa-youtube-play"></i>watch video</a>
+				</li>
+				<% end %>
+
 				<li class="action-reply">
 					<a href="#"><i class="fa fa-reply"></i><span>Reply</span></a>
 				</li>
@@ -75,5 +82,14 @@
 				</li>
 			</ul>
 		</footer>
+
+		<% if feed_item.video %>
+		<div class="entry-video">
+			<div id="video<%= feed_item.id %>" class="embed-video panel-collapse collapse">
+  				<%= embed(feed_item.video) %>
+  			</div>
+  		</div>
+  		<% end %>
+
 	</div>
 </li>

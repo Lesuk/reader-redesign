@@ -9,11 +9,14 @@ class Micropost < ActiveRecord::Base
 	has_reputation :mpost_likes, source: :user, dependent: :destroy
 	belongs_to :to, class_name: "User"
 	before_save :check_in_reply_to_scan
+	before_save :check_yt_video
+	before_save :check_media
 	scope :from_users_followed_by_including_replies, -> (user) { followed_by_including_replies(user) }
 
 	mount_uploader :mpost_picrute, MPicruteUploader
 
 	@@reply_to_regexp = /@([A-Za-z0-9_]{1,15})/ #/\A@([^\s]*)/
+	YOUTUBE_LINK_FORMAT = /\A.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i
 
 	# Повертає мікропости від користувачів, за якими стежить даний користувач
 	def self.from_users_followed_by(user)
@@ -26,13 +29,6 @@ class Micropost < ActiveRecord::Base
 		where("user_id IN (#{followed_ids}) OR user_id = :user_id OR to_id = :user_id", user_id: user.id )
 	end
 
-	def check_in_reply_to
-		if match = @@reply_to_regexp.match(content)
-			user = User.find_by_login(match[1].downcase)
-			self.to = user if user
-		end
-	end
-
 	def check_in_reply_to_scan
 		check_dog = content.scan(@@reply_to_regexp)
 		if check_dog
@@ -41,6 +37,22 @@ class Micropost < ActiveRecord::Base
 				self.to = user if user
 			end
 			content.gsub!(@@reply_to_regexp, '<a href="users/\1">@\1</a>')
+		end
+	end
+
+	def check_yt_video
+		check = content.match(YOUTUBE_LINK_FORMAT)
+		if check && check[2]
+			id = check[2].first(11) 
+		end
+	    if id && id.to_s.length == 11
+	    	self.video = id
+	    end
+	end
+
+	def check_media
+		if self.mpost_picrute || self.video
+			self.media = true
 		end
 	end
 

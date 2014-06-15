@@ -6,6 +6,7 @@
 		<p class="menu-title">BROWSE</p>
 		<%= nav_link_to set_icon("home", "fa") + "Home", root_path, {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 		<%= nav_link_to set_icon("font", "fa") + "Articles", articles_path, {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
+		<%= nav_link_to set_icon("youtube-play", "fa") + "Videos", videos_path, {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 		<%= nav_link_to set_icon("user", "fa") + "Users", users_path, {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 	</ul>
 
@@ -23,8 +24,7 @@
 		<%= nav_link_to set_icon("star-o", "fa") + "Favorites", "#", {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 		<%= nav_link_to set_icon("users", "fa") + "Friends", following_user_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 		<%= nav_link_to set_icon("list-ul", "fa") + "Tasks", user_tasks_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
-		<%= nav_link_to set_icon("youtube-play", "fa") + "Videos", videos_path, {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
-		<%= nav_link_to set_icon("picture-o", "fa") + "Gallery", media_user_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
+		<%= nav_link_to set_icon("picture-o", "fa") + "Media", media_user_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 	</ul>
 	<% end %>
 

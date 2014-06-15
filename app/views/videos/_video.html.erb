@@ -1,0 +1,19 @@
+<li id="<%= dom_id(video) %>"> 
+	<div class="entry-thumb">
+		<%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,
+                  class: 'yt_preview', :"data-uid" => video.uid %>
+        <span class="video-duration"><%= video.duration %></span>
+	</div>
+	<h5><%= video.title %></h5>
+	<div class="video-author">Shared by: <%= link_to video.user.name, user_path(video.user) %></div>
+	<div class="video-info">
+		<span><%= time_ago_in_words(video.published_at) + " ago" if video.published_at %></span>&middot;<span><%= video.views %> views</span>
+	<% if current_user?(video.user) %>
+		<div><%= link_to set_icon("times", "fa"), video, method: :delete, remote: true, class: "remove" %></div>
+	<% end %>
+	</div>
+	<div class="video-likes">
+	    <span><i class="fa fa-thumbs-o-up"></i><%= video.likes %></span>
+	    <span><i class="fa fa-thumbs-o-down"></i><%= video.dislikes %></span>
+	</div>
+</li>

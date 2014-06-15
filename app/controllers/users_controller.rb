@@ -66,7 +66,7 @@ class UsersController < ApplicationController
 
 	def media
 		@user = User.find_by_login(params[:id])
-		@microposts = @user.microposts.where.not(mpost_picrute: nil).paginate(page: params[:page], per_page: 20)
+		@microposts = @user.microposts.where(media: true).paginate(page: params[:page], per_page: 20)
 	end
 
 	private

@@ -12,3 +12,23 @@
 [2014-06-15 08:19:13,536][INFO ][node                     ] [Entropic Man] {0.20.6}[828]: stopped
 [2014-06-15 08:19:13,536][INFO ][node                     ] [Entropic Man] {0.20.6}[828]: closing ...
 [2014-06-15 08:19:13,556][INFO ][node                     ] [Entropic Man] {0.20.6}[828]: closed
+[2014-06-15 16:24:32,192][INFO ][node                     ] [Baphomet] {0.20.6}[5122]: initializing ...
+[2014-06-15 16:24:32,218][INFO ][plugins                  ] [Baphomet] loaded [], sites []
+[2014-06-15 16:24:39,424][INFO ][node                     ] [Baphomet] {0.20.6}[5122]: initialized
+[2014-06-15 16:24:39,425][INFO ][node                     ] [Baphomet] {0.20.6}[5122]: starting ...
+[2014-06-15 16:24:39,912][INFO ][transport                ] [Baphomet] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-15 16:24:42,980][INFO ][cluster.service          ] [Baphomet] new_master [Baphomet][cEyCYSg7Try1DK6NYysBPQ][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-15 16:24:43,020][INFO ][discovery                ] [Baphomet] elasticsearch/cEyCYSg7Try1DK6NYysBPQ
+[2014-06-15 16:24:43,105][INFO ][http                     ] [Baphomet] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-15 16:24:43,105][INFO ][node                     ] [Baphomet] {0.20.6}[5122]: started
+[2014-06-15 16:24:45,212][INFO ][gateway                  ] [Baphomet] recovered [1] indices into cluster_state
+[2014-06-15 17:39:55,005][INFO ][node                     ] [Red Ronin] {0.20.6}[6320]: initializing ...
+[2014-06-15 17:39:55,023][INFO ][plugins                  ] [Red Ronin] loaded [], sites []
+[2014-06-15 17:40:02,335][INFO ][node                     ] [Red Ronin] {0.20.6}[6320]: initialized
+[2014-06-15 17:40:02,335][INFO ][node                     ] [Red Ronin] {0.20.6}[6320]: starting ...
+[2014-06-15 17:40:02,964][INFO ][transport                ] [Red Ronin] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-15 17:40:06,078][INFO ][cluster.service          ] [Red Ronin] new_master [Red Ronin][UGhFCUacScGSa-fUVf6ybA][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-15 17:40:06,167][INFO ][discovery                ] [Red Ronin] elasticsearch/UGhFCUacScGSa-fUVf6ybA
+[2014-06-15 17:40:06,220][INFO ][http                     ] [Red Ronin] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-15 17:40:06,221][INFO ][node                     ] [Red Ronin] {0.20.6}[6320]: started
+[2014-06-15 17:40:08,332][INFO ][gateway                  ] [Red Ronin] recovered [1] indices into cluster_state

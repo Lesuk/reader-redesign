@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140615102736) do
+ActiveRecord::Schema.define(version: 20140615181721) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -105,8 +105,11 @@ ActiveRecord::Schema.define(version: 20140615102736) do
     t.integer  "repost_author"
     t.string   "mtitle"
     t.string   "mlink"
+    t.string   "video"
+    t.boolean  "media",         default: false
   end
 
+  add_index "microposts", ["media"], name: "index_microposts_on_media"
   add_index "microposts", ["retweet_id"], name: "index_microposts_on_retweet_id"
   add_index "microposts", ["to_id"], name: "index_microposts_on_to_id"
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
@@ -220,6 +223,8 @@ ActiveRecord::Schema.define(version: 20140615102736) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "uid"
+    t.datetime "published_at"
+    t.string   "views"
   end
 
   add_index "videos", ["uid"], name: "index_videos_on_uid"

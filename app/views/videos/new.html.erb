@@ -1,15 +1,29 @@
-<div class="container">
-  <h1>New video</h1>
+<% provide(:title, 'Add Video') %>
+<div class="content white-bg" role="main"> 
+  
+  <header class="page-header-1">
+    <h1 class="entry-title">Add Video</h1>
+  </header>
  
   <%= form_for @video do |f| %>
+
     <%= render 'shared/error_messages', object: @video %>
- 
-    <div class="form-group">
-      <%= f.label :link %>
-      <%= f.text_field :link, class: 'form-control', required: true %>
-      <span class="help-block">A link to the video on YouTube.</span>
+
+    <div class="row">
+      <div class="form-group col-md-8">
+        <%= f.label :link, class: "form-label" %>
+        <div class="controls">
+          <%= f.text_field :link, class: "form-control", required: true %>
+        </div>
+        <span class="help-block">A link to the video on YouTube.</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <%= f.submit "Add video", class: "btn btn-primary btn-cons bl-c" %>
+      </div>
     </div>
  
-    <%= f.submit class: 'btn btn-default' %>
   <% end %>
 </div>

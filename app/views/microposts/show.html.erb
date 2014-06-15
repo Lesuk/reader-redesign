@@ -59,6 +59,13 @@
 				<ul>
 					<% likes = @micropost.reputation_for(:mpost_likes).to_i %>
 					<% reposts = @micropost.repost_count(@micropost.id) %>
+
+					<% if @micropost.video %>
+					<li class="action-video">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#video<%= @micropost.id %>"><i class="fa fa-youtube-play"></i>watch video</a>
+					</li>
+					<% end %>
+
 					<li class="action-reply">
 						<a href="#"><i class="fa fa-reply"></i><span>Reply</span></a>
 					</li>
@@ -77,6 +84,15 @@
 					</li>
 				</ul>
 			</footer>
+
+			<% if @micropost.video %>
+			<div class="entry-video">
+				<div id="video<%= @micropost.id %>" class="embed-video panel-collapse collapse">
+	  				<%= embed(@micropost.video) %>
+	  			</div>
+	  		</div>
+	  		<% end %>
+
 		</div>
 	</div>
 
