@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612200109) do
+ActiveRecord::Schema.define(version: 20140614181638) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -89,9 +89,9 @@ ActiveRecord::Schema.define(version: 20140612200109) do
     t.integer  "recepient_id"
     t.string   "subject"
     t.text     "body"
-    t.boolean  "read",         default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "read",         default: false
   end
 
   create_table "microposts", force: true do |t|

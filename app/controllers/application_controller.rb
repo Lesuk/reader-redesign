@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   	end
 
     def count_mess
-      @count_mess = Message.where(recepient_id: current_user, read: nil).count
+      @count_mess = Message.where(recepient_id: current_user, read: false).count
     end
   
 end

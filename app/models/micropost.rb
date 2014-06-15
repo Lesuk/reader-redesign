@@ -65,4 +65,8 @@ class Micropost < ActiveRecord::Base
 		User.find_by("id == ?", self.repost_author)
 	end
 
+	def original_mpost
+		Micropost.find_by(id: self.retweet_id)
+	end
+
 end

@@ -35,19 +35,19 @@
 			<ul class="art-box">
 				<% rate = article.reputation_for(:votes).to_i %>
 				<% watches = article.postviews.uniq_by {|i| i.guest_ip }.count %>
-				<li class="action-reply">Tags: 
+				<li>Tags: 
                 	<%= raw article.categories.map(&:name).map{|t| link_to t, category_path(t) }.join(', ') %>
                 </li>
 
-                <li class="action-reply">
+                <li>
                     <a href="<%= article_path(article) + '#comments' %>"><i class="fa fa-comments-o"></i><span><%= article.comments.count %></span></a>
                 </li>
 
-                <li class="action-reply">
+                <li>
                     <a href="#"><i class="fa fa-thumbs-o-up"></i><span><%= rate %></span></a>
                 </li>
 
-                <li class="action-reply">
+                <li>
                     <a href="#"><i class="fa fa-eye"></i><span><%= watches %></span></a>
                 </li>
 			</ul>

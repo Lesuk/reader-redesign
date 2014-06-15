@@ -1,6 +1,7 @@
 <li id="<%= dom_id(feed_item) %>" class="animated fadeInUp">
 	<div class="hentry-box">
-		<small class="time"><span class="_timestamp"><%= time_ago_in_words(feed_item.created_at) %> ago.</span></small>
+		<% mpost_link_object = feed_item.retweet_id? ? feed_item.original_mpost : feed_item %>
+		<small class="time"><span class="_timestamp"><%= link_to time_ago_in_words(feed_item.created_at) + " ago.", micropost_path(mpost_link_object) %></span></small>
 
 		<div class="entry-user">
 			<div class="user">
@@ -14,7 +15,7 @@
 
 		<% if feed_item.mpost_picrute? %>
 		<figure class="entry-thumb">
-			<% link = feed_item.mlink ? feed_item.mlink : feed_item.mpost_picrute_url.to_s %>
+			<% link = feed_item.mpost_picrute_url.to_s %>
 			<%= link_to(image_tag(feed_item.mpost_picrute_url(:mthumb), size: "400x226", class: "entry-img"), link) %>
 		</figure>
 		<% end %>

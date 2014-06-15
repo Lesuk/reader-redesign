@@ -10,7 +10,7 @@ ReaderRor::Application.routes.draw do
     resources :comments
     member {post :vote}
   end
-  resources :microposts, only: [:create, :destroy] do
+  resources :microposts, only: [:show, :create, :destroy] do
     resources :comments
     member do
       post :retweet
