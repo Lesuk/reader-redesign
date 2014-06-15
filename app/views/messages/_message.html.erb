@@ -1,7 +1,7 @@
 <% usr_id = type == "sender" ? message.sender_id : message.recepient_id %>
 <% user = User.find_by(id: usr_id) %>
-<tr class="<%= p "read" if message.read %>">
-  <td class="center-text"><% if !message.read %><span class="badge badge-warning">&nbsp;</span><% end %></td>
+<tr class="<%= p "read" if message.read == 1 %>">
+  <td class="center-text"><% if message.read == 0 %><span class="badge badge-warning">&nbsp;</span><% end %></td>
   <td class="user-avt"><%= image_tag(user.avatar_url(:lthumb), size: "30x30") %></td>
   <td class="clickable v-align-middle"><a href="<%= user_path(user) %>"><b><%= user.name %></b></a></td>
   <td class="clickable tablefull v-align-middle"><a href="<%= message_path(message) %>"><b><%= message.subject %></b>&nbsp;&nbsp;<span class="muted"><%= truncate(message.body.html_safe, length: 70, separator: ' ', escape: false) %></span></a></td>
