@@ -4073,29 +4073,39 @@ form legend,
 #videos li{
 	display: inline-block;
 	width: 230px;
+	min-height: 264px;
 	position: relative;
 	margin: 0 15px 30px 0;
 	padding: 0;
 	word-wrap: break-word;
+	vertical-align: top;
 }
 #videos li:nth-child(3n+3){
 	margin-right: 0;
 }
 #videos li img{
 	border-radius: 3px;
+	cursor: pointer;
 }
 
 span.video-duration {
 	position: absolute;
 	bottom: 2px;
-	right: 8px;
-	color: white;
+	right: 3px;
+	padding: 0 4px;
+	height: 14px;
+	line-height: 14px;
 	font-weight: bold;
+	font-size: 11px;
+	background-color: #000;
+	color: #fff!important;
+	opacity: .8;
 }
 #videos h5 {
 	margin: 0;
 	font-weight: 600;
 	line-height: 1.4em;
+	cursor: pointer;
 }
 
 div.video-author {
@@ -4123,6 +4133,13 @@ div.video-author a:hover {
 	bottom: 0;
 	right: 0;
 	color: #F18383;
+}
+
+#player-wrapper{
+	height: 487px;
+}
+div.modal-video {
+	height: 530px;
 }
 
 div.video-likes {

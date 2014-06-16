@@ -55,8 +55,8 @@
 
 		<footer class="entry-actions">
 			<ul>
-				<% likes = feed_item.reputation_for(:mpost_likes).to_i %>
-				<% reposts = feed_item.repost_count(feed_item.id) %>
+				<% #likes = feed_item.reputation_for(:mpost_likes).to_i %>
+				<% #reposts = feed_item.repost_count(feed_item.id).to_i %>
 
 				<% if feed_item.video %>
 				<li class="action-video">
@@ -73,12 +73,12 @@
   				<% end %>
   				<% end %>
 				<li class="action-repost <%= 'reposted' if feed_item.retweets.where(user_id: current_user.id).present? %>">
-				<%= link_to set_icon("retweet", "fa") + "Repost", retweet_micropost_path(feed_item.id), method: :post %>&nbsp;<%= reposts if reposts > 0 %></li>
+				<%= link_to set_icon("retweet", "fa") + "Repost", retweet_micropost_path(feed_item.id), method: :post %>&nbsp;<%#= reposts if reposts > 0 %></li>
 				<!--<li class="action-reply">
 					<a href="#"><i class="fa fa-star"></i><span>Favorite</span></a>
 				</li> -->
 				<li class="action-like <%= 'liked' if current_user.liked_for?(feed_item) %>">
-					<%= link_to set_icon("heart", "fa") + "Like", like_micropost_path(feed_item), remote: true, method: "post" %>&nbsp;<span class="likes-count"><%= likes if likes > 0 %></span>
+					<%= link_to set_icon("heart", "fa") + "Like", like_micropost_path(feed_item), remote: true, method: "post" %>&nbsp;<span class="likes-count"><%#= likes if likes > 0 %></span>
 				</li>
 			</ul>
 		</footer>
