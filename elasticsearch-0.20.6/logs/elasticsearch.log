@@ -1,15 +1,10 @@
-[2014-06-16 07:28:12,005][INFO ][node                     ] [Enchantress] {0.20.6}[825]: initializing ...
-[2014-06-16 07:28:12,025][INFO ][plugins                  ] [Enchantress] loaded [], sites []
-[2014-06-16 07:28:18,187][INFO ][node                     ] [Enchantress] {0.20.6}[825]: initialized
-[2014-06-16 07:28:18,188][INFO ][node                     ] [Enchantress] {0.20.6}[825]: starting ...
-[2014-06-16 07:28:18,858][INFO ][transport                ] [Enchantress] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-16 07:28:21,896][INFO ][cluster.service          ] [Enchantress] new_master [Enchantress][Ge4V_HXHQ0GniFui5luBtw][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-16 07:28:21,929][INFO ][discovery                ] [Enchantress] elasticsearch/Ge4V_HXHQ0GniFui5luBtw
-[2014-06-16 07:28:21,952][INFO ][http                     ] [Enchantress] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-16 07:28:21,953][INFO ][node                     ] [Enchantress] {0.20.6}[825]: started
-[2014-06-16 07:28:22,872][INFO ][monitor.jvm              ] [Enchantress] [gc][ParNew][4][2] duration [822ms], collections [1]/[1.6s], total [822ms]/[971ms], memory [64.6mb]->[20mb]/[989.8mb], all_pools {[Code Cache] [822.1kb]->[819.5kb]/[48mb]}{[Par Eden Space] [49.5mb]->[748.8kb]/[273mb]}{[Par Survivor Space] [8.4mb]->[8.3mb]/[34.1mb]}{[CMS Old Gen] [6.5mb]->[10.9mb]/[682.6mb]}{[CMS Perm Gen] [21.3mb]->[22.2mb]/[82mb]}
-[2014-06-16 07:28:25,892][INFO ][gateway                  ] [Enchantress] recovered [1] indices into cluster_state
-[2014-06-16 08:24:57,588][INFO ][node                     ] [Enchantress] {0.20.6}[825]: stopping ...
-[2014-06-16 08:24:57,712][INFO ][node                     ] [Enchantress] {0.20.6}[825]: stopped
-[2014-06-16 08:24:57,712][INFO ][node                     ] [Enchantress] {0.20.6}[825]: closing ...
-[2014-06-16 08:24:57,757][INFO ][node                     ] [Enchantress] {0.20.6}[825]: closed
+[2014-06-17 14:27:48,037][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: initializing ...
+[2014-06-17 14:27:48,047][INFO ][plugins                  ] [Hrimhari] loaded [], sites []
+[2014-06-17 14:27:54,878][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: initialized
+[2014-06-17 14:27:54,878][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: starting ...
+[2014-06-17 14:27:54,995][INFO ][transport                ] [Hrimhari] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-17 14:27:58,034][INFO ][cluster.service          ] [Hrimhari] new_master [Hrimhari][nE6OucqZTAWfBSZglXTseA][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-17 14:27:58,070][INFO ][discovery                ] [Hrimhari] elasticsearch/nE6OucqZTAWfBSZglXTseA
+[2014-06-17 14:27:58,098][INFO ][http                     ] [Hrimhari] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-17 14:27:58,099][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: started
+[2014-06-17 14:28:00,916][INFO ][gateway                  ] [Hrimhari] recovered [1] indices into cluster_state
