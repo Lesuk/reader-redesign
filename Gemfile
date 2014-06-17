@@ -22,7 +22,7 @@ group :test do
 end
 
 gem 'rails_autolink'
-gem 'sass-rails', '>= 3.2'
+gem 'sass-rails'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails', '3.0.4'

@@ -1483,7 +1483,7 @@ span.iconset{
 	position:relative;
 }
  
-/
+
 .bubble {
 	position: relative;
 	width: 165px;
@@ -2465,8 +2465,10 @@ input[readonly] {
 	width: 320px !important;
 }
 #new_task input[readonly] {
+	border: inherit;
 	background-color: rgba(255, 255, 255, 0) !important;
 	cursor: text !important;
+	width: 135px !important;
 }
 .new-msg input[readonly] {
 	width: 220px !important;
@@ -2619,6 +2621,7 @@ color: #6AA512;
 	position: absolute;
 	top: 4px;
 	right: 4px;
+	z-index: 25;
 }
 .entry-actions ul li a{
 	color: #D4DCE2; 
@@ -6733,7 +6736,7 @@ border-bottom-left-radius: 2px;
 .input-append .add-on, .input-prepend .add-on{
 	position:absolute;
 	background-color:#D1DADE;
-	color:##5E5E5E;
+	color:#5E5E5E;
 	text-shadow:none;
 	border:#D1DADE;
 	border-radius: 0 2px 2px 0;
@@ -7740,7 +7743,7 @@ table.fc-border-separate{
 }
 
 .profile-box .profile-header .bottom-right{
-	bottom: 50px;
+	bottom: 0px;
 }
 .profile-box .profile-header .btn-primary{
 	background-color: #00aed9;

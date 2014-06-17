@@ -1,34 +1,15 @@
-[2014-06-15 08:05:13,061][INFO ][node                     ] [Entropic Man] {0.20.6}[828]: initializing ...
-[2014-06-15 08:05:13,070][INFO ][plugins                  ] [Entropic Man] loaded [], sites []
-[2014-06-15 08:05:20,953][INFO ][node                     ] [Entropic Man] {0.20.6}[828]: initialized
-[2014-06-15 08:05:20,953][INFO ][node                     ] [Entropic Man] {0.20.6}[828]: starting ...
-[2014-06-15 08:05:21,062][INFO ][transport                ] [Entropic Man] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-15 08:05:24,098][INFO ][cluster.service          ] [Entropic Man] new_master [Entropic Man][D6e7peD8TwSVPvP3PH5hrQ][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-15 08:05:24,134][INFO ][discovery                ] [Entropic Man] elasticsearch/D6e7peD8TwSVPvP3PH5hrQ
-[2014-06-15 08:05:24,157][INFO ][http                     ] [Entropic Man] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-15 08:05:24,158][INFO ][node                     ] [Entropic Man] {0.20.6}[828]: started
-[2014-06-15 08:05:26,024][INFO ][gateway                  ] [Entropic Man] recovered [1] indices into cluster_state
-[2014-06-15 08:19:13,455][INFO ][node                     ] [Entropic Man] {0.20.6}[828]: stopping ...
-[2014-06-15 08:19:13,536][INFO ][node                     ] [Entropic Man] {0.20.6}[828]: stopped
-[2014-06-15 08:19:13,536][INFO ][node                     ] [Entropic Man] {0.20.6}[828]: closing ...
-[2014-06-15 08:19:13,556][INFO ][node                     ] [Entropic Man] {0.20.6}[828]: closed
-[2014-06-15 16:24:32,192][INFO ][node                     ] [Baphomet] {0.20.6}[5122]: initializing ...
-[2014-06-15 16:24:32,218][INFO ][plugins                  ] [Baphomet] loaded [], sites []
-[2014-06-15 16:24:39,424][INFO ][node                     ] [Baphomet] {0.20.6}[5122]: initialized
-[2014-06-15 16:24:39,425][INFO ][node                     ] [Baphomet] {0.20.6}[5122]: starting ...
-[2014-06-15 16:24:39,912][INFO ][transport                ] [Baphomet] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-15 16:24:42,980][INFO ][cluster.service          ] [Baphomet] new_master [Baphomet][cEyCYSg7Try1DK6NYysBPQ][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-15 16:24:43,020][INFO ][discovery                ] [Baphomet] elasticsearch/cEyCYSg7Try1DK6NYysBPQ
-[2014-06-15 16:24:43,105][INFO ][http                     ] [Baphomet] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-15 16:24:43,105][INFO ][node                     ] [Baphomet] {0.20.6}[5122]: started
-[2014-06-15 16:24:45,212][INFO ][gateway                  ] [Baphomet] recovered [1] indices into cluster_state
-[2014-06-15 17:39:55,005][INFO ][node                     ] [Red Ronin] {0.20.6}[6320]: initializing ...
-[2014-06-15 17:39:55,023][INFO ][plugins                  ] [Red Ronin] loaded [], sites []
-[2014-06-15 17:40:02,335][INFO ][node                     ] [Red Ronin] {0.20.6}[6320]: initialized
-[2014-06-15 17:40:02,335][INFO ][node                     ] [Red Ronin] {0.20.6}[6320]: starting ...
-[2014-06-15 17:40:02,964][INFO ][transport                ] [Red Ronin] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-15 17:40:06,078][INFO ][cluster.service          ] [Red Ronin] new_master [Red Ronin][UGhFCUacScGSa-fUVf6ybA][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-15 17:40:06,167][INFO ][discovery                ] [Red Ronin] elasticsearch/UGhFCUacScGSa-fUVf6ybA
-[2014-06-15 17:40:06,220][INFO ][http                     ] [Red Ronin] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-15 17:40:06,221][INFO ][node                     ] [Red Ronin] {0.20.6}[6320]: started
-[2014-06-15 17:40:08,332][INFO ][gateway                  ] [Red Ronin] recovered [1] indices into cluster_state
+[2014-06-16 07:28:12,005][INFO ][node                     ] [Enchantress] {0.20.6}[825]: initializing ...
+[2014-06-16 07:28:12,025][INFO ][plugins                  ] [Enchantress] loaded [], sites []
+[2014-06-16 07:28:18,187][INFO ][node                     ] [Enchantress] {0.20.6}[825]: initialized
+[2014-06-16 07:28:18,188][INFO ][node                     ] [Enchantress] {0.20.6}[825]: starting ...
+[2014-06-16 07:28:18,858][INFO ][transport                ] [Enchantress] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-16 07:28:21,896][INFO ][cluster.service          ] [Enchantress] new_master [Enchantress][Ge4V_HXHQ0GniFui5luBtw][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-16 07:28:21,929][INFO ][discovery                ] [Enchantress] elasticsearch/Ge4V_HXHQ0GniFui5luBtw
+[2014-06-16 07:28:21,952][INFO ][http                     ] [Enchantress] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-16 07:28:21,953][INFO ][node                     ] [Enchantress] {0.20.6}[825]: started
+[2014-06-16 07:28:22,872][INFO ][monitor.jvm              ] [Enchantress] [gc][ParNew][4][2] duration [822ms], collections [1]/[1.6s], total [822ms]/[971ms], memory [64.6mb]->[20mb]/[989.8mb], all_pools {[Code Cache] [822.1kb]->[819.5kb]/[48mb]}{[Par Eden Space] [49.5mb]->[748.8kb]/[273mb]}{[Par Survivor Space] [8.4mb]->[8.3mb]/[34.1mb]}{[CMS Old Gen] [6.5mb]->[10.9mb]/[682.6mb]}{[CMS Perm Gen] [21.3mb]->[22.2mb]/[82mb]}
+[2014-06-16 07:28:25,892][INFO ][gateway                  ] [Enchantress] recovered [1] indices into cluster_state
+[2014-06-16 08:24:57,588][INFO ][node                     ] [Enchantress] {0.20.6}[825]: stopping ...
+[2014-06-16 08:24:57,712][INFO ][node                     ] [Enchantress] {0.20.6}[825]: stopped
+[2014-06-16 08:24:57,712][INFO ][node                     ] [Enchantress] {0.20.6}[825]: closing ...
+[2014-06-16 08:24:57,757][INFO ][node                     ] [Enchantress] {0.20.6}[825]: closed

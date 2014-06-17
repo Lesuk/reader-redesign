@@ -64,7 +64,7 @@ class Micropost < ActiveRecord::Base
 		else
 			retweeter.microposts.create(content: self.content, user_id: retweeter.id, 
 				retweet_id: self.id, repost_author: self.user_id, mtitle: self.mtitle, 
-				mpost_picrute: self.mpost_picrute)
+				mpost_picrute: self.mpost_picrute, video: self.video)
 			flash = "Succesfully retweeted!"
 		end
 	end
