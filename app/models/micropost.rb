@@ -51,7 +51,7 @@ class Micropost < ActiveRecord::Base
 	end
 
 	def check_media
-		if self.mpost_picrute || self.video
+		if !self.mpost_picrute.blank? || !self.video.blank?
 			self.media = true
 		end
 	end
