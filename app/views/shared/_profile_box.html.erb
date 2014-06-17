@@ -20,7 +20,7 @@
 	<div class="profile-navbar">
         <%= nav_link_to(user_path(@user), class: "profile-links") do %>
             <i class="fa fa-comment-o"></i>
-            <span id="user_microp" class="count"><%= @user.microposts.size %></span>
+            <span id="user_microp" class="count"><%= @user.microposts.count.to_s %></span>
             <span class="label-pf">Tweets</span>
         <% end %>
         <%= nav_link_to(articles_path + "?author=" + @user.id.to_s, class: "profile-links") do %>
