@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140615181721) do
+ActiveRecord::Schema.define(version: 20140618222821) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140615181721) do
     t.string   "slug"
     t.string   "status",       default: "published"
     t.string   "thumbnail"
+    t.text     "description"
   end
 
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true
@@ -122,6 +123,18 @@ ActiveRecord::Schema.define(version: 20140615181721) do
   end
 
   add_index "postviews", ["article_id"], name: "index_postviews_on_article_id"
+
+  create_table "profiles", force: true do |t|
+    t.integer  "user_id"
+    t.text     "bio"
+    t.string   "twitter"
+    t.string   "youtube"
+    t.string   "fb"
+    t.string   "vk"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "background_pic"
+  end
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"

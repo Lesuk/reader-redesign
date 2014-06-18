@@ -19,7 +19,7 @@ class Article < ActiveRecord::Base
 	scope :by_author, -> (user_id) { where user_id: user_id }
 	scope :published, lambda { where("articles.publish_date IS NOT NULL AND articles.publish_date <= ?", Time.zone.now) }
 
-	validates :title, :content, :user_id, presence: true
+	validates :title, :content, :user_id, :description, presence: true
 
 	def self.categorized_with(name)
 		Category.find_by_name!(name).articles

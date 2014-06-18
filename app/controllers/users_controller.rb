@@ -6,7 +6,11 @@ class UsersController < ApplicationController
 
 	def index
 		#@users = User.paginate(page: params[:page])
-		@users = User.search(params[:search]).paginate(per_page: 8, page: params[:page])
+		@users = User.search(params[:search]).paginate(per_page: 10, page: params[:page])
+		respond_to do |format|
+	        format.html
+	        format.js
+	     end
 	end
 
 	def show
@@ -22,6 +26,7 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)	
+		@user.create_profile()
 		if @user.save
 			sign_in @user
 			flash[:success] = "Welcome to the Reader!"
@@ -72,7 +77,8 @@ class UsersController < ApplicationController
 	private
 
 		def user_params
-			params.require(:user).permit(:name, :login, :email, :password, :password_confirmation, :avatar, :remove_avatar)
+			params.require(:user).permit(:name, :login, :email, :password, :password_confirmation, :avatar, :remove_avatar, 
+				profile_attributes: [:id, :bio, :background_pic, :twitter, :youtube, :fb, :vk])
 		end
 
 		def correct_user

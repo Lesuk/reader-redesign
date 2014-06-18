@@ -6,10 +6,10 @@ class ArticlesController < ApplicationController
 	def index
 		@name = ""
 		if params[:category]
-			@articles = Article.includes(:comments).categorized_with(params[:category])
+			@articles = Article.includes(:comments).categorized_with(params[:category]).paginate(page: params[:page], per_page: 20)
 		elsif params[:author]
 			#@articles = Article.users_articles(params[:author])
-			@articles = Article.includes(:comments).by_author(params[:author])
+			@articles = Article.includes(:comments).by_author(params[:author]).paginate(page: params[:page], per_page: 20)
 			@name = "by " + User.find_by_id(params[:author]).name
 		else	
 			@articles = Article.includes(:comments).search(params)
@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
 		@article = current_user.articles.new(article_params)
 		if @article.save
 			flash[:success] = "New article has been created."
-			micropost = current_user.microposts.build(content: truncate(@article.content.html_safe, length: 100, separator: ' ', escape: false), 
+			micropost = current_user.microposts.build(content: truncate(@article.description, length: 100, separator: ' ', escape: false), 
 				mtitle: @article.title, mpost_picrute: @article.thumbnail, mlink: article_path(@article))
 			micropost.save
 			redirect_to @article
@@ -99,7 +99,7 @@ class ArticlesController < ApplicationController
 		end
 
 		def article_params
-			params.require(:article).permit(:title, :content, :publish_date, :category_list, :thumbnail)
+			params.require(:article).permit(:title, :content, :description, :publish_date, :category_list, :thumbnail)
 		end
 
 end

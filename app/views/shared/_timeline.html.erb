@@ -1,4 +1,4 @@
-<% if @feed_items.any? %>
+
 <ul id="timeline" class="clearfix">
 
 	<% if signed_in? && current_user && params[:controller] == 'static_pages' %> 
@@ -9,12 +9,12 @@
 	</li>
 	<% end %>
 
+	<% if @feed_items.any? %>
 	<%= render partial: 'shared/feed_item', collection: @feed_items %>
+	<% end %>
 
 </ul>
 
 <div id="infinite-scrolling">
 	<%= will_paginate @feed_items %>
 </div>
-
-<% end %>

@@ -26,6 +26,6 @@
   </div>
   <% end %>
   <% if current_user.admin? && !current_user?(user) %>
-    <%= link_to "delete", user, method: :delete, data: {confirm: "Are you sure?"} %>
+    <%= link_to set_icon("times","fa"), user, method: :delete, data: {confirm: "Are you sure?"}, class: "del-user" %>
   <% end %>
 </li>

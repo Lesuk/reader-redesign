@@ -1,4 +1,5 @@
 <div class="form-row">
+	<%= f.label :recepient_id, "* You can send messages only to those, who is following you", class: "r-label" %>
 	<%= f.select :recepient_id, @recepients, include_blank: true %>
 </div>
 

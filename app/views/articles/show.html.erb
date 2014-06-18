@@ -10,7 +10,7 @@
 		<!-- .entry-meta -->
 		<div class="entry-meta">
 			<span class="posted-in">posted in 
-		    	<a href="">Design</a>
+		    	<a href="">Public</a>
 		    </span>
 		    
 		    <span class="posted-on">
@@ -72,7 +72,13 @@
             <!-- .author-info -->
             <div class="author-info">
                 <h4 class="author-name"><%= @article.user.name %></h4>
-                <p>Доробити біографію<%#= @article.user.bio %></p>
+                <p><%= @article.user.profile.bio %></p>
+                <div class="author-social">
+                	<%= link_to set_icon("twitter","fa"), @article.user.profile.twitter if @article.user.profile.twitter.present? %>
+                	<%= link_to set_icon("facebook","fa"), @article.user.profile.fb if @article.user.profile.fb.present? %>
+                	<%= link_to set_icon("vk","fa"), @article.user.profile.vk if @article.user.profile.vk.present? %>
+                	<%= link_to set_icon("youtube-play","fa"), @article.user.profile.youtube if @article.user.profile.youtube.present? %>
+                </div>
             </div>
             <!-- .author-info -->
         </div>

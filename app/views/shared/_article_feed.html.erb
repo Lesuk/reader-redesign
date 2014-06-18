@@ -1,49 +1,47 @@
-<% @articles.each do |article| %>
-<li id="<%= dom_id(article) %>" class="animated fadeInUp">
+<li id="<%= dom_id(article_feed) %>" class="animated fadeInUp">
 	<div class="hentry-box">
-		<small class="time"><span class="_timestamp"><%= time_ago_in_words(article.created_at) %> ago.</span></small>
+		<small class="time"><span class="_timestamp"><%= time_ago_in_words(article_feed.created_at) %> ago.</span></small>
 
 		<div class="entry-user">
 			<div class="user">
-				<a href="<%= user_path(article.user) %>">
-				  <%= image_tag(article.user.avatar_url(:lthumb), size: "50x50", class: "avatar") %>
-				  <strong class="fullname"><%= article.user.name %></strong>
-				  <span class="username"><s>@</s><b><%= article.user.login %></b></span>
+				<a href="<%= user_path(article_feed.user) %>">
+				  <%= image_tag(article_feed.user.avatar_url(:lthumb), size: "50x50", class: "avatar") %>
+				  <strong class="fullname"><%= article_feed.user.name %></strong>
+				  <span class="username"><s>@</s><b><%= article_feed.user.login %></b></span>
 				</a>
 			</div>
 		</div>
 
-		<% if article.thumbnail? %>
+		<% if article_feed.thumbnail? %>
 		<figure class="entry-thumb">
-			<%= link_to(image_tag(article.thumbnail_url(:thumb), size: "400x226", class: "entry-img"), article_path(article)) %>
+			<%= link_to(image_tag(article_feed.thumbnail_url(:thumb), size: "400x226", class: "entry-img"), article_path(article_feed)) %>
 		</figure>
 		<% end %>
 		
 		<div class="entry-wrap">
 			<header class="entry-header">
 				<h4 class="entry-title semi-bold">
-					<%= link_to article.title, article_path(article) %>
+					<%= link_to article_feed.title, article_path(article_feed) %>
 				</h4>
 			</header>
 
 			<div class="entry-summary clearfix">
-				<p><%= truncate(article.content.html_safe, length: 200, separator: ' ', escape: false) %></p>
+				<p><%= truncate(article_feed.description, length: 200, separator: ' ', escape: false) %></p>
 			</div>
 		</div>
 
 		<footer class="entry-actions">
 			<ul class="art-box">
-				<% rate = article.reputation_for(:votes).to_i %>
-				<% watches = article.postviews.uniq_by {|i| i.guest_ip }.count %>
+				<% rate = article_feed.reputation_for(:votes).to_i %>
+				<% watches = article_feed.postviews.uniq_by {|i| i.guest_ip }.count %>
 				<li>Tags: 
-                	<%= raw article.categories.map(&:name).map{|t| link_to t, category_path(t) }.join(', ') %>
+                	<%= raw article_feed.categories.map(&:name).map{|t| link_to t, category_path(t) }.join(', ') %>
                 </li>
 
-                <li><a href="<%= article_path(article) + '#comments' %>"><i class="fa fa-comments-o"></i><span><%= article.comments.count %></span></a></li>
+                <li><a href="<%= article_path(article_feed) + '#comments' %>"><i class="fa fa-comments-o"></i><span><%= article_feed.comments.count %></span></a></li>
                 <li><a href="#"><i class="fa fa-thumbs-o-up"></i><span><%= rate %></span></a></li>
                 <li><a href="#"><i class="fa fa-eye"></i><span><%= watches %></span></a></li>
 			</ul>
 		</footer>
 	</div>
 </li>
-<% end %>

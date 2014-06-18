@@ -20,8 +20,10 @@
 			<%= render @users %>
 		</ul>
 
-		<%= will_paginate @users %>
-
+		<div id="infinite-scrolling">
+			<%= will_paginate @users %>
+		</div>
+		
 	<% end %>
 
 </div>

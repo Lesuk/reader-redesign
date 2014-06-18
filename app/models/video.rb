@@ -52,6 +52,14 @@ private
 	    else
 			min.to_s + ':' + sec.to_s
 	    end
-  end
+    end
+
+    def self.search(search)
+		if search
+			where('lower(title) LIKE lower(?)', "%#{search}%")
+		else
+			scoped
+		end
+	end
 
 end

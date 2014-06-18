@@ -12,3 +12,22 @@
 [2014-06-18 11:27:11,042][INFO ][http                     ] [St. Croix, Nicole] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
 [2014-06-18 11:27:11,042][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: started
 [2014-06-18 11:27:13,044][INFO ][gateway                  ] [St. Croix, Nicole] recovered [1] indices into cluster_state
+[2014-06-18 16:18:42,055][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: stopping ...
+[2014-06-18 16:18:42,139][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: stopped
+[2014-06-18 16:18:42,139][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: closing ...
+[2014-06-18 16:18:42,152][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: closed
+[2014-06-18 19:49:45,123][INFO ][node                     ] [Jocasta] {0.20.6}[857]: initializing ...
+[2014-06-18 19:49:45,131][INFO ][plugins                  ] [Jocasta] loaded [], sites []
+[2014-06-18 19:49:52,013][INFO ][node                     ] [Jocasta] {0.20.6}[857]: initialized
+[2014-06-18 19:49:52,014][INFO ][node                     ] [Jocasta] {0.20.6}[857]: starting ...
+[2014-06-18 19:49:52,920][INFO ][transport                ] [Jocasta] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-18 19:49:56,829][INFO ][cluster.service          ] [Jocasta] new_master [Jocasta][kKY17f4aRuW9TkVrViUlnw][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-18 19:49:56,878][INFO ][discovery                ] [Jocasta] elasticsearch/kKY17f4aRuW9TkVrViUlnw
+[2014-06-18 19:49:56,911][INFO ][http                     ] [Jocasta] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-18 19:49:56,911][INFO ][node                     ] [Jocasta] {0.20.6}[857]: started
+[2014-06-18 19:50:00,973][INFO ][gateway                  ] [Jocasta] recovered [1] indices into cluster_state
+[2014-06-18 21:06:33,952][INFO ][cluster.metadata         ] [Jocasta] [articles] update_mapping [article] (dynamic)
+[2014-06-18 23:29:32,374][INFO ][node                     ] [Jocasta] {0.20.6}[857]: stopping ...
+[2014-06-18 23:29:32,437][INFO ][node                     ] [Jocasta] {0.20.6}[857]: stopped
+[2014-06-18 23:29:32,437][INFO ][node                     ] [Jocasta] {0.20.6}[857]: closing ...
+[2014-06-18 23:29:32,445][INFO ][node                     ] [Jocasta] {0.20.6}[857]: closed

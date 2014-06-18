@@ -8,6 +8,11 @@
 <%= f.cktext_area :content, ckeditor: {toolbar: [["Source","Preview","Templates"],["Bold","Italic","Underline","Strike"],["PasteText","PasteFromWord"],["Undo","Redo"],["NumberedList","BulletedList", 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],["Link","Unlink"],["Image","Flash"]], height: 400 } %>
 </div>
 
+<div class="form-row">
+  <%= f.label :description, "Add short description to your article" %>
+  <%= f.text_area :description, class: "form-control", rows: "4" %>
+</div>
+
 <div class="form-row input-group transparent">
 	<span class="input-group-addon">
 		<i class="fa fa-instagram"></i>

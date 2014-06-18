@@ -1,0 +1,59 @@
+<%= f.fields_for :profile do |p| %>
+
+  <div class="row">
+    <div class="form-group col-md-8">
+      <%= p.label :bio, "About Me", class: "form-label" %>
+      <div class="controls">
+        <%= p.text_area :bio, class: "form-control", row: "3" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row input-group">
+      <span class="input-group-btn">
+          <span class="btn btn-primary btn-file">
+              <%= set_icon("picture-o", "fa") + "  Add your background picture" %><%= p.file_field :background_pic %>
+          </span>
+      </span>
+      <input type="text" class="form-control" readonly>
+  </div>
+
+  <h3 class="user-links">My Social Links</h3>
+
+  <div class="row">
+    <div class="form-group col-md-8">
+      <%= p.label :twitter, "Twitter", class: "form-label" %>
+      <div class="controls">
+        <%= p.text_field :twitter, class: "form-control input-sm" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-8">
+      <%= p.label :fb, "Facebook", class: "form-label" %>
+      <div class="controls">
+        <%= p.text_field :fb, class: "form-control input-sm" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-8">
+      <%= p.label :vk, "VK", class: "form-label" %>
+      <div class="controls">
+        <%= p.text_field :vk, class: "form-control input-sm" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-8">
+      <%= p.label :youtube, "YouTube", class: "form-label" %>
+      <div class="controls">
+        <%= p.text_field :youtube, class: "form-control input-sm" %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

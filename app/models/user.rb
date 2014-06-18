@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 	has_many :messages
 	has_many :comments, dependent: :destroy
 	has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :source
+	has_one :profile
+	accepts_nested_attributes_for :profile, allow_destroy: true
 	before_save {self.email = email.downcase}
 	before_create :create_remember_token
 	validates :name, presence: true, length: {maximum: 30}

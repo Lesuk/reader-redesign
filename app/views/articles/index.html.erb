@@ -2,7 +2,13 @@
 <div class="content" role="main">  
 
 	<ul id="timeline" class="clearfix articles">
-		<%= render 'shared/article_feed' %> 
+		<% if @articles.any? %>
+		<%= render partial: 'shared/article_feed', collection: @articles %>
+		<% end %>
 	</ul>
+
+	<div id="infinite-scrolling">
+		<%= will_paginate @articles %>
+	</div>
 
 </div> <!-- END CONTENT --> 

@@ -14,11 +14,14 @@
           <label for="checkbox3">Remove avatar</label>
         </div>
 
-      <div class="row">
-        <div class="col-md-8">
-          <%= f.submit "Save changes", class: "btn btn-primary btn-cons bl-c" %>
+        <%= render 'profile_form', f: f %>
+
+        <div class="row">
+          <div class="col-md-8">
+            <%= f.submit "Save changes", class: "btn btn-primary btn-cons bl-c" %>
+          </div>
         </div>
-      </div>
+
     <% end %>
 
 </div>

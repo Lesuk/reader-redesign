@@ -1,4 +1,4 @@
-<li id="<%= dom_id(feed_item) %>" class="animated fadeInUp">
+<li id="<%= dom_id(feed_item) %>" class="animated fadeInUp mpost">
 	<div class="hentry-box">
 		<% mpost_link_object = feed_item.retweet_id? ? feed_item.original_mpost : feed_item %>
 		<small class="time"><span class="_timestamp"><%= link_to time_ago_in_words(feed_item.created_at) + " ago.", micropost_path(mpost_link_object) %></span></small>
