@@ -2210,7 +2210,7 @@ font-weight: 800;
  			margin-left: 15%
 			}
 .comments-area article {
- 	position: relative; margin-left: 105px; margin-bottom: 2em; padding: 1em 1.6em; border: 2px solid #EAEEEF; border-radius: 8px;
+ 	position: relative; margin-left: 105px; margin-bottom: 2em; padding: 1em 1.6em; border: 2px solid #EAEEEF; border-radius: 8px; background-color: #fff;
 	}
 .comments-area article:after,
 .comments-area article:before {
@@ -2304,7 +2304,61 @@ font-weight: 800;
 #new_comment_link{
 	font-size: 16px;
 }
+#new_comment input.btn {
+color: #fff;
+}
 
+a.del-comment{
+	position: absolute;
+	top: 0;
+	right: 3px;
+	color: #F0A1A1;
+}
+
+#comments.micropost-comments{
+	padding: 1em 0;
+}
+#comments #commentlist{ padding: 0; }
+#comments.micropost-comments ol li{
+padding: 0;
+}
+#comments.micropost-comments ol li article{
+	margin-left: 70px;
+	margin-bottom: 1em;
+	padding: 10px 15px;
+}
+#comments.micropost-comments ol li article img{
+width: 50px;
+height: 50px;
+left: -70px;
+border-radius: 4px;
+}
+#comments.micropost-comments ol li article .comment-meta .fn{
+	text-transform: capitalize;
+}
+#comments.micropost-comments ol li article:after {border-width: 8px;}
+#comments.micropost-comments ol li article:before {border-width: 11px;}
+#comments.micropost-comments ol li article:after, 
+#comments.micropost-comments ol li article:before{
+	top: 22px;
+}
+
+.show-micropost #reply-title{
+display: none;
+}
+.show-micropost #new_comment_link {
+font-size: 14px;
+}
+.show-micropost #respond label{
+	display: none;
+}
+
+.show-micropost form#new_comment {
+background-color: #fff;
+border: 1px solid #d8d8d8;
+border-bottom-width: 2px;
+padding: 10px 15px;
+}
 
 div.form-row {
 	margin-bottom: 20px;
@@ -2312,7 +2366,6 @@ div.form-row {
 .date-picker select{
 	width: 110px;
 }
-
 
 
 /* User Feed */

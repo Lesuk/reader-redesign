@@ -1,10 +1,14 @@
-[2014-06-17 14:27:48,037][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: initializing ...
-[2014-06-17 14:27:48,047][INFO ][plugins                  ] [Hrimhari] loaded [], sites []
-[2014-06-17 14:27:54,878][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: initialized
-[2014-06-17 14:27:54,878][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: starting ...
-[2014-06-17 14:27:54,995][INFO ][transport                ] [Hrimhari] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-17 14:27:58,034][INFO ][cluster.service          ] [Hrimhari] new_master [Hrimhari][nE6OucqZTAWfBSZglXTseA][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-17 14:27:58,070][INFO ][discovery                ] [Hrimhari] elasticsearch/nE6OucqZTAWfBSZglXTseA
-[2014-06-17 14:27:58,098][INFO ][http                     ] [Hrimhari] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-17 14:27:58,099][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: started
-[2014-06-17 14:28:00,916][INFO ][gateway                  ] [Hrimhari] recovered [1] indices into cluster_state
+[2014-06-18 00:39:36,040][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: stopping ...
+[2014-06-18 00:39:36,102][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: stopped
+[2014-06-18 00:39:36,102][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: closing ...
+[2014-06-18 00:39:36,110][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: closed
+[2014-06-18 11:27:01,027][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: initializing ...
+[2014-06-18 11:27:01,035][INFO ][plugins                  ] [St. Croix, Nicole] loaded [], sites []
+[2014-06-18 11:27:07,126][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: initialized
+[2014-06-18 11:27:07,127][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: starting ...
+[2014-06-18 11:27:07,929][INFO ][transport                ] [St. Croix, Nicole] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-18 11:27:10,970][INFO ][cluster.service          ] [St. Croix, Nicole] new_master [St. Croix, Nicole][w33cy1pXTuOEKo20-RaLxw][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-18 11:27:11,009][INFO ][discovery                ] [St. Croix, Nicole] elasticsearch/w33cy1pXTuOEKo20-RaLxw
+[2014-06-18 11:27:11,042][INFO ][http                     ] [St. Croix, Nicole] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-18 11:27:11,042][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: started
+[2014-06-18 11:27:13,044][INFO ][gateway                  ] [St. Croix, Nicole] recovered [1] indices into cluster_state

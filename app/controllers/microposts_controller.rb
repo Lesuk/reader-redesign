@@ -5,6 +5,9 @@ class MicropostsController < ApplicationController
 
 	def show
 		@micropost = Micropost.find(params[:id])
+		@commentable = @micropost
+		@comments = @commentable.comments
+		@comments_count = @micropost.comments.count
 	end
 
 	def create

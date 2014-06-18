@@ -94,6 +94,29 @@
 	  		<% end %>
 
 		</div>
+
+		<div id="comments" class="comments-area micropost-comments">
+
+			<!-- #respond --> 
+			<div id="respond">
+				<h2 id="reply-title"><i class="fa fa-comment-o"></i>&nbsp;DROP A COMMENT</h2>
+
+				<% if signed_in? && current_user %>
+				<%= link_to set_icon("plus","fa") + "New comment", polymorphic_path([:new, @commentable, :comment], format: :js), remote: true, id: "new_comment_link" %>
+				<% else %>
+					<%= link_to "Please Sign In to comment", signin_path %>
+				<% end %>
+			</div>
+			<!-- #respond --> 
+	  
+		  	<!-- .commentlist -->
+		  	<ol id="commentlist">  
+		  		<%= render @comments %>
+		  	</ol>
+		  	<!-- .commentlist -->
+		  
+		</div>
+
 	</div>
 
 </div> <!-- END CONTENT --> 

@@ -57,16 +57,16 @@
 			<ul>
 				<% likes = feed_item.reputation_for(:mpost_likes).to_i %>
 				<% reposts = feed_item.repost_count(feed_item.id).to_i %>
+				<% comments = feed_item.comments.count.to_i %>
 
 				<% if feed_item.video %>
 				<li class="action-video">
-					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#video<%= feed_item.id %>"><i class="fa fa-youtube-play"></i>watch video</a>
-				</li>
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#video<%= feed_item.id %>"><i class="fa fa-youtube-play"></i>watch video</a></li>
 				<% end %>
 
 				<li class="action-reply">
-					<a href="#"><i class="fa fa-reply"></i><span>Reply</span></a>
-				</li>
+					<%= link_to set_icon("reply", "fa") + "Reply", micropost_path(mpost_link_object) + "#respond" %>&nbsp;<%= comments if comments > 0 %></li>
+
 				<% if signed_in? && current_user %>
 				<% if current_user?(feed_item.user) || current_user.admin? %>
     				<li class="action-delete delete"><%= link_to set_icon("times", "fa"), feed_item, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></li>
