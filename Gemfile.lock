@@ -286,7 +286,7 @@ DEPENDENCIES
   pg (= 0.15.1)
   rails (= 4.0.4)
   rails-erd
-  rails_12factor (= 0.0.2)
+  rails_12factor
   rails_autolink
   rmagick
   rspec-rails (= 2.13.1)
