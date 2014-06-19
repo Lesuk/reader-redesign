@@ -2001,6 +2001,10 @@ font-family: 'Open Sans';
 	padding-bottom: 10px;
 	font-size: 2.0em;
 }
+.rd-message .entry-content {
+	font-size: 16px;
+	line-height: 24px;
+}
 
 /* entry-meta */
 .readable-content .hentry .entry-meta {
@@ -2418,31 +2422,17 @@ div.form-row {
 	border-radius: 3px;
 	vertical-align: top;
 }
-.hentry-box:hover .entry-actions ul li{
-	color: #8899a6;
-}
-.hentry-box:hover .entry-actions ul li.liked{
-	color: #E97C51;
-}
-.hentry-box:hover .entry-actions ul li.reposted{
-	color: #6AA512;
-}
-.hentry-box:hover .entry-actions a{
-	color: #8899a6;
-}
-.hentry-box:hover .entry-actions li.liked a{
-	color: #E97C51;
-}
-.hentry-box:hover .entry-actions li.reposted a{
-	color: #6AA512;
-}
+.hentry-box:hover .entry-actions ul li{ color: #8899a6; }
+.hentry-box:hover .entry-actions ul li.liked{ color: #E97C51; }
+.hentry-box:hover .entry-actions ul li.reposted{ color: #6AA512; }
+.hentry-box:hover .entry-actions ul li.favorite{ color: #ffac33; }
+.hentry-box:hover .entry-actions a{ color: #8899a6; }
+.hentry-box:hover .entry-actions li.liked a{ color: #E97C51; }
+.hentry-box:hover .entry-actions li.reposted a{ color: #6AA512; }
+.hentry-box:hover .entry-actions li.favorite a{ color: #ffac33; }
 
-.hentry-box .entry-actions li.action-video{
-	float: left;
-}
-.hentry-box .entry-actions li.action-video a{
-	color: #0084B4;
-}
+.hentry-box .entry-actions li.action-video{ float: left; }
+.hentry-box .entry-actions li.action-video a{ color: #0084B4; }
 
 .hentry-box .time{
 	position: absolute;
@@ -2658,6 +2648,9 @@ max-height: 560px;
 .entry-actions ul li.reposted {
 color: #6AA512;
 }
+.entry-actions ul li.favorite{
+	color: #ffac33;
+}
 .entry-actions ul.art-box li{
 	display: inline;
 	color: #8899a6;
@@ -2685,6 +2678,9 @@ color: #E97C51;
 }
 .entry-actions ul li.reposted a {
 	color: #6AA512;
+}
+.entry-actions ul li.favorite a {
+color: #ffac33;
 }
 
 .entry-actions ul.art-box li a{
@@ -7857,6 +7853,9 @@ table.fc-border-separate{
 	top: 18px;
 	left: 12px;
 	color: #555;
+}
+.profile-navbar .profile-links i.fa-star{
+	font-size: 15px;
 }
 .profile-navbar .profile-links span.count{
 	display: block;

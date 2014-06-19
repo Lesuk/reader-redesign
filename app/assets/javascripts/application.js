@@ -68,7 +68,8 @@ $(document).ready(function(){
   });
 
   $('.mpost .entry-thumb a').touchTouch();
-
+  $('.show-micropost .entry-thumb a').touchTouch();
+  
   $('#new_micropost .b-post').on('click', function () {  
     $('#ModalWrite').modal('hide');
   });

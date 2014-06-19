@@ -1,0 +1,2 @@
+$("#micropost_<%= @tweet.id %> .reposts-count").html('<%= @reposts > 0 ? @reposts : "" %>');
+$('#micropost_<%= @tweet.id %> .action-repost').addClass('reposted');

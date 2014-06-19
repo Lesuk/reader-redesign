@@ -10,6 +10,7 @@
     </div>
   
   <% unless current_user?(user) %>
+  <% if signed_in? %>
   <div class="overlayer top-right">
     <div class="overlayer-wrapper">
       <div class="padding-15 hidden-xs">
@@ -25,7 +26,8 @@
   </div>
   </div>
   <% end %>
-  <% if current_user.admin? && !current_user?(user) %>
-    <%= link_to set_icon("times","fa"), user, method: :delete, data: {confirm: "Are you sure?"}, class: "del-user" %>
   <% end %>
+  <%# if current_user.admin? && !current_user?(user) %>
+    <%#= link_to set_icon("times","fa"), user, method: :delete, data: {confirm: "Are you sure?"}, class: "del-user" %>
+  <%# end %>
 </li>

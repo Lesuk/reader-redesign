@@ -13,7 +13,7 @@
 		</section>
 		<!-- .comment-content -->
 		<% if signed_in? && current_user %>
-			<% if current_user?(comment.user) || current_user.id == @article.user_id %>
+			<% if current_user?(comment.user) || current_user.id == @commentable.user_id %>
 			<span class="actions">
 				<%= link_to set_icon("times","fa"), [@commentable, comment], confirm: 'Are you sure?', method: :delete, remote: true, class: "del-comment" %>
 			</span>

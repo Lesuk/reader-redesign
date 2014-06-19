@@ -1,7 +1,7 @@
 <li id="<%= dom_id(feed_item) %>" class="animated fadeInUp mpost">
 	<div class="hentry-box">
 		<% mpost_link_object = feed_item.retweet_id? ? feed_item.original_mpost : feed_item %>
-		<small class="time"><span class="_timestamp"><%= link_to time_ago_in_words(feed_item.created_at) + " ago.", micropost_path(mpost_link_object) %></span></small>
+		<small class="time"><span class="_timestamp"><%= link_to time_ago_in_words(feed_item.created_at) + " ago.", micropost_path(mpost_link_object) if !mpost_link_object.nil? %></span></small>
 
 		<div class="entry-user">
 			<div class="user">
@@ -58,28 +58,32 @@
 				<% likes = feed_item.reputation_for(:mpost_likes).to_i %>
 				<% reposts = feed_item.repost_count(feed_item.id).to_i %>
 				<% comments = feed_item.comments.count.to_i %>
+				<% favorites = feed_item.fans.size %>
 
 				<% if feed_item.video %>
 				<li class="action-video">
 					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#video<%= feed_item.id %>"><i class="fa fa-youtube-play"></i>watch video</a></li>
 				<% end %>
 
+				<% if !mpost_link_object.nil? %>
 				<li class="action-reply">
 					<%= link_to set_icon("reply", "fa") + "Reply", micropost_path(mpost_link_object) + "#respond" %>&nbsp;<%= comments if comments > 0 %></li>
+				<% end %>
 
 				<% if signed_in? && current_user %>
 				<% if current_user?(feed_item.user) || current_user.admin? %>
     				<li class="action-delete delete"><%= link_to set_icon("times", "fa"), feed_item, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></li>
   				<% end %>
   				<% end %>
+
 				<li class="action-repost <%= 'reposted' if feed_item.retweets.where(user_id: current_user.id).present? %>">
-				<%= link_to set_icon("retweet", "fa") + "Repost", retweet_micropost_path(feed_item.id), method: :post %>&nbsp;<%= reposts if reposts > 0 %></li>
-				<!--<li class="action-reply">
-					<a href="#"><i class="fa fa-star"></i><span>Favorite</span></a>
-				</li> -->
+				<%= link_to set_icon("retweet", "fa") + "Repost", repost_micropost_path(feed_item.id), remote: true, method: :post %>&nbsp;<span class="reposts-count"><%= reposts if reposts > 0 %></span></li>
+
+				<li class="action-favorite <%= 'favorite' if feed_item.fans.where(id: current_user).present? %>">
+					<%= link_to set_icon("star", "fa") + "Favorite", favorite_micropost_path(feed_item), remote: true, method: "post" %>&nbsp;<span class="favorites-count"><%= favorites if favorites > 0 %></span></li>
+
 				<li class="action-like <%= 'liked' if current_user.liked_for?(feed_item) %>">
-					<%= link_to set_icon("heart", "fa") + "Like", like_micropost_path(feed_item), remote: true, method: "post" %>&nbsp;<span class="likes-count"><%= likes if likes > 0 %></span>
-				</li>
+					<%= link_to set_icon("heart", "fa") + "Like", like_micropost_path(feed_item), remote: true, method: "post" %>&nbsp;<span class="likes-count"><%= likes if likes > 0 %></span></li>
 			</ul>
 		</footer>
 

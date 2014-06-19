@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_action :signed_in_user, 	only: [:index, :show, :edit, :update, :destroy, :following, :followers]
+	before_action :signed_in_user, 	only: [:show, :edit, :update, :destroy, :following, :followers]
 	before_action :correct_user,	only: [:edit, :update]
 	before_action :admin_user,     only: :destroy
 
@@ -72,6 +72,12 @@ class UsersController < ApplicationController
 	def media
 		@user = User.find_by_login(params[:id])
 		@microposts = @user.microposts.where(media: true).paginate(page: params[:page], per_page: 20)
+	end
+
+	def favorites
+		@user = User.find_by_login(params[:id])
+		@favorites = @user.favorite_mposts
+		render 'favorites'
 	end
 
 	private

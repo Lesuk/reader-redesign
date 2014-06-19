@@ -59,6 +59,7 @@
 				<ul>
 					<% likes = @micropost.reputation_for(:mpost_likes).to_i %>
 					<% reposts = @micropost.repost_count(@micropost.id) %>
+					<% comments = @micropost.comments.count.to_i %>
 
 					<% if @micropost.video %>
 					<li class="action-video">
@@ -67,8 +68,8 @@
 					<% end %>
 
 					<li class="action-reply">
-						<a href="#"><i class="fa fa-reply"></i><span>Reply</span></a>
-					</li>
+					<%= link_to set_icon("reply", "fa") + "Reply", micropost_path(@micropost) + "#respond" %>&nbsp;<%= comments if comments > 0 %></li>
+					
 					<% if signed_in? && current_user %>
 					<% if current_user?(@micropost.user) || current_user.admin? %>
 	    				<li class="action-delete delete"><%= link_to set_icon("times", "fa"), @micropost, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></li>

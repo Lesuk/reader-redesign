@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	before_action :load_commentable
+	before_action :signed_in_user, only: [:new, :create, :destroy]
 
 	def new
 		@comment = @commentable.comments.new

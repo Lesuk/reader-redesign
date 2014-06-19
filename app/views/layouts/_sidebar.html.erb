@@ -21,7 +21,7 @@
 	          <li><%= link_to set_icon("pencil-square-o","fa") + "New Message", new_message_path %></li>
 	        </ul>
 		<% end %>
-		<%#= nav_link_to set_icon("star-o", "fa") + "Favorites", "#", {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
+		<%= nav_link_to set_icon("star-o", "fa") + "Favorites", favorites_user_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 		<%= nav_link_to set_icon("users", "fa") + "Friends", following_user_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 		<%= nav_link_to set_icon("list-ul", "fa") + "Tasks", user_tasks_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>
 		<%= nav_link_to set_icon("picture-o", "fa") + "Media", media_user_path(current_user), {class: nil}, {wrapper: 'li', selected_class: 'active'} %>

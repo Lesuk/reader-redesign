@@ -1,33 +1,24 @@
-[2014-06-18 00:39:36,040][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: stopping ...
-[2014-06-18 00:39:36,102][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: stopped
-[2014-06-18 00:39:36,102][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: closing ...
-[2014-06-18 00:39:36,110][INFO ][node                     ] [Hrimhari] {0.20.6}[2863]: closed
-[2014-06-18 11:27:01,027][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: initializing ...
-[2014-06-18 11:27:01,035][INFO ][plugins                  ] [St. Croix, Nicole] loaded [], sites []
-[2014-06-18 11:27:07,126][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: initialized
-[2014-06-18 11:27:07,127][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: starting ...
-[2014-06-18 11:27:07,929][INFO ][transport                ] [St. Croix, Nicole] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-18 11:27:10,970][INFO ][cluster.service          ] [St. Croix, Nicole] new_master [St. Croix, Nicole][w33cy1pXTuOEKo20-RaLxw][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-18 11:27:11,009][INFO ][discovery                ] [St. Croix, Nicole] elasticsearch/w33cy1pXTuOEKo20-RaLxw
-[2014-06-18 11:27:11,042][INFO ][http                     ] [St. Croix, Nicole] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-18 11:27:11,042][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: started
-[2014-06-18 11:27:13,044][INFO ][gateway                  ] [St. Croix, Nicole] recovered [1] indices into cluster_state
-[2014-06-18 16:18:42,055][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: stopping ...
-[2014-06-18 16:18:42,139][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: stopped
-[2014-06-18 16:18:42,139][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: closing ...
-[2014-06-18 16:18:42,152][INFO ][node                     ] [St. Croix, Nicole] {0.20.6}[828]: closed
-[2014-06-18 19:49:45,123][INFO ][node                     ] [Jocasta] {0.20.6}[857]: initializing ...
-[2014-06-18 19:49:45,131][INFO ][plugins                  ] [Jocasta] loaded [], sites []
-[2014-06-18 19:49:52,013][INFO ][node                     ] [Jocasta] {0.20.6}[857]: initialized
-[2014-06-18 19:49:52,014][INFO ][node                     ] [Jocasta] {0.20.6}[857]: starting ...
-[2014-06-18 19:49:52,920][INFO ][transport                ] [Jocasta] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-18 19:49:56,829][INFO ][cluster.service          ] [Jocasta] new_master [Jocasta][kKY17f4aRuW9TkVrViUlnw][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-18 19:49:56,878][INFO ][discovery                ] [Jocasta] elasticsearch/kKY17f4aRuW9TkVrViUlnw
-[2014-06-18 19:49:56,911][INFO ][http                     ] [Jocasta] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-18 19:49:56,911][INFO ][node                     ] [Jocasta] {0.20.6}[857]: started
-[2014-06-18 19:50:00,973][INFO ][gateway                  ] [Jocasta] recovered [1] indices into cluster_state
-[2014-06-18 21:06:33,952][INFO ][cluster.metadata         ] [Jocasta] [articles] update_mapping [article] (dynamic)
-[2014-06-18 23:29:32,374][INFO ][node                     ] [Jocasta] {0.20.6}[857]: stopping ...
-[2014-06-18 23:29:32,437][INFO ][node                     ] [Jocasta] {0.20.6}[857]: stopped
-[2014-06-18 23:29:32,437][INFO ][node                     ] [Jocasta] {0.20.6}[857]: closing ...
-[2014-06-18 23:29:32,445][INFO ][node                     ] [Jocasta] {0.20.6}[857]: closed
+[2014-06-19 07:52:27,960][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: initializing ...
+[2014-06-19 07:52:27,969][INFO ][plugins                  ] [Doctor Minerva‎] loaded [], sites []
+[2014-06-19 07:52:33,983][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: initialized
+[2014-06-19 07:52:33,984][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: starting ...
+[2014-06-19 07:52:34,091][INFO ][transport                ] [Doctor Minerva‎] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-19 07:52:37,128][INFO ][cluster.service          ] [Doctor Minerva‎] new_master [Doctor Minerva‎][iyJby0lOT92k-uLsLMvJbQ][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-19 07:52:37,163][INFO ][discovery                ] [Doctor Minerva‎] elasticsearch/iyJby0lOT92k-uLsLMvJbQ
+[2014-06-19 07:52:37,200][INFO ][http                     ] [Doctor Minerva‎] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-19 07:52:37,201][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: started
+[2014-06-19 07:52:40,998][INFO ][gateway                  ] [Doctor Minerva‎] recovered [1] indices into cluster_state
+[2014-06-19 10:14:46,128][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: stopping ...
+[2014-06-19 10:14:46,371][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: stopped
+[2014-06-19 10:14:46,372][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: closing ...
+[2014-06-19 10:14:46,386][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: closed
+[2014-06-19 11:23:55,002][INFO ][node                     ] [Captain UK] {0.20.6}[4442]: initializing ...
+[2014-06-19 11:23:55,010][INFO ][plugins                  ] [Captain UK] loaded [], sites []
+[2014-06-19 11:24:02,834][INFO ][node                     ] [Captain UK] {0.20.6}[4442]: initialized
+[2014-06-19 11:24:02,834][INFO ][node                     ] [Captain UK] {0.20.6}[4442]: starting ...
+[2014-06-19 11:24:02,964][INFO ][transport                ] [Captain UK] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-06-19 11:24:06,334][INFO ][cluster.service          ] [Captain UK] new_master [Captain UK][PEC-FCPbSEa3vnM5fWM0nA][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-06-19 11:24:06,368][INFO ][discovery                ] [Captain UK] elasticsearch/PEC-FCPbSEa3vnM5fWM0nA
+[2014-06-19 11:24:06,399][INFO ][http                     ] [Captain UK] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-06-19 11:24:06,399][INFO ][node                     ] [Captain UK] {0.20.6}[4442]: started
+[2014-06-19 11:24:08,989][INFO ][gateway                  ] [Captain UK] recovered [1] indices into cluster_state

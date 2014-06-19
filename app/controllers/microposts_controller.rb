@@ -42,11 +42,18 @@ class MicropostsController < ApplicationController
 		end
 	end
 
-	def retweet
-		tweet = Micropost.find(params[:id])
-		if !current_user?(tweet.user) 
-			flash[:notice] = tweet.retweet_by(current_user)
-			redirect_to root_url
+	def repost
+		@tweet = Micropost.find(params[:id])
+		if !current_user?(@tweet.user) 
+			notice = @tweet.retweet_by(current_user)
+			@reposts = @tweet.repost_count(@tweet.id).to_i 
+			respond_to do |format|
+				format.html{
+					flash[:notice] = notice
+					redirect_to root_url
+				}
+				format.js
+			end
 		else
 			redirect_to :back, notice: "You can't do repost your message!"
 		end
@@ -74,6 +81,30 @@ class MicropostsController < ApplicationController
 
 	def like_reset
 		@micropost.delete_evaluation(:mpost_likes, current_user)
+	end
+
+	def favorite
+		@micropost = Micropost.find(params[:id])
+		@favorite_present = @micropost.fans.where(id: current_user).present?
+		if @favorite_present
+			current_user.favorite_mposts.delete(@micropost)
+			@favorites_size = @micropost.fans.size
+			respond_to do |format|
+				format.html{
+					redirect_to :back, notice: 'You unfavorited micropost'
+				}
+				format.js
+			end
+		else
+			current_user.favorite_mposts << @micropost
+			@favorites_size = @micropost.fans.size
+			respond_to do |format|
+				format.html{
+					redirect_to :back, notice: 'Micropost marked as favorite'
+				}
+				format.js
+			end
+		end
 	end
 
 	private

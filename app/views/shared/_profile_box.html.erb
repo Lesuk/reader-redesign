@@ -48,5 +48,10 @@
             <span class="count"><%= @user.microposts.where(media: true).size %></span>
             <span class="label-pf">Media</span>
         <% end %>
+        <%= nav_link_to(favorites_user_path(@user), class: "profile-links") do %>
+            <i class="fa fa-star-o"></i>
+            <span class="count"><%= @user.favorite_mposts.size %></span>
+            <span class="label-pf">Favorites</span>
+        <% end %>
 	</div>
 </div>

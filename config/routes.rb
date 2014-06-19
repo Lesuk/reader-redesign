@@ -2,7 +2,7 @@ ReaderRor::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :users do
     member do
-      get :following, :followers, :media
+      get :following, :followers, :media, :favorites
     end
     resources :tasks
   end
@@ -13,8 +13,9 @@ ReaderRor::Application.routes.draw do
   resources :microposts, only: [:show, :create, :destroy] do
     resources :comments
     member do
-      post :retweet
+      post :repost
       post :like
+      post :favorite
     end
   end
   resources :messages do

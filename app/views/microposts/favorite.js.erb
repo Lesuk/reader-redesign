@@ -1,0 +1,6 @@
+$("#micropost_<%= @micropost.id %> .favorites-count").html('<%= @favorites_size > 0 ? @favorites_size : "" %>');
+<% if @favorite_present %>
+	$('#micropost_<%= @micropost.id %> .action-favorite').removeClass('favorite');
+<% else %>
+	$('#micropost_<%= @micropost.id %> .action-favorite').addClass('favorite');
+<% end %>
