@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	has_many :replies, foreign_key: "to_id", class_name: "Micropost"
 	has_many :videos, dependent: :destroy
 	has_many :tasks, dependent: :destroy
-	has_many :messages, dependent: :destroy
+	has_many :messages
 	has_many :comments, dependent: :destroy
 	has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :source
 	has_one :profile, dependent: :destroy

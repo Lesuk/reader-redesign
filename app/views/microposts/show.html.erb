@@ -60,6 +60,7 @@
 					<% likes = @micropost.reputation_for(:mpost_likes).to_i %>
 					<% reposts = @micropost.repost_count(@micropost.id) %>
 					<% comments = @micropost.comments.count.to_i %>
+					<% favorites = @micropost.fans.size %>
 
 					<% if @micropost.video %>
 					<li class="action-video">
@@ -76,10 +77,11 @@
 	  				<% end %>
 	  				<% end %>
 					<li class="action-repost <%= 'reposted' if @micropost.retweets.where(user_id: current_user.id).present? %>">
-					<%= link_to set_icon("retweet", "fa") + "Repost", retweet_micropost_path(@micropost.id), method: :post %>&nbsp;<%= reposts if reposts > 0 %></li>
-					<!--<li class="action-reply">
-						<a href="#"><i class="fa fa-star"></i><span>Favorite</span></a>
-					</li> -->
+					<%= link_to set_icon("retweet", "fa") + "Repost", repost_micropost_path(@micropost.id), method: :post %>&nbsp;<%= reposts if reposts > 0 %></li>
+					
+					<li class="action-favorite <%= 'favorite' if @micropost.fans.where(id: current_user).present? %>">
+					<%= link_to set_icon("star", "fa") + "Favorite", favorite_micropost_path(@micropost), remote: true, method: "post" %>&nbsp;<span class="favorites-count"><%= favorites if favorites > 0 %></span></li>
+
 					<li class="action-like <%= 'liked' if current_user.liked_for?(@micropost) %>">
 						<%= link_to set_icon("heart", "fa") + "Like", like_micropost_path(@micropost), remote: true, method: "post" %>&nbsp;<span class="likes-count"><%= likes if likes > 0 %></span>
 					</li>

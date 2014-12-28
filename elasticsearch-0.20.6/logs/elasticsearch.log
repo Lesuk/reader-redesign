@@ -1,24 +1,15 @@
-[2014-06-19 07:52:27,960][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: initializing ...
-[2014-06-19 07:52:27,969][INFO ][plugins                  ] [Doctor Minerva‎] loaded [], sites []
-[2014-06-19 07:52:33,983][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: initialized
-[2014-06-19 07:52:33,984][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: starting ...
-[2014-06-19 07:52:34,091][INFO ][transport                ] [Doctor Minerva‎] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-19 07:52:37,128][INFO ][cluster.service          ] [Doctor Minerva‎] new_master [Doctor Minerva‎][iyJby0lOT92k-uLsLMvJbQ][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-19 07:52:37,163][INFO ][discovery                ] [Doctor Minerva‎] elasticsearch/iyJby0lOT92k-uLsLMvJbQ
-[2014-06-19 07:52:37,200][INFO ][http                     ] [Doctor Minerva‎] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-19 07:52:37,201][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: started
-[2014-06-19 07:52:40,998][INFO ][gateway                  ] [Doctor Minerva‎] recovered [1] indices into cluster_state
-[2014-06-19 10:14:46,128][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: stopping ...
-[2014-06-19 10:14:46,371][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: stopped
-[2014-06-19 10:14:46,372][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: closing ...
-[2014-06-19 10:14:46,386][INFO ][node                     ] [Doctor Minerva‎] {0.20.6}[844]: closed
-[2014-06-19 11:23:55,002][INFO ][node                     ] [Captain UK] {0.20.6}[4442]: initializing ...
-[2014-06-19 11:23:55,010][INFO ][plugins                  ] [Captain UK] loaded [], sites []
-[2014-06-19 11:24:02,834][INFO ][node                     ] [Captain UK] {0.20.6}[4442]: initialized
-[2014-06-19 11:24:02,834][INFO ][node                     ] [Captain UK] {0.20.6}[4442]: starting ...
-[2014-06-19 11:24:02,964][INFO ][transport                ] [Captain UK] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
-[2014-06-19 11:24:06,334][INFO ][cluster.service          ] [Captain UK] new_master [Captain UK][PEC-FCPbSEa3vnM5fWM0nA][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
-[2014-06-19 11:24:06,368][INFO ][discovery                ] [Captain UK] elasticsearch/PEC-FCPbSEa3vnM5fWM0nA
-[2014-06-19 11:24:06,399][INFO ][http                     ] [Captain UK] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
-[2014-06-19 11:24:06,399][INFO ][node                     ] [Captain UK] {0.20.6}[4442]: started
-[2014-06-19 11:24:08,989][INFO ][gateway                  ] [Captain UK] recovered [1] indices into cluster_state
+[2014-07-05 02:13:51,815][INFO ][node                     ] [Amiko Kobayashi] {0.20.6}[1013]: initializing ...
+[2014-07-05 02:13:51,824][INFO ][plugins                  ] [Amiko Kobayashi] loaded [], sites []
+[2014-07-05 02:13:57,927][INFO ][node                     ] [Amiko Kobayashi] {0.20.6}[1013]: initialized
+[2014-07-05 02:13:57,927][INFO ][node                     ] [Amiko Kobayashi] {0.20.6}[1013]: starting ...
+[2014-07-05 02:13:58,042][INFO ][transport                ] [Amiko Kobayashi] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.203.201:9300]}
+[2014-07-05 02:14:01,728][INFO ][cluster.service          ] [Amiko Kobayashi] new_master [Amiko Kobayashi][2QzrBGjcQn6Eet2FNRYagg][inet[/192.168.203.201:9300]], reason: zen-disco-join (elected_as_master)
+[2014-07-05 02:14:01,764][INFO ][discovery                ] [Amiko Kobayashi] elasticsearch/2QzrBGjcQn6Eet2FNRYagg
+[2014-07-05 02:14:01,789][INFO ][http                     ] [Amiko Kobayashi] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.203.201:9200]}
+[2014-07-05 02:14:01,789][INFO ][node                     ] [Amiko Kobayashi] {0.20.6}[1013]: started
+[2014-07-05 02:14:02,736][INFO ][monitor.jvm              ] [Amiko Kobayashi] [gc][ParNew][4][2] duration [829ms], collections [1]/[1.8s], total [829ms]/[1s], memory [65.1mb]->[19.8mb]/[989.8mb], all_pools {[Code Cache] [813.1kb]->[821.4kb]/[48mb]}{[Par Eden Space] [50mb]->[755.8kb]/[273mb]}{[Par Survivor Space] [8.4mb]->[8.1mb]/[34.1mb]}{[CMS Old Gen] [6.5mb]->[10.9mb]/[682.6mb]}{[CMS Perm Gen] [21.3mb]->[22.3mb]/[82mb]}
+[2014-07-05 02:14:04,793][INFO ][gateway                  ] [Amiko Kobayashi] recovered [1] indices into cluster_state
+[2014-07-05 03:37:32,647][INFO ][node                     ] [Amiko Kobayashi] {0.20.6}[1013]: stopping ...
+[2014-07-05 03:37:32,740][INFO ][node                     ] [Amiko Kobayashi] {0.20.6}[1013]: stopped
+[2014-07-05 03:37:32,741][INFO ][node                     ] [Amiko Kobayashi] {0.20.6}[1013]: closing ...
+[2014-07-05 03:37:32,749][INFO ][node                     ] [Amiko Kobayashi] {0.20.6}[1013]: closed

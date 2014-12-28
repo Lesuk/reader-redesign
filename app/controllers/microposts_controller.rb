@@ -45,7 +45,7 @@ class MicropostsController < ApplicationController
 	def repost
 		@tweet = Micropost.find(params[:id])
 		if !current_user?(@tweet.user) 
-			notice = @tweet.retweet_by(current_user)
+			notice = @tweet.repost_by(current_user)
 			@reposts = @tweet.repost_count(@tweet.id).to_i 
 			respond_to do |format|
 				format.html{

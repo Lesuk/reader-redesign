@@ -1,8 +1,5 @@
 class Micropost < ActiveRecord::Base
 	belongs_to :user
-	default_scope -> {order('microposts.created_at DESC')}
-	validates :user_id, presence: true
-	validates :content, presence: true, length: {maximum: 140}
 	has_many :comments, as: :commentable
 	has_many :replies, foreign_key: "to_id", class_name: "Micropost"
 	has_many :retweets, class_name: "Micropost", foreign_key: "retweet_id"
@@ -10,11 +7,14 @@ class Micropost < ActiveRecord::Base
 	has_many :fans, through: :favorites, source: :user
 	has_reputation :mpost_likes, source: :user, dependent: :destroy
 	belongs_to :to, class_name: "User"
-	before_save :check_in_reply_to_scan
-	before_save :check_yt_video
-	before_save :check_media
-	scope :from_users_followed_by_including_replies, -> (user) { followed_by_including_replies(user) }
+	
 
+
+	default_scope -> {order('microposts.created_at DESC')}
+	validates :user_id, presence: true
+	validates :content, presence: true, length: {maximum: 140}
+	scope :from_users_followed_by_including_replies, -> (user) { followed_by_including_replies(user) }
+	
 	mount_uploader :mpost_picrute, MPicruteUploader
 
 	@@reply_to_regexp = /@([A-Za-z0-9_]{1,15})/ #/\A@([^\s]*)/
@@ -30,6 +30,10 @@ class Micropost < ActiveRecord::Base
 		followed_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
 		where("user_id IN (#{followed_ids}) OR user_id = :user_id OR to_id = :user_id", user_id: user.id )
 	end
+
+	before_save :check_in_reply_to_scan
+	before_save :check_yt_video
+	before_save :check_media
 
 	def check_in_reply_to_scan
 		check_dog = content.scan(@@reply_to_regexp)
@@ -58,7 +62,7 @@ class Micropost < ActiveRecord::Base
 		end
 	end
 
-	def retweet_by(retweeter)
+	def repost_by(retweeter)
 		if self.user == retweeter
 			"Sorry, you can't repost your own micropost"
 		elsif self.retweets.where(user_id: retweeter.id).present?
